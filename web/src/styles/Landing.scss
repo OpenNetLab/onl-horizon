@@ -1,13 +1,30 @@
 .landing-container {
+  background: url("../assets/Background.png") no-repeat center;
+  background-size: cover;
+
   .landing-header {
     position: absolute;
     width: 100%;
     height: 100px;
     left: 0px;
     top: 0px;
-
-    background: #1F2A3C;
     border-radius: 0px;
+  }
+
+  .landing-footer {
+    height: 200px;
+    background-color: black;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+  }
+
+  .landing-footer-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .landing-header-container {
@@ -21,6 +38,10 @@
   .landing-header-container ul {
     display: flex;
     margin-top: 15px;
+  }
+
+  .landing-footer-container ul {
+    display: flex;
   }
 
   .landing-nav li {
@@ -51,15 +72,25 @@
   .bg {
     width: 100%;
     height: 700px;
-    background: url("../assets/LandingPage.jpg") no-repeat center;
-    background-size: cover
+    //background: url("../assets/LandingPage.jpg") no-repeat center;
+    //background-size: cover;
+  }
+
+  .bg-title-info {
+    position: absolute;
+    top: 180px;
+    left: 120px;
+    font-size: 27px;
+    font-weight: 400;
+    color: white;
+    z-index: 100;
   }
 
   .bg-title {
     position: absolute;
-    top: 133px;
-    left: 174px;
-    font-size: 70px;
+    top: 210px;
+    left: 120px;
+    font-size: 45px;
     font-weight: 700;
     color: #ffffff;
     z-index: 100;
@@ -67,24 +98,28 @@
 
   .bg-description {
     position: absolute;
-    width: 40vw;
-    top: 280px;
-    left: 174px;
-    font-size: 18px;
+    width: 477px;
+    top: 315px;
+    left: 120px;
+    font-weight: 350;
+    font-size: 14px;
     color: #ffffff;
     z-index: 100;
   }
+
   .contact {
     padding: 20px;
     text-aligh: center;
+
     a {
       color: #6a6a6a;
     }
   }
+
   .login {
     margin-top: 50px;
     //float: right;
-    //margin-left: -100px;
+    margin-left: -15px;
     width: 200px;
     //height: 103px;
     z-index: 100;
@@ -92,8 +127,9 @@
   }
 
   .title {
-    font-size: 48px;
-    color: #707070;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
   }
 
   .right {
@@ -105,17 +141,185 @@
   }
 
   .description {
-    color: #707070;
-    font-size: 24px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
   }
 
   .img {
-    width: 648px;
-    height: 478px;
+    width: 780px;
+    height: 600px;
+  }
 
+  .photo {
+    width: 500px;
   }
 
   .margin-right {
     margin-right: 132px;
   }
+
+  .margin-top {
+    margin-top: 30px;
+  }
+
+  .padding-top {
+    padding-top: 10px;
+  }
+
+  .padding-left {
+    padding-left: 140px;
+  }
+
+  .padding-right {
+    padding-right: 30px;
+  }
+
+  .contactUs {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: -200px;
+  }
+
+  .email {
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+    margin-left: -200px;
+  }
+
+  .line {
+    margin: 80px 0px;
+
+    p {
+      color: #02A5F4;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    img {
+      margin-top: -30px;
+      width: 100%;
+    }
+  }
+
+  .linksInRect {
+    position: absolute;
+    color: #02A5F4;
+    font-size: 20px;
+    font-weight: 630;
+    margin-left: 120px;
+    margin-top: -81px;
+  }
+
+  .links {
+    color: #02A5F4;
+    font-size: 20px;
+    font-weight: 630;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  .rectangle {
+    width: 188px;
+    margin-left: 110px;
+    margin-top: -60px;
+    margin-bottom: 40px;
+  }
+
+  .rectangle-container {
+    width: 520px;
+  }
+
+  .background {
+    background: url("../assets/Rectangle-23.png") no-repeat center;
+    background-size: cover;
+    height: 120px;
+    width: 480px;
+    margin-left: 110px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    .description {
+      margin-top: -20px;
+    }
+
+    .vector {
+      position: absolute;
+      height: 90px;
+      margin-top: 15px;
+      margin-left: 20px;
+    }
+  }
+
+  .background-features {
+    width: 270px;
+    height: 400px;
+    background: url("../assets/Rectangle-24.png") no-repeat center;
+    background-size: cover;
+    border-radius: 8px;
+    margin-left: 20px;
+
+    .title {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .description {
+      position: absolute;
+      margin: 0px 45px;
+      text-align: center;
+    }
+  }
+
+  .arrow {
+    display: inline-block;
+    height: 15px;
+    margin-left: 8px;
+    margin-top: -7px;
+  }
+
+  .ellipse {
+    display: inline-block;
+    height: 10px;
+    margin-left: 12px;
+    margin-top: 30px;
+  }
+
+  .icon {
+    height: 120px;
+    margin-left: 76px;
+    margin-top: 30px;
+  }
+
+  .background-join {
+    background: url("../assets/Rectangle-25.png") no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    height: 260px;
+    margin: 180px 140px 280px 140px;
+
+    .bg-title-bottom {
+      display: inline-block;
+      font-size: 45px;
+      font-weight: 700;
+      color: #ffffff;
+      z-index: 100;
+      padding-top: 86px;
+      padding-left: 160px;
+    }
+
+    .description {
+      padding-left: 160px;
+      margin-top: -50px;
+    }
+
+    .login {
+      display: inline-block;
+      margin-top: -10px;
+      margin-left: 377px;
+    }
+  }
 }
+
