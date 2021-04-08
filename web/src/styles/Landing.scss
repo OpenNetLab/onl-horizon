@@ -1,7 +1,6 @@
 .landing-container {
-
-  background: url("../assets/Background.png") no-repeat center;
-  background-size: cover;
+  background: linear-gradient(180deg, #1F293C 0%, #1D2A3F 14.9%, #161B25 100%);
+  z-index: -100;
 
   .landing-header {
     width: 100%;
@@ -20,15 +19,23 @@
   }
 
   .landing-header-container {
-    width: 90%;
+    width: 92%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
+  .bg-bottom {
+    z-index: -1;
+    height: 700px;
+    //position: absolute;
+    margin-top: -600px;
+  }
+
   .landing-footer-container {
-    width: 90%;
+    z-index: 100;
+    width: 92%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -45,8 +52,9 @@
   }
 
   .landing-nav li {
+    color: white;
     list-style: none;
-    margin-right: 30px;
+    margin-right: 20px;
   }
 
   .landing-nav-item {
@@ -117,7 +125,7 @@
   }
 
   .challenge {
-    margin-top: -200px;
+    //margin-top: -200px;
   }
 
   .challenge-container {
@@ -125,6 +133,7 @@
   }
 
   .challenge-text {
+    margin-top: 40px;
     margin-left: 100px;
   }
 
@@ -142,6 +151,7 @@
 
   .news-text {
     margin-left: 100px;
+    margin-top: 40px;
     margin-right: 100px;
   }
 
@@ -170,12 +180,16 @@
 
   .description {
     color: white;
-    font-size: 14px;
-    font-weight: 400;
+    font-weight: 350;
   }
 
   .photo {
-    width: 500px;
+    width: 600px;
+    border-radius: 5px;
+  }
+
+  .photo:hover {
+    box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.2);
   }
 
   .margin-right {
@@ -186,8 +200,12 @@
     margin-top: 30px;
   }
 
+  .margin-lift {
+    margin-top: -230px;
+  }
+
   .padding-top {
-    padding-top: 10px;
+    padding-top: 28px;
   }
 
   .padding-left {
@@ -212,9 +230,14 @@
     margin-left: -200px;
   }
 
+  .landing-profile {
+    margin-top: 3px;
+  }
+
   .line {
-    margin: 150px 100px 80px 100px;
     display: flex;
+    margin: 200px 0px 80px 100px;
+    justify-content: space-between;
 
     p {
       color: #02A5F4;
@@ -222,20 +245,24 @@
       font-weight: 600;
     }
 
-    img {
-      margin-top: 24px;
+    .border {
+      width: 80%;
+      margin-right: 100px;
       margin-left: 30px;
-      width: 95%;
+      margin-top: 28px;
+      border-top: 3px solid rgba(2, 165, 244, 0.2);
     }
   }
 
   .linksInRect {
-    position: absolute;
+    //position: absolute;
+    margin-left: 110px;
+    padding: 8px 15px;
     color: #02A5F4;
     font-size: 20px;
-    font-weight: 630;
-    margin-left: 120px;
-    margin-top: -81px;
+    font-weight: 630;border: 2px solid #02A5F4;
+    box-sizing: border-box;
+    border-radius: 10px;
   }
 
   .links {
@@ -257,25 +284,65 @@
     width: 520px;
   }
 
+  .background:hover {
+    background: linear-gradient(180deg, #47ADD6 0%, #377FB7 26.87%, #264F97 100%);
+    box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+
   .background {
-    background: url("../assets/Rectangle-23.png") no-repeat center;
-    background-size: cover;
-    height: 140px;
+    background: linear-gradient(180deg, #26364A 0%, #1C273C 100%);
+    border-radius: 8px;
+    height: 160px;
     width: 480px;
     margin-left: 110px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 38px;
+    margin-top: 54px;
 
     .description {
       margin-top: -20px;
+      font-family: Segoe UI;
+      font-style: normal;
+      font-weight: normal;
+      font-weight: 350;
     }
 
     .vector {
       position: absolute;
       height: 90px;
-      margin-top: 15px;
+      margin-top: 34px;
       margin-left: 20px;
     }
+  }
+
+  .square-container {
+    display: flex;
+    margin-left: 110px;
+    justify-content: space-between;
+  }
+
+  .square {
+    background: linear-gradient(180deg, #26364A 0%, #1C273C 100%);
+    border-radius: 8px;
+    height: 170px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .square:hover {
+    background: linear-gradient(180deg, #47ADD6 0%, #377FB7 26.87%, #264F97 100%);
+    box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+
+  .vector-git {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 60px;
   }
 
   .features-container {
@@ -284,11 +351,17 @@
     justify-content: center;
   }
 
+  .background-features:hover {
+    background: linear-gradient(180deg, #47ADD6 0%, #377FB7 26.87%, #264F97 100%);
+    box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+
   .background-features {
     width: 270px;
     height: 420px;
-    background: url("../assets/Rectangle-24.png") no-repeat center;
-    background-size: cover;
+    background: linear-gradient(180deg, #26364A 0%, #1C273C 100%);
+    border-radius: 8px;
     border-radius: 8px;
     margin-right: 20px;
     margin-top: 20px;
@@ -327,13 +400,16 @@
   }
 
   .background-join {
-    background: url("../assets/Rectangle-25.png") no-repeat center;
-    background-size: cover;
+    position: relative;
+    background: linear-gradient(265.65deg, #47ADD6 13.4%, #254E97 86.23%);
+    box-shadow: 0px 0px 40px rgba(55, 131, 174, 0.1);
+    border-radius: 8px;
     border-radius: 10px;
     height: 260px;
     margin: 180px 140px 280px 140px;
     display: flex;
     justify-content: center;
+    z-index: 100;
 
     .bg-title-bottom {
       font-size: 45px;
@@ -367,6 +443,10 @@
   }
 
   @media screen and (max-width: 1200px) {
+    .bg-bottom {
+      display: none;
+    }
+
     .footer-contact {
       display: none;
     }
@@ -377,10 +457,6 @@
 
     .description-bottom {
       display: none;
-    }
-
-    .background-join {
-      background: none;
     }
 
     .landing-profile {
