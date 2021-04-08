@@ -1,23 +1,26 @@
 import React, {useContext /*useState*/} from 'react';
 import {Row, Avatar} from 'antd';
 import loginButton from '../../assets/login-button.png';
-import background from '../../assets/bg.png';
 import vector from '../../assets/Vector.png';
-import mmSys from '../../assets/mmsys.png';
-import photo from '../../assets/3-1.png';
 import arrow from '../../assets/arrow.png';
-import icon1 from '../../assets/icon-1.png';
-import icon2 from '../../assets/icon-2.png';
-import icon3 from '../../assets/icon-3.png';
-import icon4 from '../../assets/icon-4.png';
 import join from '../../assets/join-button.png';
 import * as Setting from "../../utils/Setting";
 import { useHistory } from "react-router-dom";
 import {MsalContext} from "@hsluoyz/msal-react";
 import '../../styles/Landing.scss';
-import bgBottom from '../../assets/bg-bottom.png';
 
 const Landing = () => {
+  const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
+  const mmsys = `${bgUrl}mmsys.png`;
+  const icon1 = `${bgUrl}icon-1.png`;
+  const icon2 = `${bgUrl}icon-2.png`;
+  const icon3 = `${bgUrl}icon-3.png`;
+  const icon4 = `${bgUrl}icon-4.png`;
+  const photo = `${bgUrl}photo.png`;
+  const background = `${bgUrl}bg.png`;
+  const bgBottom = `${bgUrl}bg-bottom.png`;
+
+
   const history = useHistory();
   const msalContext = useContext(MsalContext);
   console.log(msalContext.accounts);
@@ -125,7 +128,7 @@ const Landing = () => {
               <a href="https://2021.acmmmsys.org/rtc_challenge.php" className="linksInRect" target="_blank">More Information</a>
               <a href="https://2021.acmmmsys.org/rtc_challenge.php" target="_blank">
                 <div className="background">
-                  <img className="vector" src={mmSys} />
+                  <img className="vector" src={mmsys} />
                   <p className="title padding-left padding-right padding-top">ACM MMSys'21, Istanbul, Turkey</p>
                   <p className="description padding-left padding-right">
                 More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
