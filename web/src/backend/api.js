@@ -100,9 +100,9 @@ export const getChallengeId = () => {
 
 // sign up
 export const signUp = (params) => {
-  return post(`${baseUrl}/signup`, params)
+  return post(`${baseUrl}/display/userRegistration`, params)
     .then((res) => {
-      this.getUser();
+      getUser();
     });
 };
 
