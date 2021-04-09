@@ -5,8 +5,11 @@ import {signUp} from "../../backend/api";
 import '../../styles/SignUpPage.scss';
 import * as Setting from '../../utils/Setting';
 import {MsalContext} from "@hsluoyz/msal-react";
+import {getUserId} from "../../utils/Setting";
+import {useHistory} from "react-router-dom";
 
 const SignUpPage = (props) => {
+  const history = useHistory();
   const msalContext = useContext(MsalContext);
   const [email, setEmail] = useState('xxx@xxx.com');
   const [firstName, setFirstName] = useState('');
@@ -37,8 +40,9 @@ const SignUpPage = (props) => {
     }
   }, [msalContext]);
 
-  const paramsDic = ["firstName", "lastName", "company", "phone", "title"];
-  const paramsVal = [firstName, lastName, company, phone, title];
+  const userID = Setting.getUserId();
+  const paramsDic = ["userID", "firstName", "lastName", "company", "phone", "title", "email"];
+  const paramsVal = [userID, firstName, lastName, company, phone, title, email];
   const onHandleClick = () => {
     if (!nextValid) {
       setCheckValid(true);
@@ -50,9 +54,10 @@ const SignUpPage = (props) => {
       const val = paramsVal[i];
       params[key] = val;
     }
+    console.log(params);
     signUp(params)
       .then(()=>{
-        window.history.push("/home");
+        history.push("/");
       });
   };
 
