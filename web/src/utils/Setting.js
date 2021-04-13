@@ -84,7 +84,6 @@ function getRandomInt(s) {
       hash = hash & hash;
     }
   }
-
   return hash;
 }
 

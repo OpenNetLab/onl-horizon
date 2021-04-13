@@ -115,7 +115,7 @@ class App extends Component {
           })
           .catch(err => {
             this.setState({
-              isForbidden: true,
+              isForbidden: true
             });
           });
         // set challenge ID in local storage
