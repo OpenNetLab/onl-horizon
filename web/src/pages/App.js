@@ -28,8 +28,10 @@ import AuthRoute from "../components/AuthRoute";
 import {MsalContext} from "@hsluoyz/msal-react";
 import {loginRequest} from "../auth/authConfig";
 import {isJobAccessible, isChallengeAccessible, isAdmin} from "../utils/Setting";
+import Footer from "../components/Footer";
+import "../styles/index.css";
 
-const { Header, Sider, Content, Footer } = Layout;
+const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
 // todo: divide the code
@@ -115,7 +117,7 @@ class App extends Component {
           })
           .catch(err => {
             this.setState({
-              isForbidden: true,
+              isForbidden: true
             });
           });
         // set challenge ID in local storage
@@ -409,22 +411,22 @@ class App extends Component {
   }
 
   // render the footer
-  renderFooter() {
-    // How to keep your footer where it belongs ?
-    // https://www.freecodecamp.org/neyarnws/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+  // renderFooter() {
+  //   // How to keep your footer where it belongs ?
+  //   // https://www.freecodecamp.org/neyarnws/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
 
-    return (
-      <Footer id="footer" style={
-        {
-          borderTop: '1px solid #e8e8e8',
-          backgroundColor: 'white',
-          textAlign: 'center',
-        }
-      }>
-        Made with <span style={{color: 'rgb(255, 255, 255)'}}>❤️</span> by <a style={{fontWeight: "bold", color: "black"}} target="_blank" href="https://opennetlab.org">OpenNetLab</a>
-      </Footer>
-    );
-  }
+  //   return (
+  //     <Footer id="footer" style={
+  //       {
+  //         borderTop: '1px solid #e8e8e8',
+  //         backgroundColor: 'white',
+  //         textAlign: 'center',
+  //       }
+  //     }>
+  //       Made with <span style={{color: 'rgb(255, 255, 255)'}}>❤️</span> by <a style={{fontWeight: "bold", color: "black"}} target="_blank" href="https://opennetlab.org">OpenNetLab</a>
+  //     </Footer>
+  //   );
+  // }
 
   // render modal
   renderModal() {
@@ -492,6 +494,9 @@ class App extends Component {
           }
         </div>
         <BackTop />
+        <div className="about-container">
+          <Footer />
+        </div>
       </div>
     );
   }

@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './pages/App';
+import AboutPage from "./pages/about/AboutPage";
+import JoinPage from "./pages/join/JoinPage";
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Landing from "./pages/landing/Landing";
@@ -16,6 +18,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Landing}/>
+        <Route exact path="/join" component={JoinPage}/>
+        <Route exact path="/about" component={AboutPage}/>
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route component={App}/>

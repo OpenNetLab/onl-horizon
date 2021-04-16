@@ -1,0 +1,283 @@
+.about-container {
+  background: #F9FAFF;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    background: linear-gradient(90deg, #245182 16.94%, #253959 79.95%);
+  }
+
+  .logo {
+    margin-left: 80px;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .nav li {
+    margin-right: 30px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 24px;
+    color: white;
+    list-style: none;
+    a {
+      color: white;
+    }
+  }
+
+  .nav-item {
+    margin-top: 25px;
+  }
+
+  .profile {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .body-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title {
+    margin-top: 10px;
+    padding: 15px 36px;
+    margin-bottom: 30px;
+    color: #062A4E;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+  }
+
+  .back {
+    background: #DBFBFE;
+    border-radius: 10px;
+    width: 30px;
+    white-space:nowrap;
+  }
+
+  .content {
+    width: 90%;
+    margin-top: -100px;
+    background-color: white;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .margin-top {
+    padding-top: 100px;
+  }
+
+  .big-title {
+    position: absolute;
+    left: 6%;
+  }
+
+  .margin-left {
+    margin-left: 10px;
+  }
+
+  .content-next {
+    width: 90%;
+    background: #F9FBFF;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .text {
+    width: 46%;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    color: #062A4E;
+  }
+
+  .pic {
+    width: 500px;
+  }
+
+  .line {
+    height: 0px;
+    width: 90%;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #C4C4C4;
+  }
+
+  p {
+    font-family: Segoe UI;
+    margin-right: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .underline {
+    text-decoration: underline #062A4E;
+  }
+
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px;
+  }
+
+  .role {
+    margin-left: 30px;
+    background: #1D5E9E;
+    border-radius: 10px;
+    padding: 10px 0px;
+    height: 52px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    width: 150px;
+    text-align: center;
+  }
+
+  .name {
+    margin-left: 100px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    color: #062A4E;
+  }
+
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: -80px;
+
+    // ul {
+    //   margin-right: 30px;
+    // }
+  }
+
+  .footer {
+    height: 200px;
+    background: linear-gradient(184.01deg, #245182 15.97%, #253959 109.62%);
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contactUs {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: -200px;
+  }
+
+  .email {
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+    margin-left: -200px;
+  }
+
+  .ant-tabs-tab-btn {
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+
+  .ant-tabs-tab-active {
+    color: black !important;
+  }
+
+  .ant-tabs-ink-bar {
+    background-color: transparent !important;
+  }
+
+  .bg {
+    position: absolute;
+    width: 60%;
+    right: 5%;
+    top: 1300px;
+  }
+
+  .pic-small {
+    position: absolute;
+    height: 80px;
+    right: 22%;
+  }
+
+  .pic-box {
+    position: absolute;
+    height: 160px;
+    right: 12%;
+    margin-top: -70px;
+  }
+
+  .earth {
+    position: absolute;
+    height: 140px;
+    left: 43%;
+    margin-top: -54px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .logo {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .profile {
+      display: none;
+    }
+
+    .footer-contact {
+      display: none;
+    }
+
+    .pic {
+      display: none;
+    }
+
+    .bg {
+      display: none;
+    }
+
+    .pic-small {
+      display: none;
+    }
+  }
+}

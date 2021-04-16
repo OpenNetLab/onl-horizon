@@ -43,7 +43,6 @@ const SubmitChallenge = (props) => {
         setIsModel(false);
       }
     },
-
   };
 
   const titleValid = useMemo(() => {
