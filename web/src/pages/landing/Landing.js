@@ -20,7 +20,6 @@ const Landing = () => {
   const background = `${bgUrl}bg.png`;
   const bgBottom = `${bgUrl}bg-bottom.png`;
 
-
   const history = useHistory();
   const msalContext = useContext(MsalContext);
   console.log(msalContext.accounts);
@@ -71,12 +70,12 @@ const Landing = () => {
             }
           </div>
           <ul className="landing-nav">
-            <li className="landing-nav-item">
-              <a href="#">RESEARCH</a>
+            {/* <li className="landing-nav-item">
+              <a href="/home">RESEARCH</a>
             </li>
             <li className="landing-nav-item">
-              <a href="#">DATA</a>
-            </li>
+              <a href="/home">DATA</a>
+            </li> */}
             <li className="landing-nav-item">
               <a href="/about">ABOUT US</a>
             </li>
@@ -241,7 +240,7 @@ const Landing = () => {
             </p>
           </div>
         }
-        <a href="#"><img className="join" src={join}/></a>
+        <a href="/home"><img className="join" src={join}/></a>
       </div>
       <img className="bg-bottom" src={bgBottom}/>
       <Row className="landing-footer" justify="space-between">
@@ -261,14 +260,14 @@ const Landing = () => {
           </div>
           <ul className="landing-nav">
             <li className="landing-nav-item">
-              <a href="#">Join us</a>
+              <a href="/about">About us</a>
             </li>
             <li className="landing-nav-item">
-              <a href="#">Feedback</a>
+              <a href="/join">Join us</a>
             </li>
-            <li className="landing-nav-item">
-              <a href="#">Links</a>
-            </li>
+            {/* <li className="landing-nav-item">
+              <a href="/home">Links</a>
+            </li> */}
           </ul>
         </div>
       </Row>

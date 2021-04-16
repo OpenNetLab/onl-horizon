@@ -11,10 +11,10 @@ const ChallengeDashboard = (props) => {
         <div className="intro-container">
           <div className="intro-contents">
             <div className="intro-header">
-              Challenge Name
+              Challenge
             </div>
             <div className="intro-details">
-              challenge description challenge description challenge description challenge description challenge description challenge description challenge description challenge description challenge description challenge description challenge description challenge description challenge description
+            Real-time video applications have never played a more critical role in our lives as they enable us to live and work remotely while staying connected with the rest of the world. However, the rapid increase in the use of real-time video also poses an unprecedented challenge for consistently delivering high quality of experience (QoE) — such as high video and audio quality, low delay and few stalls — to all users.
             </div>
             <div className="row-wrapper">
               <div className="btn-container website">
