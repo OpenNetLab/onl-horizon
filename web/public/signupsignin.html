@@ -158,7 +158,7 @@
         body {
             font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
             background-attachment: fixed;
-            background-color: #fff;
+            background-color: #3767b0;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -201,6 +201,7 @@
 
         .container {
             text-align: center;
+            backgournd-color: blue;
             width: 100%;
             display: table;
             height: 100vh;
@@ -211,7 +212,28 @@
             margin: 0 auto
         }
 
-        .col-lg-6 {
+        .header {
+            background-color: white;
+            height: 50px;
+            text-align: right;
+        }
+
+        .header img {
+            max-width: 100%;
+            width: auto;
+            height: 40px;
+            margin-left: 20px;
+            display: inline-block;
+            float: left;
+        }
+
+        .header a {
+            margin: 15px;
+            color: grey;
+            float: right;
+        }
+
+        .col-lg-4 {
             max-width: 470px;
             width: 100%;
             float: none;
@@ -220,11 +242,31 @@
             padding: 0
         }
 
+        .col-lg-8 {
+            max-width: 800px;
+            width: 100%;
+            float: none;
+            display: inline-block;
+            vertical-align: top;
+            padding-right: 200px;
+            padding-top: 100px;
+        }
+
         .row {
             width: 100%;
             margin: 0;
             display: table-cell;
             vertical-align: middle
+        }
+
+        .intro {
+            color: white;
+            text-align: left;
+        }
+
+        .intro p {
+            font-size: 1.0em;
+            padding: 50px 0;
         }
 
         ul {
@@ -764,7 +806,8 @@
             max-width: 380px;
             width: auto;
             margin: 0 auto;
-            padding: 0
+            padding: 0;
+            text-align: left;
         }
 
         .unified_container .row .panel-default .panel-body .companyName {
@@ -774,6 +817,23 @@
 
         .unified_container .row .panel-default .panel-body .companyLogo {
             display: block
+        }
+
+        .unified_container .row .panel-default .panel-body h1 {
+            color: #1d7fc3;
+            font-size: 3.5em;
+            font-weight: bold;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        .unified_container .row .panel-default .panel-body p {
+            color: black;
+            font-size: 1.5em;
+            font-weight: 500;
+            padding-top: 30px;
+            margin: 0;
         }
 
         .unified_container .row .panel-default .panel-body img {
@@ -792,7 +852,9 @@
         .unified_container .row .panel-default #api {
             display: table;
             margin: 0;
-            width: 100%
+            width: 100%;
+            position: relative;
+            bottom: 20px;
         }
 
         .unified_container .row .panel-default #api .intro {
@@ -1136,21 +1198,30 @@
 
 </head>
 <body>
-<div id="background_branding_container" data-tenant-branding-background-color="true">
-    <img data-tenant-branding-background="true"
-         src="https://opennetlaborg.b2clogin.com/static/tenant/templates/backgrounds/1-1.png" alt="Illustration"/>
+<div class="header">
+    <img
+            src="https://opennetlab.org/public/logo.png"
+            alt="Company Logo">
+    <a class="contact" href="https://v2.opennetlab.org/contact">CONTACT US</a>
 </div>
+<!--<div id="background_branding_container" data-tenant-branding-background-color="true">-->
+<!--&lt;!&ndash;    <img data-tenant-branding-background="true"&ndash;&gt;-->
+<!--&lt;!&ndash;         src="https://opennetlaborg.b2clogin.com/static/tenant/templates/backgrounds/1-1.png" alt="Illustration"/>&ndash;&gt;-->
+<!--</div>-->
 <div class="container  unified_container " role="presentation">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
+            <div class="intro">
+                <h2>What's OpenNetLab</h2>
+                <p>OpenNetLab is to build and provide a distributed networking platform with many collaborative nodes and a common benchmarking dataset (a.k.a ImageNet in Networking Area) through this platform for the researchers to collect real networking data and training/evaluating their AI models for various networking environment, including Internet/cloud, wireless and mobile network. </p>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <img
-                         src="https://opennetlab.org/public/logo.png"
-                         alt="Company Logo">
-<!--                    <img class="companyLogo" data-tenant-branding-logo="true"-->
-<!--                         src="https://opennetlaborg.b2clogin.com/static/tenant/templates/images/logo.svg"-->
-<!--                         alt="Company Logo">-->
+                    <h1>LOGIN</h1>
+                    <p>Sign in with your social account</p>
                     <div id="api">
                     </div>
                 </div>
