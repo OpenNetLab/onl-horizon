@@ -54,7 +54,7 @@ export default function AboutPage () {
                   Rotating Chair
                 </div>
                 <div className="name">
-                  Tian Chen<br />Nanjing University
+                  Chen Tian<br />Nanjing University
                 </div>
               </div>
               <div className="info">
