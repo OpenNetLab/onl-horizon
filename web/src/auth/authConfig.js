@@ -9,7 +9,7 @@ export const msalConfig = {
     clientId: "170cd5f3-4611-4882-a714-235c1390b138",
     authority: b2cPolicies.authorities.signUpSignIn.authority,
     knownAuthorities: [b2cPolicies.authorityDomain],
-    redirectUri: "http://localhost:2000", //defaults to application start page
+    redirectUri: `${window.location.protocol}//${window.location.host}`, // defaults to application start page, can be "http://localhost:2000" or "https://v2.opennetlab.org"
     // postLogoutRedirectUri: "http://localhost:2000",
   },
   cache: {
