@@ -167,15 +167,15 @@ export default function AboutPage () {
               <li className="name">Hao Chen (MSRA)<br />Outreach</li>
               <li className="name">Junjie Deng (BUPT, MSRA)<br />AlphaRTC</li>
               <li className="name">Xuan Feng (PKU, MSRA)<br />Frontend​</li>
-              <li className="name">Ze Gan (MSRA)<br />AlphaRTC​​</li>
-              <li className="name">Weijie Guo (MSRA)<br />Frontend​</li>
+              <li className="name">Ze Gan (MSRA)<br />AlphaRTC</li>
+              <li className="name">Weijie Guo (MSRA)<br />Frontend</li>
               <li className="name">Yunyun Jiang (MSRA)<br />Outreach</li>
             </ul>
             <ul>
               <li className="name">Yuting Jiang (NJU, MSRA)<br />Backend</li>
-              <li className="name">Miran Li (MSRA)<br />Outreach​</li>
+              <li className="name">Miran Li (MSRA)<br />Outreach</li>
               <li className="name">Yilin Liu (PKU, MSRA)<br />Backend​​</li>
-              <li className="name">Yang Luo (MSRA)<br />Frontendr​</li>
+              <li className="name">Yang Luo (MSRA)<br />Frontend</li>
               <li className="name">Xin Ma (MSRA)<br />Outreach</li>
               <li className="name">Yang Ou (MSRA)<br />Designer</li>
             </ul>
@@ -196,6 +196,7 @@ export default function AboutPage () {
               <li className="name">Wanying Zu (MSRA)<br />Designer​</li>
             </ul>
           </div>
+          <div className="text center bold">* Sorted by last name</div>
         </div>
       </div>
       <Footer />

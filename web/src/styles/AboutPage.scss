@@ -253,6 +253,142 @@
     margin-top: -54px;
   }
 
+  .bold {
+    font-weight: bold;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+
+  .img-container {
+    display: flex;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    margin-left: 30px;
+
+    .pic-gallery {
+      height: 280px;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 135px;
+  }
+
+  .pic-info {
+    height: 120px;
+  }
+
+  .names {
+    text-align: center;
+    white-space: nowrap;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    color: #062A4E;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    font-size: 14px;
+  }
+
+  .padding-top {
+    padding-top: 100px;
+  }
+
+  .join-content-next {
+    width: 90%;
+    background: #F9FBFF;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+    margin-bottom: 100px;
+    padding-bottom: 80px;
+  }
+
+  .join-ul {
+    background: #F2F8FF;
+    border-radius: 0px;
+    padding: 46px;
+    margin-bottom: 0px;
+
+    li {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 48px;
+      font-family: Segoe UI;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      color: #062A4E;
+    }
+  }
+
+  .tab-container {
+    margin-left: 10%;
+    width: 80%;
+  }
+
+  .info-bg{
+    padding: 30px;
+    margin: 0px;
+    background: linear-gradient(265.65deg, #47ADD6 13.4%, #254E97 86.23%);
+    box-shadow: 0px 0px 40px rgba(55, 131, 174, 0.1);
+  }
+
+  .white-title {
+    font-size: 28px;
+    color: white;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-decoration: underline white;
+    }
+  }
+
+  .white-info {
+    font-size: 18px;
+    color: white;
+    width: 70%;
+
+    a {
+      color: #00FFC6;
+      text-decoration: underline #00FFC6;;
+    }
+  }
+
+  .flex-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .flex-box-bottom {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      margin-left: 10px;
+      margin-right: 40px;
+    }
+  }
+
+  .title-container {
+    margin-left: 30px;
+  }
+
   @media screen and (max-width: 750px) {
     .logo {
       display: none;
