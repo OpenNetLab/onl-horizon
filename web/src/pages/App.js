@@ -344,7 +344,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The OpenNetLab is now open for internal preview. Please check us at the end of January 2021 for the Grand Challenge Release.<br/>
+          The platfrom for challenge user is coming soon.<br/>
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br/>
           please email us: feedback(at)opennetlab.org
         </Modal>

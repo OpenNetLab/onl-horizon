@@ -5,6 +5,8 @@ import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Landing from "./pages/Landing";
+import JoinPage from "./pages/JoinPage";
+import AboutPage from "./pages/AboutPage";
 
 import { MsalProvider } from "@hsluoyz/msal-react";
 import {pca} from "./utils/Setting";
@@ -14,6 +16,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Landing}/>
+        <Route exact path="/join" component={JoinPage}/>
+        <Route exact path="/about" component={AboutPage}/>
         <Route component={App}/>
       </Switch>
     </BrowserRouter>
