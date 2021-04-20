@@ -49,19 +49,25 @@ const SubmitResult = (props) => {
   })();
 
   const runText = (() => {
+    if (sendStatus === ST.CREATE_FAILED) {
+      return "Failed to create!";
+    }
     if (sendStatus === ST.RUN_FAILED) {
-      return "Failed to run!";
+      return "Created successfully, but failed to run!";
     }
     if (sendStatus === ST.RUN_SUCCEEDED) {
-      return "Job is running!";
+      return "Job is submitted successfully!";
     }
     if (curStatusStep < ST.SEND_STEP_RUN || sendStatus === ST.RUN_PROCESSING) {
-      return "Job is waiting to run!";
+      return "Job is waiting!";
     }
-    return "Job is waiting to run!";
+    return "Job is waiting!";
   })();
 
   const runIcon = (() => {
+    if (sendStatus === ST.CREATE_FAILED) {
+      return (<StepsIcon type='fail' showLarge={true}/>);
+    }
     if (sendStatus === ST.RUN_FAILED) {
       return (<StepsIcon type='fail' showLarge={true}/>);
     }
@@ -142,9 +148,9 @@ const SubmitResult = (props) => {
         >
           <div className="steps-container">
             <Steps direction="vertical" current={curStatusStep}>
-              <Step title="Submitted" description={submitText} icon={submitIcon}/>
-              <Step title="Created" description={createText} icon={createIcon}/>
-              <Step title="Running" description={runText} icon={runIcon} />
+              {/* <Step title="Submitted" description={submitText} icon={submitIcon}/>
+              <Step title="Created" description={createText} icon={createIcon}/> */}
+              <Step title="Job Status" description={runText} icon={runIcon} />
             </Steps>
           </div>
         </CSSTransition>

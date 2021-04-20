@@ -63,6 +63,14 @@ export function isChallengeAccessible() {
   return false;
 }
 
+export function isCourseAccessible() {
+  const operations = localStorage.getItem("operations");
+  if (operations != 'undefined' && operations !== null) {
+    return operations.includes("createCourseJob");
+  }
+  return false;
+}
+
 export function isJobAccessible() {
   const operations = localStorage.getItem("operations");
   if (operations != 'undefined' && operations !== null) {

@@ -321,19 +321,20 @@ class App extends Component {
               </Menu.Item>
             </>
         }
-        {
-          !Setting.isChallengeAccessible() ? null :
-            <>
-              <SubMenu key="3" title="Activity" icon={<PlusOutlined/>} style={{paddingLeft: "10px", fontWeight: "bold"}}>
-                <Menu.Item key="4" onClick={() => this.props.history.push("/challenge")}>
-                  Challenge
-                </Menu.Item>
-                <Menu.Item key="5" onClick={() => this.props.history.push("/course")}>
-                  Course
-                </Menu.Item>
-              </SubMenu>
-            </>
-        }
+        <SubMenu key="3" title="Activity" icon={<PlusOutlined/>} style={{paddingLeft: "10px", fontWeight: "bold"}}>
+          {
+            !Setting.isChallengeAccessible() ? null :
+              <Menu.Item key="4" onClick={() => this.props.history.push("/challenge")}>
+                Challenge
+              </Menu.Item>
+          }
+          {
+            !Setting.isCourseAccessible() ? null :
+              <Menu.Item key="5" onClick={() => this.props.history.push("/course")}>
+                Course
+              </Menu.Item>
+          }
+        </SubMenu>
       </Menu>
     );
   }
@@ -447,7 +448,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The OpenNetLab is now open for internal preview. Please check us at the end of January 2021 for the Grand Challenge Release.<br/>
+          The platform for challenge user is coming soon.<br/>
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br/>
           please email us: feedback(at)opennetlab.org
         </Modal>
@@ -472,7 +473,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The OpenNetLab is now open for internal preview. Please check us at the end of January 2021 for the Grand Challenge Release.<br/>
+          The platform for challenge user is coming soon.<br/>
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br/>
           please email us: feedback(at)opennetlab.org
         </Modal>

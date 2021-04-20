@@ -164,36 +164,36 @@ export default function AboutPage () {
           <div className="line"></div>
           <div className="list-container">
             <ul>
-              <li className="name">Hao Chen (MSRA)<br />Outreach</li>
-              <li className="name">Junjie Deng (BUPT, MSRA)<br />AlphaRTC</li>
-              <li className="name">Xuan Feng (PKU, MSRA)<br />Frontend​</li>
-              <li className="name">Ze Gan (MSRA)<br />AlphaRTC</li>
-              <li className="name">Weijie Guo (MSRA)<br />Frontend</li>
-              <li className="name">Yunyun Jiang (MSRA)<br />Outreach</li>
+              <li className="name" style={{fontSize: 14}}>Hao Chen (MSRA)<br />Outreach</li>
+              <li className="name" style={{fontSize: 14}}>Junjie Deng (BUPT, MSRA)<br />AlphaRTC</li>
+              <li className="name" style={{fontSize: 14}}>Xuan Feng (PKU, MSRA)<br />Frontend​</li>
+              <li className="name" style={{fontSize: 14}}>Ze Gan (MSRA)<br />AlphaRTC</li>
+              <li className="name" style={{fontSize: 14}}>Weijie Guo (MSRA)<br />Frontend</li>
+              <li className="name" style={{fontSize: 14}}>Yunyun Jiang (MSRA)<br />Outreach</li>
             </ul>
             <ul>
-              <li className="name">Yuting Jiang (NJU, MSRA)<br />Backend</li>
-              <li className="name">Miran Li (MSRA)<br />Outreach</li>
-              <li className="name">Yilin Liu (PKU, MSRA)<br />Backend​​</li>
-              <li className="name">Yang Luo (MSRA)<br />Frontend</li>
-              <li className="name">Xin Ma (MSRA)<br />Outreach</li>
-              <li className="name">Yang Ou (MSRA)<br />Designer</li>
+              <li className="name" style={{fontSize: 14}}>Yuting Jiang (NJU, MSRA)<br />Backend</li>
+              <li className="name" style={{fontSize: 14}}>Miran Li (MSRA)<br />Outreach</li>
+              <li className="name" style={{fontSize: 14}}>Yilin Liu (PKU, MSRA)<br />Backend​​</li>
+              <li className="name" style={{fontSize: 14}}>Yang Luo (MSRA)<br />Frontend</li>
+              <li className="name" style={{fontSize: 14}}>Xin Ma (MSRA)<br />Outreach</li>
+              <li className="name" style={{fontSize: 14}}>Yang Ou (MSRA)<br />Designer</li>
             </ul>
             <ul>
-              <li className="name">Tim Pan (MSRA)<br />Outreach</li>
-              <li className="name">Lily Sun (MSRA)<br />Outreach</li>
-              <li className="name">Yuqi Tang (UCSD)<br />Frontend​</li>
-              <li className="name">Yizhi Wang (NJU)<br />Node Operation and Backend</li>
-              <li className="name">Zhangyang Wei (LZU)<br />Node Operation</li>
-              <li className="name">Yuhui Wei (PKU, MSRA)<br />Backend</li>
+              <li className="name" style={{fontSize: 14}}>Tim Pan (MSRA)<br />Outreach</li>
+              <li className="name" style={{fontSize: 14}}>Lily Sun (MSRA)<br />Outreach</li>
+              <li className="name" style={{fontSize: 14}}>Yuqi Tang (UCSD)<br />Frontend​</li>
+              <li className="name" style={{fontSize: 14}}>Yizhi Wang (NJU)<br />Node Operation and Backend</li>
+              <li className="name" style={{fontSize: 14}}>Zhangyang Wei (LZU)<br />Node Operation</li>
+              <li className="name" style={{fontSize: 14}}>Yuhui Wei (PKU, MSRA)<br />Backend</li>
             </ul>
             <ul>
-              <li className="name">Zhongyang Xia (MSRA)<br />AlphaRTC</li>
-              <li className="name">Kangjie Xu (SJTU, MSRA)<br />Backend​</li>
-              <li className="name">Yuying Zhang (MSRA)<br />Designer​</li>
-              <li className="name">Yinjie Zhang (PKU)<br />Backend​</li>
-              <li className="name">Yuheng Zou (PKU)<br />Backend​</li>
-              <li className="name">Wanying Zu (MSRA)<br />Designer​</li>
+              <li className="name" style={{fontSize: 14}}>Zhongyang Xia (MSRA)<br />AlphaRTC</li>
+              <li className="name" style={{fontSize: 14}}>Kangjie Xu (SJTU, MSRA)<br />Backend​</li>
+              <li className="name" style={{fontSize: 14}}>Yuying Zhang (MSRA)<br />Designer​</li>
+              <li className="name" style={{fontSize: 14}}>Yinjie Zhang (PKU)<br />Backend​</li>
+              <li className="name" style={{fontSize: 14}}>Yuheng Zou (PKU)<br />Backend​</li>
+              <li className="name" style={{fontSize: 14}}>Wanying Zu (MSRA)<br />Designer​</li>
             </ul>
           </div>
           <div className="text center bold">* Sorted by last name</div>
