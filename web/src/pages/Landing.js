@@ -1,85 +1,275 @@
-import React, { /*useState*/ } from 'react';
-import { Row, Col } from 'antd';
+import React, {useContext /*useState*/} from 'react';
+import {Row, Avatar} from 'antd';
 import loginButton from '../assets/login-button.png';
-import chat from '../assets/landing-chat.png';
-import data from '../assets/landing-data.png';
-import realtime from '../assets/landing-realtime.png';
-import map from '../assets/landing-map.png';
+import vector from '../assets/Vector.png';
+import arrow from '../assets/arrow.png';
+import join from '../assets/join-button.png';
+import * as Setting from "../utils/Setting";
 import { useHistory } from "react-router-dom";
-
+import {MsalContext} from "@hsluoyz/msal-react";
 import '../styles/Landing.scss';
 
 const Landing = () => {
+  const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
+  const mmsys = `${bgUrl}mmsys.png`;
+  const icon1 = `${bgUrl}icon-1.png`;
+  const icon2 = `${bgUrl}icon-2.png`;
+  const icon3 = `${bgUrl}icon-3.png`;
+  const icon4 = `${bgUrl}icon-4.png`;
+  const photo = `${bgUrl}photo.png`;
+  const background = `${bgUrl}bg.png`;
+  const bgBottom = `${bgUrl}bg-bottom.png`;
+
   const history = useHistory();
+  const msalContext = useContext(MsalContext);
+  console.log(msalContext.accounts);
   const handleLogin = () => {
     history.push("/home");
   };
 
+  const renderAvatar = () => {
+    const account = Setting.getAccount(msalContext);
+    const imageSrc = Setting.getAvatarSrc();
+    const name = account.name;
+    if (imageSrc === "") {
+      return (
+        <div>
+          <Avatar size="large" style={{ backgroundColor: Setting.getAvatarColor(account.name), verticalAlign: 'middle' }}>
+            {Setting.getFirstName(account.name)}
+          </Avatar>
+          &nbsp;
+          &nbsp;
+          <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Avatar size="large" src={imageSrc} />
+          &nbsp;
+          &nbsp;
+          <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="landing-container">
-      <Row className="home-hero">
-        <div className="bg">
-          <p className="bg-title">OpenNetLab</p>
-          <p className="bg-description">OpenNetLab is to build
-            and provide a distributed networking platform with many collaborative nodes
-            and a common benchmarking dataset (a.k.a ImageNet in Networking Area)
-            through this platform for the researchers to collect real networking data and
-            training/evaluating their AI models for various networking environment,
-            including Internet/cloud, wireless and mobile network.<br/>
-          <img src={loginButton} className="login" onClick={handleLogin} />
-          </p>
+      <Row className="landing-header">
+        <div className="landing-header-container">
+          <div className="landing-logo">
+            {
+              Setting.isMobile() ? null : <a className="logo" href={"/"} />
+            }
+          </div>
+          <ul className="landing-nav">
+            {/* <li className="landing-nav-item">
+              <a href="/home">RESEARCH</a>
+            </li>
+            <li className="landing-nav-item">
+              <a href="/home">DATA</a>
+            </li> */}
+            <li className="landing-nav-item">
+              <a href="/about">ABOUT US</a>
+            </li>
+            <li className="landing-nav-item">
+              <a href="/join">JOIN US</a>
+            </li>
+            <li>
+              <div className="landing-profile">
+                {msalContext.accounts.length === 0 ? null : renderAvatar()}
+              </div>
+            </li>
+          </ul>
         </div>
-
       </Row>
-      <Row class="chat" type="flex" justify="center" align="middle">
-        <Col
-          span={10} class="text right margin-right">
-          <p className="title">Contribute to research comunity</p>
-          <p className="description">Platform - Free to networking research community</p>
-          <p className="description">Dataset - Publish to GitHub for researcher to reproduce the experiments and train
-            models</p>
-        </Col>;
-        <Col span={10} class="img-container">
-          <img className="img" src={chat} />
-        </Col>;
+      <Row className="home-hero">
+        <div className="hero-left">
+          <div className="bg">
+            <p className="bg-title-info">Open | Share | Collaborate</p>
+            <p className="bg-title">OpenNetLab</p>
+            <p className="bg-description">OpenNetLab aims to build and provide a distributed networking platform with many collaborative nodes and a common benchmarking dataset (i.e. ImageNet in the networking area) for researchers to collect real networking data and train/evaluate their AI models for various networking environments, including the Internet/cloud, and wireless and mobile networks.<br/>
+              <img src={loginButton} className="login" onClick={handleLogin} />
+            </p>
+          </div>
+        </div>
+        <img className="img-right" src={background} />
       </Row>
-      <Row class="data" type="flex" justify="center" align="middle">
-        <Col
-          span={10} class="img-container right margin-right">
-          <img className="img " src={data} />
-        </Col>
-        <Col
-          span={10} class="text left">
-          <p className="title">Data Centric for networking-related AI</p>
-          <p className="description">Automatic data collection, data storing, data aggregation, and data sharing</p>
-        </Col>;
+      <div className="margin-lift">
+        <div className="line">
+          <div>
+            <p>CHALLENGE</p>
+          </div>
+          <div className="border">
+            {/*<img src={line}/>*/}
+          </div>
+        </div>
+        <Row className="challenge" type="flex" justify="center" align="middle">
+          <div className="challenge-container">
+            <div className="challenge-text">
+              <p className="title">Grand Challenge on Bandwidth Estimation for Real-Time Communications</p>
+              <p className="description">Real-time video applications have never played a more critical role in our lives as they enable us to live and work remotely while staying connected with the rest of the world. However, the rapid increase in the use of real-time video also poses an unprecedented challenge for consistently delivering high quality of experience (QoE) — such as high video and audio quality, low delay and few stalls — to all users.<br/><br />
+          A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br/><br />
+          Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
+              </p>
+              <a href="/home" className="links">THE PLATFORM FOR CHALLENGE IS COMING SOON</a>
+              <img className="arrow" src={arrow}/>
+              <img className="arrow" src={arrow}/>
+            </div>
+            <div className="challenge-pics">
+              <a href="https://2021.acmmmsys.org/rtc_challenge.php" className="linksInRect" target="_blank">More Information</a>
+              <a href="https://2021.acmmmsys.org/rtc_challenge.php" target="_blank">
+                <div className="background">
+                  <img className="vector" src={mmsys} />
+                  <p className="title padding-left padding-right padding-top">ACM MMSys'21, Istanbul, Turkey</p>
+                  <p className="description padding-left padding-right">
+                More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
+                  </p>
+                </div>
+              </a>
+              <div className="square-container">
+                <a href="https://github.com/OpenNetLab/AlphaRTC" target="_blank">
+                  <div className="square">
+                    <img src={vector} className="vector-git"/>
+                    <p className="title">OpenNetLab<br/>AlphaRTC</p>
+                  </div>
+                </a>
+                <a href="https://github.com/OpenNetLab/gym" target="_blank">
+                  <div className="square">
+                    <img src={vector} className="vector-git"/>
+                    <p className="title">OpenNetLab<br/>Gym</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </Row>
+      </div>
+      <div className="line">
+        <div>
+          <p>NEWS</p>
+        </div>
+        <div className="border">
+          {/*<img src={line}/>*/}
+        </div>
+      </div>
+      <Row class="news" type="flex" justify="center" align="middle">
+        <div className="news-container">
+          <div className="news-pic">
+            <img className="photo" src={photo} />
+          </div>
+          <div className="news-text">
+            <p className="title">Microsoft Research Asia partners with universities in Asia to build OpenNetLab, empowering AI-assisted networking research</p>
+            <p className="description">BEIJING, 19 January 2021 – Microsoft Research Asia announced the establishment of OpenNetLab, an open networking community and platform in collaboration with multiple universities in Asia, including academia from China, Korea and Singapore.<br /><br />
+              OpenNetLab is a network research community project. Its aims to promote the application and development of artificial intelligence (AI) in networking research by providing researchers with a universal distributed network testing platform and real network evaluation datasets. Ultimately, they hope to create a healthy and sustainable networking research ecosystem.
+            </p>
+            <a href="https://news.microsoft.com/apac/2021/01/19/microsoft-research-asia-partners-with-universities-in-asia-to-build-opennetlab-empowering-ai-assisted-networking-research/" className="links" target="_blank">VIEW MORE</a>
+            <img className="arrow" src={arrow}/>
+            <img className="arrow" src={arrow}/>
+            {/*<div>*/}
+            {/*  <img className="ellipse" src={ellipse1}/>*/}
+            {/*  <img className="ellipse" src={ellipse2}/>*/}
+            {/*  <img className="ellipse" src={ellipse3}/>*/}
+            {/*</div>*/}
+          </div>
+        </div>
       </Row>
-      <Row class="application" type="flex" justify="center" align="middle">
-        <Col
-          span={10} class="text right margin-right">
-          <p className="title">Real applications</p>
-          <p className="description">Real Time Communication (RTC)</p>
-          <p className="description">Video/Data Streaming</p>
-          <p className="description">Web Service/CDN</p>
-          <p className="description">Other networking applications</p>
-        </Col>;
-        <Col span="10" class="img-container">
-          <img className="img" src={realtime} />
-        </Col>;
+      <div className="line">
+        <div>
+          <p>FEATURES</p>
+        </div>
+        <div className="border">
+          {/*<img src={line}/>*/}
+        </div>
+      </div>
+      <Row class="features" type="flex" justify="center" align="middle">
+        <div className="features-container">
+          <div className="background-features">
+            <img className="icon" src={icon1}/>
+            <p className="title">
+              Contributing to the research community
+            </p>
+            <p className="description">
+              Platform: Free to the networking research community Dataset: Published to GitHub for researchers to reproduce the experiments and train models
+            </p>
+          </div>
+          <div className="background-features">
+            <img className="icon" src={icon2}/>
+            <p className="title">
+              Data centric for networking-related AI
+            </p>
+            <p className="description">
+              Automatic data collection Automatic data storing Automatic data aggregation Automatic data sharing
+            </p>
+          </div>
+          <div className="background-features">
+            <img className="icon" src={icon3}/>
+            <p className="title">
+              Real Applications
+            </p>
+            <p className="description">
+              Real Time Communication Video/Data Streaming Web Service/CDN Other networking applications
+            </p>
+          </div>
+          <div className="background-features">
+            <img className="icon" src={icon4}/>
+            <p className="title">
+              Distributed heterogenous test nodes
+            </p>
+            <p className="description">
+              Geo-distributed testbed Heterogenous network Various user devices
+            </p>
+          </div>
+        </div>
       </Row>
-      <Row className="map" type="flex" justify="center" align="middle">
-        <Col
-          span={10} class="img-container right margin-right">
-          <img className="img" src={map} />
-        </Col>
-        <Col
-          span={10} class="text left">
-          <p className="title">Distributed heterogenous test nodes</p>
-          <p className="description">Geo-distributed testbed</p>
-          <p className="description">Heterogenous network (LAN, wireless, 4G/5G, etc)</p>
-          <p className="description">Web Service/CDN</p>
-          <p className="description">Various user devices (desktop, Mobile, etc)</p>
-        </Col>;
+      <div className="background-join">
+        {
+          Setting.isMobile() ? null : <div children="join-container">
+            <p className="bg-title-bottom">
+              Join OpenNetLab
+            </p>
+            <p className="description description-bottom">
+              Open | Share | Collaborate
+            </p>
+          </div>
+        }
+        <a href="/join"><img className="join" src={join}/></a>
+      </div>
+      <img className="bg-bottom" src={bgBottom}/>
+      <Row className="landing-footer" justify="space-between">
+        <div className="landing-footer-container">
+          <div className="landing-footer-logo">
+            {
+              Setting.isMobile() ? null : <a className="logo" href={"/"} />
+            }
+          </div>
+          <div className="footer-contact">
+            <p className="contactUs">
+              Welcome to Contact us
+            </p>
+            <a className="email">
+              contact@opennetlab.org
+            </a>
+          </div>
+          <ul className="landing-nav">
+            <li className="landing-nav-item">
+              <a href="/about">About us</a>
+            </li>
+            <li className="landing-nav-item">
+              <a href="/join">Join us</a>
+            </li>
+            {/* <li className="landing-nav-item">
+              <a href="/home">Links</a>
+            </li> */}
+          </ul>
+        </div>
       </Row>
     </div>
   );
