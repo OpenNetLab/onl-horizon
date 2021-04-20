@@ -168,14 +168,15 @@
 
   .list-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 100px;
     margin-bottom: 100px;
     margin-left: -80px;
 
-    // ul {
-    //   margin-right: 30px;
-    // }
+     ul {
+       margin-left: -80px;
+     }
   }
 
   .footer {
@@ -265,10 +266,11 @@
     display: flex;
     margin-top: 100px;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: 30px;
 
     .pic-gallery {
-      height: 240px;
+      height: 210px;
     }
   }
 
@@ -280,11 +282,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 120px;
+    width: 100px;
   }
 
   .pic-info {
-    height: 110px;
+    height: 80px;
   }
 
   .names {
@@ -391,6 +393,10 @@
 
   @media screen and (max-width: 750px) {
     .logo {
+      display: none;
+    }
+
+    .info-bg {
       display: none;
     }
   }
