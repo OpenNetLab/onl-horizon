@@ -6,8 +6,8 @@ import {getGlobalJobStates, getGlobalMachineStates, getMyJobStates} from "../../
 import Map from "../../components/Map";
 
 const HomePage = () => {
-  const [myJobStates, setMyJobStates] = useState({failed: 0, succeeded: 0, running: 0});
-  const [globalJobStates, setGlobalJobStates] = useState({failed: 0, succeeded: 0, running: 0});
+  const [myJobStates, setMyJobStates] = useState({Failed: 0, Succeeded: 0, Running: 0});
+  const [globalJobStates, setGlobalJobStates] = useState({Succeeded: 0, Faile: 0, Running: 0});
   const [globalMachineStates, setGlobalMachineStates] = useState({available: 0, busy: 0, error: 0});
 
   const jobAry = ['Succeeded', 'Failed', 'Running'];
@@ -17,9 +17,6 @@ const HomePage = () => {
   useEffect(() => {
     getMyJobStates()
       .then((info) => {
-        if (info.running === undefined) {
-          info.running = 0;
-        }
         setMyJobStates(info);
       });
 
@@ -40,7 +37,7 @@ const HomePage = () => {
         <Col flex="350px">
           <InfoCard
             keyAry={jobAry}
-            valueAry={[myJobStates.succeeded, myJobStates.failed, myJobStates.running]}
+            valueAry={[myJobStates.Succeeded || 0, myJobStates.Failed || 0, myJobStates.Running || 0]}
             title={<div style={{fontWeight: "bold"}}>My Jobs</div>}
             showIcon={true}
             width={350}
@@ -55,13 +52,13 @@ const HomePage = () => {
             <InfoCard
               screenWidth={"47.5%"}
               keyAry={jobAry}
-              valueAry={[globalJobStates.succeeded, globalJobStates.failed, globalJobStates.running]}
+              valueAry={[globalJobStates.Succeeded || 0, globalJobStates.Failed || 0, globalJobStates.Running || 0]}
               title={<div style={{fontWeight: "bold"}}>Global Jobs</div>}
               showIcon={true}/>
             <InfoCard
               screenWidth={"47.5%"}
               keyAry={serverAry}
-              valueAry={[globalMachineStates.available, globalMachineStates.error || 0, globalMachineStates.busy]}
+              valueAry={[globalMachineStates.available || 0, globalMachineStates.error || 0, globalMachineStates.busy || 0]}
               title={<div style={{fontWeight: "bold"}}>Servers</div>}
               showIcon={true}/>
           </Row>

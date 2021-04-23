@@ -118,7 +118,7 @@ const SubmitResult = (props) => {
         <p className="task-name">{title}</p>
       </div>
       <div className="content-wrapper">
-        <CSSTransition
+        {/* <CSSTransition
           in={showSubmit}
           timeout ={1000}
           classNames = 'move'
@@ -138,7 +138,7 @@ const SubmitResult = (props) => {
               </div>
             </div>
           </div>
-        </CSSTransition>
+        </CSSTransition> */}
         <CSSTransition
           in={showSteps}
           timeout ={1000}

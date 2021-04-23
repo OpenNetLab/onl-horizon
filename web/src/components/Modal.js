@@ -93,7 +93,7 @@ const Modal = (props) => {
     handleConfirm(willDownloadFiles);
   };
   const handleFileClick = (fileObj) => {
-    const url = 'https://api.opennetlab.org/api' + '/results/download/' + fileObj.id + '?filename=' + fileObj.name;
+    const url = 'https://dev-api.opennetlab.org/api' + '/results/download/' + fileObj.id + '?filename=' + fileObj.name;
     var temporaryDownloadLink = document.createElement("a");
     temporaryDownloadLink.style.display = 'none';
     document.body.appendChild(temporaryDownloadLink);
