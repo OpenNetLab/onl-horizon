@@ -260,10 +260,10 @@ const Landing = () => {
           </div>
           <ul className="landing-nav">
             <li className="landing-nav-item">
-              <a href="/about">About us</a>
+              <a href="/about">ABOUT US</a>
             </li>
             <li className="landing-nav-item">
-              <a href="/join">Join us</a>
+              <a href="/join">JOIN US</a>
             </li>
             {/* <li className="landing-nav-item">
               <a href="/home">Links</a>

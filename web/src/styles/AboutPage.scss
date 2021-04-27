@@ -32,6 +32,10 @@
 
   .nav-item {
     margin-top: 25px;
+
+    a {
+      font-size: 12px;
+    }
   }
 
   .profile {
@@ -180,7 +184,7 @@
   }
 
   .footer {
-    height: 200px;
+    height: 150px;
     background: linear-gradient(184.01deg, #245182 15.97%, #253959 109.62%);
     left: 0px;
     top: 0px;
@@ -199,7 +203,9 @@
 
   .contactUs {
     color: white;
-    font-size: 13px;
+    font-size: 14px;
+    padding-top: 8px;
+    height: 14px;
     font-weight: 500;
     margin-left: -200px;
   }
@@ -207,6 +213,7 @@
   .email {
     color: white;
     font-size: 10px;
+    height: 10px;
     font-weight: 100;
     margin-left: -200px;
   }

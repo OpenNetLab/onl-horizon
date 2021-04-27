@@ -3,12 +3,13 @@
     min-height: 200px;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 32px;
+    border-radius: 10px;
     padding: 16px 32px 32px 32px;
   }
   .title {
     font-size: 32px;
-    color: #0078d4;
+    // color: #0078d4;
+    color: black;
   }
   .row {
     margin-top: 5px;
@@ -25,9 +26,30 @@
   }
   .key {
     margin-left: 8px;
+    font-weight: bold;
   }
   .value {
     margin-right: 20px;
     font-weight: bold;
+  }
+  .line {
+    margin-top: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  .button {
+    padding: 8px 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: linear-gradient(315.63deg, #02A5F4 3.96%, #04B2EE 42.99%, #06C1E6 71.92%, #08CBE1 90.32%);
+    filter: drop-shadow(0px 0px 12px rgba(1, 86, 96, 0.169));
+  }
+  .link {
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
   }
 }
