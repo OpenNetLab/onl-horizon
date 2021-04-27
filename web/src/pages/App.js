@@ -234,7 +234,7 @@ class App extends Component {
           }
           &nbsp;
           &nbsp;
-          <span style={{fontWeight: "bold"}}>{Setting.isMobile() ? null : account.name}</span> &nbsp; <DownOutlined />
+          <span style={{fontWeight: "bold", color: "white"}}>{Setting.isMobile() ? null : account.name}</span> &nbsp; <DownOutlined />
           &nbsp;
           &nbsp;
           &nbsp;
@@ -357,7 +357,7 @@ class App extends Component {
       <Layout>
         <Header style={{ padding: '0', marginBottom: '3px'}}>
           {
-            Setting.isMobile() ? null : <a className="logo" href={"/"} />
+            Setting.isMobile() ? null : <a className="logo" style={{marginLeft: 80}} href={"/"} />
           }
           <Menu
             // theme="dark"
@@ -366,9 +366,11 @@ class App extends Component {
             selectedKeys={[]}
             style={{ lineHeight: '64px' }}
           >
-            {
+            {/* {
               this.renderMenu()
-            }
+            } */}
+            <a href="/about" className="menu-about">ABOUT US</a>
+            <a href="/join" className="menu-join">JOIN US</a>
             {
               this.renderAccount()
             }
