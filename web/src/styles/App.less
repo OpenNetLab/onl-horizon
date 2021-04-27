@@ -46,8 +46,28 @@
 
 .map__card {
   padding: -2px;
-  border-radius: 32px;
+  border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   height: 100%;
   width: 100%;
+}
+
+.human {
+  position: absolute;
+  height: 80px;
+  bottom: 20px;
+  left: 20px;
+}
+
+.box {
+  position: absolute;
+  height: 130px;
+  bottom: 20px;
+  left: 58px;
+}
+
+@media screen and (max-width: 1200px) {
+  .box {
+    display: none;
+  }
 }

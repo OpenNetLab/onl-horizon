@@ -21,10 +21,10 @@ export default function Footer () {
         </div>
         <ul className="nav">
           <li className="nav-item">
-            <a href="/about">About us</a>
+            <a href="/about">ABOUT US</a>
           </li>
           <li className="nav-item">
-            <a href="/join">Join us</a>
+            <a href="/join">JOIN US</a>
           </li>
           {/* <li className="nav-item">
             <a href="#">Links</a>

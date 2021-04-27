@@ -40,8 +40,8 @@ const HomePage = () => {
             valueAry={[myJobStates.Succeeded || 0, myJobStates.Failed || 0, myJobStates.Running || 0]}
             title={<div style={{fontWeight: "bold"}}>My Jobs</div>}
             showIcon={true}
-            width={350}
-            height={744}
+            width={400}
+            height={766}
             showChart={true}/>
         </Col>
         <Col flex="auto" style={{marginLeft: "24px"}}>

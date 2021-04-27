@@ -8,7 +8,7 @@ import dotRed from '../assets/dot-red.svg';
 import dotBlue from '../assets/dot-blue.svg';
 import PieChart from "./PieChart";
 import * as Setting from "../utils/Setting";
-import {PlayCircleOutlined} from "@ant-design/icons";
+import {PlayCircleOutlined, PlusSquareOutlined} from "@ant-design/icons";
 
 
 const InfoCard = (props) => {
@@ -25,12 +25,11 @@ const InfoCard = (props) => {
           {title}
           {showChart && (
             <Link to="/jobs">
-              <span className="link" style={{fontSize: 14, fontWeight: "bold"}}>
-                {`Explore `}<PlayCircleOutlined />
-              </span>
+              <button className="link">Job List</button>
             </Link>)
           }
         </Row>
+        <div className="line"></div>
         {showChart && <Row style={{marginTop: 0, paddingBottom:48}}>
           <PieChart data={{succeeded: valueAry[0], failed: valueAry[1], running: valueAry[2]}} />
         </Row>  }
@@ -64,11 +63,14 @@ const InfoCard = (props) => {
           </Row>
         </div>
         {showChart &&
-            <Row justify="center" style={{marginTop:"96px"}}>
-              <Button type="primary" style={{width: "100%", height: "60px", fontSize: 25}} onClick={() => Setting.goToLinkSoft(history, "/jobs/create")}>
-                CREATE JOB
-              </Button>
-            </Row>
+            <>
+              <div className="line"></div>
+              <Row justify="center" style={{marginTop:"30px"}}>
+                <a className="button" onClick={() => Setting.goToLinkSoft(history, "/jobs/create")}>
+                  <PlusSquareOutlined /> CREATE JOB
+                </a>
+              </Row>
+            </>
         }
       </div>
     </div>
