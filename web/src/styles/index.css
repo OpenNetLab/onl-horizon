@@ -37,3 +37,33 @@ code {
 .ant-menu {
   background: transparent;
 }
+
+.menu-about {
+  position: absolute;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  right: 360px;
+}
+
+.menu-join {
+  position: absolute;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  right: 280px;
+}
+
+@media screen and (max-width: 750px) {
+  .menu-about {
+    display: none;
+  }
+
+  .menu-join {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}
