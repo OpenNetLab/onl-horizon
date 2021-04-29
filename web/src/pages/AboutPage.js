@@ -13,7 +13,7 @@ export default function AboutPage () {
   const { TabPane } = Tabs;
 
   return (
-    <div className="about-container">
+    <div className="about-join-container">
       <Header />
       <div className="body-container">
         <div className="content">

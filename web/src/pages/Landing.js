@@ -37,24 +37,24 @@ const Landing = () => {
           <Avatar size="large" style={{ backgroundColor: Setting.getAvatarColor(account.name), verticalAlign: 'middle' }}>
             {Setting.getFirstName(account.name)}
           </Avatar>
-          &nbsp;
-          &nbsp;
+            &nbsp;
+            &nbsp;
           <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
-          &nbsp;
-          &nbsp;
-          &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
         </div>
       );
     } else {
       return (
         <div>
           <Avatar size="large" src={imageSrc} />
-          &nbsp;
-          &nbsp;
+            &nbsp;
+            &nbsp;
           <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
-          &nbsp;
-          &nbsp;
-          &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
         </div>
       );
     }
@@ -90,7 +90,7 @@ const Landing = () => {
           </ul>
         </div>
       </Row>
-      <Row className="home-hero">
+      <Row className="home-hero" type="flex" justify="center" align="middle">
         <div className="hero-left">
           <div className="bg">
             <p className="bg-title-info">Open | Share | Collaborate</p>
@@ -116,12 +116,12 @@ const Landing = () => {
             <div className="challenge-text">
               <p className="title">Grand Challenge on Bandwidth Estimation for Real-Time Communications</p>
               <p className="description">Real-time video applications have never played a more critical role in our lives as they enable us to live and work remotely while staying connected with the rest of the world. However, the rapid increase in the use of real-time video also poses an unprecedented challenge for consistently delivering high quality of experience (QoE) — such as high video and audio quality, low delay and few stalls — to all users.<br/><br />
-          A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br/><br />
-          Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
+                  A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br/><br />
+                  Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
               </p>
               <a href="/home" className="links">THE PLATFORM FOR CHALLENGE IS COMING SOON</a>
-              <img className="arrow" src={arrow}/>
-              <img className="arrow" src={arrow}/>
+              {/* <img className="arrow" src={arrow}/>
+              <img className="arrow" src={arrow}/> */}
             </div>
             <div className="challenge-pics">
               <a href="https://2021.acmmmsys.org/rtc_challenge.php" className="linksInRect" target="_blank">More Information</a>
@@ -130,7 +130,7 @@ const Landing = () => {
                   <img className="vector" src={mmsys} />
                   <p className="title padding-left padding-right padding-top">ACM MMSys'21, Istanbul, Turkey</p>
                   <p className="description padding-left padding-right">
-                More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
+                      More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
                   </p>
                 </div>
               </a>
@@ -168,7 +168,7 @@ const Landing = () => {
           <div className="news-text">
             <p className="title">Microsoft Research Asia partners with universities in Asia to build OpenNetLab, empowering AI-assisted networking research</p>
             <p className="description">BEIJING, 19 January 2021 – Microsoft Research Asia announced the establishment of OpenNetLab, an open networking community and platform in collaboration with multiple universities in Asia, including academia from China, Korea and Singapore.<br /><br />
-              OpenNetLab is a network research community project. Its aims to promote the application and development of artificial intelligence (AI) in networking research by providing researchers with a universal distributed network testing platform and real network evaluation datasets. Ultimately, they hope to create a healthy and sustainable networking research ecosystem.
+                OpenNetLab is a network research community project. Its aims to promote the application and development of artificial intelligence (AI) in networking research by providing researchers with a universal distributed network testing platform and real network evaluation datasets. Ultimately, they hope to create a healthy and sustainable networking research ecosystem.
             </p>
             <a href="https://news.microsoft.com/apac/2021/01/19/microsoft-research-asia-partners-with-universities-in-asia-to-build-opennetlab-empowering-ai-assisted-networking-research/" className="links" target="_blank">VIEW MORE</a>
             <img className="arrow" src={arrow}/>
@@ -194,37 +194,37 @@ const Landing = () => {
           <div className="background-features">
             <img className="icon" src={icon1}/>
             <p className="title">
-              Contributing to the research community
+                Contributing to the research community
             </p>
             <p className="description">
-              Platform: Free to the networking research community Dataset: Published to GitHub for researchers to reproduce the experiments and train models
+                Platform: Free to the networking research community Dataset: Published to GitHub for researchers to reproduce the experiments and train models
             </p>
           </div>
           <div className="background-features">
             <img className="icon" src={icon2}/>
             <p className="title">
-              Data centric for networking-related AI
+                Data centric for networking-related AI
             </p>
             <p className="description">
-              Automatic data collection Automatic data storing Automatic data aggregation Automatic data sharing
+                Automatic data collection Automatic data storing Automatic data aggregation Automatic data sharing
             </p>
           </div>
           <div className="background-features">
             <img className="icon" src={icon3}/>
             <p className="title">
-              Real Applications
+                Real Applications
             </p>
             <p className="description">
-              Real Time Communication Video/Data Streaming Web Service/CDN Other networking applications
+                Real Time Communication Video/Data Streaming Web Service/CDN Other networking applications
             </p>
           </div>
           <div className="background-features">
             <img className="icon" src={icon4}/>
             <p className="title">
-              Distributed heterogenous test nodes
+                Distributed heterogenous test nodes
             </p>
             <p className="description">
-              Geo-distributed testbed Heterogenous network Various user devices
+                Geo-distributed testbed Heterogenous network Various user devices
             </p>
           </div>
         </div>
@@ -233,14 +233,14 @@ const Landing = () => {
         {
           Setting.isMobile() ? null : <div children="join-container">
             <p className="bg-title-bottom">
-              Join OpenNetLab
+                Join OpenNetLab
             </p>
             <p className="description description-bottom">
-              Open | Share | Collaborate
+                Open | Share | Collaborate
             </p>
           </div>
         }
-        <a href="/join"><img className="join" src={join}/></a>
+        <a href="/home"><img className="join" src={join}/></a>
       </div>
       <img className="bg-bottom" src={bgBottom}/>
       <Row className="landing-footer" justify="space-between">
@@ -252,18 +252,18 @@ const Landing = () => {
           </div>
           <div className="footer-contact">
             <p className="contactUs">
-              Welcome to Contact us
+                Welcome to Contact us
             </p>
             <a className="email">
-              contact@opennetlab.org
+                contact@opennetlab.org
             </a>
           </div>
           <ul className="landing-nav">
             <li className="landing-nav-item">
-              <a href="/about">About us</a>
+              <a href="/about">ABOUT US</a>
             </li>
             <li className="landing-nav-item">
-              <a href="/join">Join us</a>
+              <a href="/join">JOIN US</a>
             </li>
             {/* <li className="landing-nav-item">
               <a href="/home">Links</a>
