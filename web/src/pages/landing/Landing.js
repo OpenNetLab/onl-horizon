@@ -90,7 +90,7 @@ const Landing = () => {
           </ul>
         </div>
       </Row>
-      <Row className="home-hero">
+      <Row className="home-hero" type="flex" justify="center" align="middle">
         <div className="hero-left">
           <div className="bg">
             <p className="bg-title-info">Open | Share | Collaborate</p>
@@ -120,8 +120,8 @@ const Landing = () => {
           Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
               </p>
               <a href="/home" className="links">THE PLATFORM FOR CHALLENGE IS COMING SOON</a>
-              <img className="arrow" src={arrow}/>
-              <img className="arrow" src={arrow}/>
+              {/* <img className="arrow" src={arrow}/>
+              <img className="arrow" src={arrow}/> */}
             </div>
             <div className="challenge-pics">
               <a href="https://2021.acmmmsys.org/rtc_challenge.php" className="linksInRect" target="_blank">More Information</a>

@@ -82,7 +82,7 @@ export default function JoinPage () {
   const [active3, setActive3] = useState(types[0]);
 
   return (
-    <div className="about-container">
+    <div className="about-join-container">
       <Header />
       <div className="body-container">
         <div className="content">
@@ -127,7 +127,7 @@ export default function JoinPage () {
               <div className="flex-box">
                 <div className="title-container">
                   <h1 className="white-title">
-                    Want to Become a <a href="/home">Member</a>?
+                    Want to Become a <a>Member</a>?
                   </h1>
                   <div className="white-info">We welcome all individuals and organizations to join us, especially those who have an interest in or are dedicated to working on network research and education.</div>
                 </div>
@@ -212,7 +212,7 @@ export default function JoinPage () {
             }
             <div className="info-bg">
               <div className="title-container">
-                <h1 className="white-title">Want to Become a <a href="/home">Core Founding Member</a>?</h1>
+                <h1 className="white-title">Want to Become a <a>Core Founding Member</a>?</h1>
                 <div className="white-info">Core Founding Members will dedicate great efforts to ONL development.</div>
               </div>
               <div className="flex-box-bottom">
