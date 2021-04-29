@@ -73,6 +73,8 @@
   .home-hero {
     display: flex;
     flex-wrap: nowrap;
+    max-width: 1160px;
+    margin: auto;
   }
 
   .img-right {
@@ -124,40 +126,35 @@
     cursor: pointer;
   }
 
-  .challenge {
-    //margin-top: -200px;
-  }
-
   .challenge-container {
     display: flex;
+    max-width: 1160px;
   }
 
   .challenge-text {
-    margin-top: 40px;
-    margin-left: 100px;
+    margin-left: 10px;
   }
 
-  .challenge-pics {
-    margin-right: 100px;
-  }
+  // .challenge-pics {
+  //   margin-right: 100px;
+  // }
 
   .news-container {
     display: flex;
+    max-width: 1160px;
   }
 
   .news-pic {
-    margin-left: 100px;
+    margin-top: 30px;
   }
 
   .news-text {
-    margin-left: 100px;
+    margin-left: 60px;
     margin-top: 40px;
-    margin-right: 100px;
   }
 
   .contact {
     padding: 20px;
-    text-aligh: center;
 
     a {
       color: #6a6a6a;
@@ -238,8 +235,9 @@
 
   .line {
     display: flex;
-    margin: 200px 0px 80px 100px;
+    margin: 200px auto 80px auto;
     justify-content: space-between;
+    max-width: 1160px;
 
     p {
       color: #02A5F4;
@@ -248,8 +246,7 @@
     }
 
     .border {
-      width: 80%;
-      margin-right: 100px;
+      width: 100%;
       margin-left: 30px;
       margin-top: 28px;
       border-top: 3px solid rgba(2, 165, 244, 0.2);
@@ -367,6 +364,7 @@
     border-radius: 8px;
     margin-right: 20px;
     margin-top: 20px;
+    margin-bottom: 100px;
 
     .title {
       margin: 20px;
@@ -408,10 +406,11 @@
     border-radius: 8px;
     border-radius: 10px;
     height: 260px;
-    margin: 180px 140px 280px 140px;
+    margin: 180px auto 280px auto;
     display: flex;
     justify-content: center;
     z-index: 100;
+    max-width: 1160px;
 
     .bg-title-bottom {
       font-size: 45px;
@@ -419,8 +418,8 @@
       color: #ffffff;
       z-index: 100;
       padding-top: 86px;
-      padding-left: 100px;
-      padding-right: 200px;
+      // padding-left: 30px;
+      padding-right: 380px;
     }
 
     .description {
@@ -483,6 +482,22 @@
 
     .news-pic {
       display: none;
+    }
+
+    .background-join {
+      display: none;
+    }
+
+    .challenge-text {
+      margin: 40px;
+    }
+
+    .news-text {
+      margin: 40px;
+    }
+
+    .line {
+      margin: 40px;
     }
   }
 }

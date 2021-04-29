@@ -1,4 +1,4 @@
-.about-container {
+.about-join-container {
   background: #F9FAFF;
 
   .header-container {
@@ -69,6 +69,7 @@
 
   .content {
     width: 90%;
+    max-width: 1200px;
     margin-top: -100px;
     background-color: white;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
@@ -83,7 +84,7 @@
 
   .big-title {
     position: absolute;
-    left: 6%;
+    left: 18%;
   }
 
   .margin-left {
@@ -93,6 +94,7 @@
   .content-next {
     width: 90%;
     background: #F9FBFF;
+    max-width: 1200px;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
     margin-bottom: 100px;
     display: flex;
@@ -142,7 +144,7 @@
   .info {
     display: flex;
     flex-wrap: wrap;
-    margin: 30px 0px;
+    margin: 30px 30px 30px 0px;
   }
 
   .role {
@@ -161,7 +163,7 @@
   }
 
   .name {
-    margin-left: 100px;
+    // margin-left: 100px;
     font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
@@ -176,11 +178,6 @@
     flex-wrap: wrap;
     margin-top: 100px;
     margin-bottom: 100px;
-    margin-left: -80px;
-
-     ul {
-       margin-left: -80px;
-     }
   }
 
   .footer {
@@ -221,7 +218,6 @@
   .ant-tabs-tab-btn {
     color: rgba(0, 0, 0, 0.25);
     font-size: 26px;
-    font-weight: bold;
     margin-bottom: 100px;
     margin-top: 100px;
   }
@@ -237,20 +233,20 @@
   .bg {
     position: absolute;
     width: 60%;
-    right: 5%;
-    top: 1300px;
+    right: 19%;
+    top: 1600px;
   }
 
   .pic-small {
     position: absolute;
     height: 80px;
-    right: 22%;
+    right: 29%;
   }
 
   .pic-box {
     position: absolute;
     height: 160px;
-    right: 12%;
+    right: 20%;
     margin-top: -70px;
   }
 
@@ -274,10 +270,12 @@
     margin-top: 100px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 30px;
 
     .pic-gallery {
-      height: 210px;
+      height: 200px;
+      margin: 10px;
+      border-radius: 19px;
+      filter: drop-shadow(0px 4px 40px rgba(29, 94, 158, 0.2));
     }
   }
 
@@ -314,6 +312,7 @@
 
   .join-content-next {
     width: 90%;
+    max-width: 1200px;
     background: #F9FBFF;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
     margin-bottom: 100px;

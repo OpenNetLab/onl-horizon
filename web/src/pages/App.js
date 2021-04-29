@@ -502,7 +502,7 @@ class App extends Component {
           }
         </div>
         <BackTop />
-        <div className="about-container">
+        <div className="about-join-container">
           <Footer />
         </div>
       </div>
