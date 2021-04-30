@@ -310,12 +310,12 @@ class App extends Component {
         {
           !Setting.isJobAccessible() ? null :
             <>
-              <Menu.Item key="1" onClick={() => this.props.history.push("/jobs/create")}>
+              {/* <Menu.Item key="1" onClick={() => this.props.history.push("/jobs/create")}>
                 <div style={{paddingLeft: "10px", fontWeight: "bold"}}>
                   <FileAddOutlined />
                   Create Job
                 </div>
-              </Menu.Item>
+              </Menu.Item> */}
               <Menu.Item key="2" onClick={() => this.props.history.push("/jobs")}>
                 <div style={{paddingLeft: "10px", fontWeight: "bold"}}>
                   <DatabaseOutlined />

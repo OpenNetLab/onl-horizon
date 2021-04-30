@@ -75,7 +75,7 @@ const SubmitChallenge = (props) => {
           <Row className="model">
             <AdvInput
               type="normal"
-              title="Model Upload"
+              title="Model Upload (.zip)"
               placeholder={modelFileName}
               widthRange={[200, 400]}
               showError={checkValid && !modelValid}

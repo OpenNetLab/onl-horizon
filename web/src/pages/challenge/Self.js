@@ -23,15 +23,25 @@ const Self = () => {
       key:'metricsAudio',
     },
     {
-      title: 'Metrics(all)',
+      title: 'Metrics(network)',
       dataIndex: 'metricsAll',
       key:'metricsAll',
     },
-    {
-      title: 'Rank',
-      dataIndex: 'rank',
-      key:'rank',
-    },
+    // {
+    //   title: 'Rank',
+    //   dataIndex: 'rank',
+    //   key:'rank',
+    // },
+    // {
+    //   title: 'Status',
+    //   dataIndex: 'status',
+    //   key:'status',
+    // },
+    // {
+    //   title: 'Log',
+    //   dataIndex: 'log',
+    //   key:'log',
+    // },
   ];
 
   useEffect(() => {
@@ -44,8 +54,9 @@ const Self = () => {
   return (
     <div className="self-container">
       <Row justify="space-between">
-        <p className="title">Self</p>
+        <p className="title">Your submissions</p>
       </Row>
+      <p className="info">Please check <a href="/jobs">Job List</a> for AlphaRTC logs.</p>
       <div className="table-wrapper">
         <Table
           dataSource={data}
