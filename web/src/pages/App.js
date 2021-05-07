@@ -97,7 +97,7 @@ class App extends Component {
 
   //todo: change hook render?
   componentWillMount() {
-    // this.updateMenuKey();
+    this.updateMenuKey();
   }
 
   // fix: menu select issue
@@ -366,7 +366,7 @@ class App extends Component {
               </div>
             </Menu.Item>
         }
-        {
+        {/* {
           !Setting.isChallengeAccessible() ? null :
             <Menu.Item key="4" onClick={() => this.props.history.push("/howto")}>
               <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
@@ -374,7 +374,7 @@ class App extends Component {
                 How to Challenge
               </div>
             </Menu.Item>
-        }
+        } */}
         {
           !Setting.isCourseAccessible() ? null :
             <Menu.Item key="6" onClick={() => this.props.history.push("/course")}>
