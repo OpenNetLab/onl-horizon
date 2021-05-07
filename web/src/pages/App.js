@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../styles/App.less';
 import * as Setting from "../utils/Setting";
 import {
@@ -7,12 +7,13 @@ import {
   HomeOutlined,
   InfoCircleTwoTone,
   LogoutOutlined, PlusOutlined,
-  SettingOutlined
+  SettingOutlined,
+  FileSearchOutlined
 } from '@ant-design/icons';
-import {Avatar, BackTop, Button, Dropdown, Layout, Menu, Modal} from 'antd';
-import {Route, Switch, Redirect, withRouter} from 'react-router-dom';
+import { Avatar, BackTop, Button, Dropdown, Layout, Menu, Modal } from 'antd';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import * as http from '../backend/http';
-import {getUser, getChallengeId} from "../backend/api";
+import { getUser, getChallengeId } from "../backend/api";
 import HomePage from "./home/HomePage";
 // import CreateJobPage from "./create-job/CreateJobPage";
 // import JobListPage from "./job-list/JobListPage";
@@ -25,11 +26,13 @@ import challengeRoutes from "../routes/challengeRoutes";
 import adminRoutes from "../routes/adminRoutes";
 import AuthRoute from "../components/AuthRoute";
 
-import {MsalContext} from "@hsluoyz/msal-react";
-import {loginRequest} from "../auth/authConfig";
-import {isJobAccessible, isChallengeAccessible, isAdmin} from "../utils/Setting";
+import { MsalContext } from "@hsluoyz/msal-react";
+import { loginRequest } from "../auth/authConfig";
+import { isJobAccessible, isChallengeAccessible, isAdmin } from "../utils/Setting";
 import Footer from "../components/Footer";
 import "../styles/index.css";
+import HowTo from './challenge/HowTo';
+import { urlAlphabet } from 'nanoid';
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -79,6 +82,10 @@ class App extends Component {
       return "1";
     } else if (uri.includes('jobs')) {
       return "2";
+    } else if (uri.includes('challenge')) {
+      return "3";
+    } else if (uri.includes('howto')) {
+      return "4";
     } else {
       return "-1";
     }
@@ -90,6 +97,11 @@ class App extends Component {
 
   //todo: change hook render?
   componentWillMount() {
+    // this.updateMenuKey();
+  }
+
+  // fix: menu select issue
+  componentWillReceiveProps() {
     this.updateMenuKey();
   }
 
@@ -228,13 +240,13 @@ class App extends Component {
 
     return (
       <Dropdown key="4" overlay={menu} >
-        <a className="ant-dropdown-link" href="#" style={{float: 'right'}}>
+        <a className="ant-dropdown-link" href="#" style={{ float: 'right' }}>
           {
             this.renderAvatar()
           }
           &nbsp;
           &nbsp;
-          <span style={{fontWeight: "bold", color: "white"}}>{Setting.isMobile() ? null : account.name}</span> &nbsp; <DownOutlined />
+          <span style={{ fontWeight: "bold", color: "white" }}>{Setting.isMobile() ? null : account.name}</span> &nbsp; <DownOutlined />
           &nbsp;
           &nbsp;
           &nbsp;
@@ -244,7 +256,7 @@ class App extends Component {
   }
 
   // check if account ? renderRightDropDown : Login button, inside renderContent
-  renderAccount(){
+  renderAccount() {
     const account = Setting.getAccount(this.context);
 
     let res = [];
@@ -260,7 +272,7 @@ class App extends Component {
       //   </Menu.Item>
       // );
       res.push(
-        <Menu.Item key="2" style={{float: 'right'}}>
+        <Menu.Item key="2" style={{ float: 'right' }}>
           <div onClick={this.login}>
             Login
           </div>
@@ -296,13 +308,14 @@ class App extends Component {
         defaultOpenKeys={['sub1']}
         mode="inline"
         style={{ height: '100%', borderRight: 0, paddingTop: '50px' }}
+        selectedKeys={this.state.selectedMenuKey}
         // How to remove padding in Ant Design menu?
         // https://stackoverflow.com/questions/51050707/how-to-remove-padding-in-ant-design-menu/51064320
         inlineIndent={10}
-        // theme="dark"
+      // theme="dark"
       >
         <Menu.Item key="0" onClick={() => this.props.history.push("/home")}>
-          <div style={{paddingLeft: "10px", fontWeight: "bold"}}>
+          <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
             <HomeOutlined />
             Home
           </div>
@@ -317,14 +330,14 @@ class App extends Component {
                 </div>
               </Menu.Item> */}
               <Menu.Item key="2" onClick={() => this.props.history.push("/jobs")}>
-                <div style={{paddingLeft: "10px", fontWeight: "bold"}}>
+                <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
                   <DatabaseOutlined />
-                Job List
+                  Job List
                 </div>
               </Menu.Item>
             </>
         }
-        <SubMenu key="3" title="Activity" icon={<PlusOutlined/>} style={{paddingLeft: "10px", fontWeight: "bold"}}>
+        {/* <SubMenu key="3" title="Activity" icon={<PlusOutlined />} style={{ paddingLeft: "10px", fontWeight: "bold" }}>
           {
             !Setting.isChallengeAccessible() ? null :
               <Menu.Item key="4" onClick={() => this.props.history.push("/challenge")}>
@@ -332,12 +345,45 @@ class App extends Component {
               </Menu.Item>
           }
           {
+            !Setting.isChallengeAccessible() ? null :
+              <Menu.Item key="5" onClick={() => this.props.history.push("/howto")}>
+                How to Challenge
+              </Menu.Item>
+          }
+          {
             !Setting.isCourseAccessible() ? null :
-              <Menu.Item key="5" onClick={() => this.props.history.push("/course")}>
+              <Menu.Item key="6" onClick={() => this.props.history.push("/course")}>
                 Course
               </Menu.Item>
           }
-        </SubMenu>
+        </SubMenu> */}
+        {
+          !Setting.isChallengeAccessible() ? null :
+            <Menu.Item key="3" onClick={() => this.props.history.push("/challenge")}>
+              <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
+                <FileAddOutlined />
+                Challenge
+              </div>
+            </Menu.Item>
+        }
+        {
+          !Setting.isChallengeAccessible() ? null :
+            <Menu.Item key="4" onClick={() => this.props.history.push("/howto")}>
+              <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
+                <FileSearchOutlined />
+                How to Challenge
+              </div>
+            </Menu.Item>
+        }
+        {
+          !Setting.isCourseAccessible() ? null :
+            <Menu.Item key="6" onClick={() => this.props.history.push("/course")}>
+              <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
+                <DatabaseOutlined />
+                Course
+              </div>
+            </Menu.Item>
+        }
         <img className="human" src={human} />
         <img className="box" src={box} />
       </Menu>
@@ -347,17 +393,17 @@ class App extends Component {
   // check if the page is start page
   isStartPages = () => {
     return window.location.pathname.startsWith('/login') ||
-        window.location.pathname.startsWith('/register') ||
-        window.location.pathname === '/';
+      window.location.pathname.startsWith('/register') ||
+      window.location.pathname === '/';
   }
 
   // render the whole page
   renderContent() {
     return (
       <Layout>
-        <Header style={{ padding: '0', marginBottom: '3px'}}>
+        <Header style={{ padding: '0', marginBottom: '3px' }}>
           {
-            Setting.isMobile() ? null : <a className="logo" style={{marginLeft: 80}} href={"/"} />
+            Setting.isMobile() ? null : <a className="logo" style={{ marginLeft: 80 }} href={"/"} />
           }
           <Menu
             // theme="dark"
@@ -393,7 +439,7 @@ class App extends Component {
               }}
             >
               <Switch>
-                <Route exact path="/home" component={HomePage}/>
+                <Route exact path="/home" component={HomePage} />
                 {jobRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isJobAccessible()} {...route} />
                 )}
@@ -406,7 +452,8 @@ class App extends Component {
                 {/*<Route exact path="/jobs/create" component={CreateJobPage}/>*/}
                 {/*<Route exact path="/jobs" component={JobListPage}/>*/}
                 {/*<Route path="/jobs/detail/:id" component={JobDetail}/>*/}
-                <Route exact path="/account" component={AccountPage}/>
+                <Route exact path="/account" component={AccountPage} />
+                <Route exact path="/howto" component={HowTo} />
                 {/*<Route exact path="/challenge" component={ChallengeDashboard}/>*/}
                 {/*<Route exact path="/challenge/create" component={CreateChallenge}/>*/}
                 <Redirect to="/home" />
@@ -443,7 +490,7 @@ class App extends Component {
         <Modal
           title={
             <div>
-              <InfoCircleTwoTone style={{marginRight: "10px"}} twoToneColor={"rgb(43,121,215)"} />
+              <InfoCircleTwoTone style={{ marginRight: "10px" }} twoToneColor={"rgb(43,121,215)"} />
               Please login first to view this website
             </div>
           }
@@ -455,8 +502,8 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The platform for challenge user is coming soon.<br/>
-          If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br/>
+          The platform for challenge user is coming soon.<br />
+          If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br />
           please email us: feedback(at)opennetlab.org
         </Modal>
       );
@@ -468,7 +515,7 @@ class App extends Component {
         <Modal
           title={
             <div>
-              <CloseCircleTwoTone style={{marginRight: "10px"}} twoToneColor={"rgb(225,107,88)"} />
+              <CloseCircleTwoTone style={{ marginRight: "10px" }} twoToneColor={"rgb(225,107,88)"} />
               Please sign up to visit the website.
             </div>
           }
@@ -480,8 +527,8 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The platform for challenge user is coming soon.<br/>
-          If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br/>
+          The platform for challenge user is coming soon.<br />
+          If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br />
           please email us: feedback(at)opennetlab.org
         </Modal>
       );

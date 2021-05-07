@@ -66,7 +66,7 @@ const InfoCard = (props) => {
             <>
               <div className="line"></div>
               <Row justify="center" style={{marginTop:"30px"}}>
-                <a className="button" onClick={() => Setting.goToLinkSoft(history, "/jobs/create")}>
+                <a className="button" onClick={() => Setting.goToLinkSoft(history, "/challenge")}>
                   <PlusSquareOutlined /> CREATE JOB
                 </a>
               </Row>
