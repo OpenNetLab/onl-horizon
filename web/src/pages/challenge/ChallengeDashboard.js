@@ -3,6 +3,8 @@ import '../../styles/ChallengeDashboard.scss';
 import Top10 from "./Top10";
 import Self from "./Self";
 import { Modal, Button } from 'antd';
+import { goToLinkSoft } from '../../utils/Setting';
+import { useHistory } from "react-router-dom";
 
 const ChallengeDashboard = (props) => {
   const [isModalVisible, setIsModalVisible] = useState(true);
@@ -15,9 +17,10 @@ const ChallengeDashboard = (props) => {
     setIsModalVisible(false);
   };
 
+  let history = useHistory();
 
   return (
-    <div className="challenge-container" style={{margin: -64}}>
+    <div className="challenge-container" style={{ margin: -64 }}>
       <Modal
         title="Message"
         visible={isModalVisible}
@@ -26,11 +29,11 @@ const ChallengeDashboard = (props) => {
         width={800}
       >
         <ul>
-          <li className="info" style={{fontSize: 18}}>Please use the first author's email address to login this system.</li>
-          <li className="info" style={{fontSize: 18}}>We only store your last submission for evaluation.</li>
-          <li className="info" style={{fontSize: 18}}>We limit the number of submissions for each participant to <b>3 times per day</b>.</li>
+          <li className="info" style={{ fontSize: 18 }}>Please use the first author's email address to login this system.</li>
+          <li className="info" style={{ fontSize: 18 }}>We only store your last submission for evaluation.</li>
+          <li className="info" style={{ fontSize: 18 }}>We limit the number of submissions for each participant to <b>3 times per day</b>.</li>
         </ul>
-        <p className="info" style={{fontSize: 18}}>Please read the&nbsp;<a href="https://github.com/OpenNetLab/challenge-HOWTO" target="blank" style={{textDecoration: "underline"}}>HOW-TO</a>&nbsp;before submission.</p>
+        <p className="info" style={{ fontSize: 18 }}>Please read the&nbsp;<a onClick={() => {goToLinkSoft(history, '/howto');}} style={{ textDecoration: "underline" }}>HOW-TO</a>&nbsp;before submission.</p>
       </Modal>
       <div className="challenge-wrapper">
         <div className="intro-container">
@@ -47,13 +50,13 @@ const ChallengeDashboard = (props) => {
                   <a href="https://2021.acmmmsys.org/rtc_challenge.php" target="_blank">Official Website</a>
                 </div>
               </div>
-              <div className="btn-container submit" onClick={()=>props.history.push('/challenge/create')}>
+              <div className="btn-container submit" onClick={() => props.history.push('/challenge/create')}>
                 <p>Submit</p>
               </div>
             </div>
-            <div className="row-wrapper">
-              <p className="info">Please read the&nbsp;<a href="https://github.com/OpenNetLab/challenge-HOWTO" target="blank" style={{textDecoration: "underline"}}>HOW-TO</a>&nbsp;before submission.</p>
-            </div>
+            {/* <div className="row-wrapper">
+              <p className="info">Please read the&nbsp;<a href="https://github.com/OpenNetLab/challenge-HOWTO" target="blank" style={{ textDecoration: "underline" }}>HOW-TO</a>&nbsp;before submission.</p>
+            </div> */}
           </div>
         </div>
       </div>
