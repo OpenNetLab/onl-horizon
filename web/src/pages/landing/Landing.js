@@ -24,7 +24,7 @@ const Landing = () => {
   const msalContext = useContext(MsalContext);
   console.log(msalContext.accounts);
   const handleLogin = () => {
-    history.push("/home");
+    window.location.href = "/home";
   };
 
   const renderAvatar = () => {
