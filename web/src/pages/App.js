@@ -359,7 +359,7 @@ class App extends Component {
         </SubMenu> */}
         {
           !Setting.isChallengeAccessible() ? null :
-            <Menu.Item key="3" onClick={() => this.props.history.push("/challenge")}>
+            <Menu.Item key="3" onClick={() => window.location.href = "/challenge"}>
               <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
                 <FileAddOutlined />
                 Challenge
