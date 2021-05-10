@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import {Button, Upload, message, Col, Row} from "antd";
+import { Button, Upload, message, Col, Row } from "antd";
 import AdvInput from "../../components/AdvInput";
 import { nanoid } from 'nanoid';
 import '../../styles/SubmitChallenge.scss';
@@ -7,10 +7,11 @@ import '../../styles/SubmitChallenge.scss';
 const SubmitChallenge = (props) => {
   const { title: initTitle, model: initModel, handleNext } = props;
   const [title, setTitle] = useState(initTitle ? initTitle : '');
-  const [modelFileName, setModelFileName] = useState(initModel ? initModel: 'Model Path');
+  const [modelFileName, setModelFileName] = useState(initModel ? initModel : 'Model Path');
   const [isModel, setIsModel] = useState(false);
   const [modelFile, setModelFile] = useState(null);
   const [checkValid, setCheckValid] = useState(false);
+  const [isZip, setIsZip] = useState(false);
 
   const onClickNext = () => {
     if (titleValid && modelValid) {
@@ -29,9 +30,26 @@ const SubmitChallenge = (props) => {
     }
   };
 
+  const refreshPage = () => {
+    window.location.href = "/challenge/create";
+  };
+
   const uploadParams = {
     name: 'file',
     beforeUpload: (file) => {
+      console.log(file.type);
+      if (file.type !== 'application/x-zip-compressed') {
+        message.error({
+          content: `${file.name} is not a zip file`,
+          style: {
+            marginTop: '100px',
+          }
+        }, 6);
+        setIsZip(false);
+        // setTimeout(refreshPage, 2000);
+        return Upload.LIST_IGNORE;
+      }
+      setIsZip(true);
       setModelFile(file);
       setModelFileName(file.name);
       return false;
@@ -53,7 +71,7 @@ const SubmitChallenge = (props) => {
     return isModel;
   }, [isModel]);
 
-  return(
+  return (
     <div className="submit-challenge-container">
       <Row className="content-zone" justify="center">
         <Col span={20}>
@@ -94,7 +112,7 @@ const SubmitChallenge = (props) => {
       </Row>
       <Row justify="end">
         <Col span={4}>
-          <Button type="primary" onClick={onClickNext}>NEXT</Button>
+          <Button type="primary" onClick={onClickNext} disabled={!isZip}>NEXT</Button>
         </Col>
       </Row>
     </div>
