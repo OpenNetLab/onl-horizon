@@ -64,7 +64,6 @@ const ChallengeDashboard = (props) => {
         </div>
         <ReactMarkdown
           children={markdown}
-          escapeHtml={false}
         />
         <div className="row-wrapper">
           <a className="btn-website" href="https://2021.acmmmsys.org/rtc_challenge.php" target="_blank">
