@@ -36,6 +36,7 @@ const SubmitChallenge = (props) => {
 
   const uploadParams = {
     name: 'file',
+    accept: 'application/x-zip-compressed',
     beforeUpload: (file) => {
       console.log(file.type);
       if (file.type !== 'application/x-zip-compressed') {
@@ -46,7 +47,6 @@ const SubmitChallenge = (props) => {
           }
         }, 6);
         setIsZip(false);
-        // setTimeout(refreshPage, 2000);
         return Upload.LIST_IGNORE;
       }
       setIsZip(true);
