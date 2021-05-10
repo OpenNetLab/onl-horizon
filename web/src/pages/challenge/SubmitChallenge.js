@@ -36,19 +36,9 @@ const SubmitChallenge = (props) => {
 
   const uploadParams = {
     name: 'file',
-    accept: 'application/x-zip-compressed',
+    accept: 'application/zip',
     beforeUpload: (file) => {
       console.log(file.type);
-      if (file.type !== 'application/x-zip-compressed') {
-        message.error({
-          content: `${file.name} is not a zip file`,
-          style: {
-            marginTop: '100px',
-          }
-        }, 6);
-        setIsZip(false);
-        return Upload.LIST_IGNORE;
-      }
       setIsZip(true);
       setModelFile(file);
       setModelFileName(file.name);
