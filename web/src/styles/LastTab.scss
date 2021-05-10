@@ -9,9 +9,16 @@
     position: absolute;
     top: 28px;
   }
+  .ant-steps-item-title {
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+  .ant-steps-item-description {
+    margin-left: 10px;
+  }
   .steps-container {
     padding-top: 200px;
-    margin-left: 40%;
+    margin-left: 46%;
   }
   .task-name {
     font-size: 32px;

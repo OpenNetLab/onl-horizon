@@ -1,10 +1,10 @@
 import { Steps } from "antd";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 const { Step } = Steps;
 import succeed from '../../assets/submit-img.png';
 import '../../styles/LastTab.scss';
 
-import {SubmitStatus as ST} from '../../utils/BaseVar';
+import { SubmitStatus as ST } from '../../utils/BaseVar';
 import { CSSTransition } from 'react-transition-group';
 import StepsIcon from '../../components/StepsIcon';
 const SubmitResult = (props) => {
@@ -16,7 +16,7 @@ const SubmitResult = (props) => {
 
   const showTryAgain = (sendStatus === ST.CREATE_FAILED) || (sendStatus === ST.RUN_FAILED);
 
-  let submitIcon = <StepsIcon type='checked' showLarge={sendStatus === ST.SUBMIT_SUCCEEDED || sendStatus === ST.CREATE_PROCESSING || sendStatus === ST.CREATE_WAITING}/>;
+  let submitIcon = <StepsIcon type='checked' showLarge={sendStatus === ST.SUBMIT_SUCCEEDED || sendStatus === ST.CREATE_PROCESSING || sendStatus === ST.CREATE_WAITING} />;
 
   // submit
   const submitText = (() => {
@@ -39,12 +39,12 @@ const SubmitResult = (props) => {
 
   const createIcon = (() => {
     if (sendStatus === ST.CREATE_FAILED) {
-      return (<StepsIcon type='fail' showLarge={true}/>);
+      return (<StepsIcon type='fail' showLarge={true} />);
     }
     if (sendStatus === ST.CREATE_PROCESSING) {
-      return (<StepsIcon type='wait' showLarge={false}/>);
+      return (<StepsIcon type='wait' showLarge={false} />);
     }
-    return (<StepsIcon type='checked' showLarge={sendStatus === ST.CREATE_SUCCEEDED  || sendStatus === ST.RUN_PROCESSING}/>);
+    return (<StepsIcon type='checked' showLarge={sendStatus === ST.CREATE_SUCCEEDED || sendStatus === ST.RUN_PROCESSING} />);
 
   })();
 
@@ -66,24 +66,25 @@ const SubmitResult = (props) => {
 
   const runIcon = (() => {
     if (sendStatus === ST.CREATE_FAILED) {
-      return (<StepsIcon type='fail' showLarge={true}/>);
+      return (<StepsIcon type='fail' showLarge={true} />);
     }
     if (sendStatus === ST.RUN_FAILED) {
-      return (<StepsIcon type='fail' showLarge={true}/>);
+      return (<StepsIcon type='fail' showLarge={true} />);
     }
     if (sendStatus === ST.RUN_SUCCEEDED) {
-      return (<StepsIcon type='checked' showLarge={true}/>);
+      return (<StepsIcon type='checked' showLarge={true} />);
     }
     if (curStatusStep < ST.SEND_STEP_RUN || sendStatus === ST.RUN_PROCESSING) {
-      return (<StepsIcon type='wait'/>);
+      return (<StepsIcon type='wait' />);
     }
-    return (<StepsIcon type='wait'/>);
+    return (<StepsIcon type='wait' />);
   })();
 
-  useEffect(()=> {
+  useEffect(() => {
     setTimeout(
       () => {
-        setShowSubmit(false);},
+        setShowSubmit(false);
+      },
       1000);
     setTimeout(() => {
       setShowSteps(true);
@@ -104,7 +105,7 @@ const SubmitResult = (props) => {
     if (sendStatus < ST.CREATE_SUCCEEDED) {
       setCurStatusStep(ST.SEND_STEP_SUBMIT);
     }
-    else if (sendStatus < ST.RUN_SUCCEEDED){
+    else if (sendStatus < ST.RUN_SUCCEEDED) {
       setCurStatusStep(ST.SEND_STEP_CREATE);
     }
     else {
@@ -141,10 +142,10 @@ const SubmitResult = (props) => {
         </CSSTransition> */}
         <CSSTransition
           in={showSteps}
-          timeout ={1000}
-          classNames = 'steps'
+          timeout={1000}
+          classNames='steps'
           unmountOnExit
-          apper={true}
+          appear={true}
         >
           <div className="steps-container">
             <Steps direction="vertical" current={curStatusStep}>
@@ -156,7 +157,7 @@ const SubmitResult = (props) => {
         </CSSTransition>
       </div>
       <div className="footer">
-        {showTryAgain ? (<div>Please  <span className="link-text" onClick={ setFirst }>Create</span> again later</div>) : (<p>{countTime}s</p>)}
+        {showTryAgain ? (<div>Please  <span className="link-text" onClick={setFirst}>Create</span> again later</div>) : (<p>{countTime}s</p>)}
       </div>
     </div>
   );
