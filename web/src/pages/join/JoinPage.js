@@ -49,7 +49,6 @@ export default function JoinPage () {
   });
 
   const Tab = styled.button`
-    font-family: 'Segoe UI';
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
