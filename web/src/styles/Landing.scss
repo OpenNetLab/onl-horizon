@@ -78,10 +78,9 @@
   }
 
   .img-right {
-    width: 780px;
-    height: 600px;
+    height: 400px;
     margin-top: -100px;
-    margin-right: 60px;
+    // margin-right: 60px;
   }
 
   .bg {
@@ -91,7 +90,7 @@
   .bg-title-info {
     width: 400px;
     margin-top: 100px;
-    margin-left: 100px;
+    margin-left: 10px;
     font-size: 27px;
     font-weight: 400;
     color: white;
@@ -100,7 +99,7 @@
 
   .bg-title {
     width: 400px;
-    margin-left: 100px;
+    margin-left: 10px;
     margin-top: -30px;
     font-size: 45px;
     font-weight: 700;
@@ -111,7 +110,7 @@
   .bg-description {
     font-weight: 350;
     font-size: 14px;
-    margin-left: 100px;
+    margin-left: 10px;
     color: #ffffff;
     z-index: 100;
   }
@@ -489,6 +488,10 @@
 
     .challenge-text {
       margin: 40px;
+    }
+
+    .bg {
+      margin: 30px;
     }
 
     .news-text {
