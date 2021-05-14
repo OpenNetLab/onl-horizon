@@ -179,13 +179,42 @@
   }
 
   .footer {
-    height: 150px;
+    height: 120px;
     background: linear-gradient(184.01deg, #245182 15.97%, #253959 109.62%);
     left: 0px;
     top: 0px;
     width: 100%;
     display: flex;
     align-items: center;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+
+    .logo-title {
+      margin-left: 6px;
+      color: white;
+    }
+
+    .logo-title-big {
+      margin: 0px;
+      padding: 0px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .logo-title-small {
+      margin: 0px;
+      padding: 0px;
+      font-weight: 200;
+      font-size: 10px;
+    }
+  }
+
+  .logo-solo {
+    height: 94px;
+    margin-left: 38px;
   }
 
   .footer-container {
@@ -197,13 +226,17 @@
     justify-content: space-between;
   }
 
+  .footer-contact {
+    margin-left: -98px;
+  }
+
   .contactUs {
     color: white;
     font-size: 14px;
-    padding-top: 8px;
+    padding: 0px;
+    margin: 0px;
     height: 14px;
     font-weight: 500;
-    margin-left: -200px;
   }
 
   .email {
@@ -211,7 +244,8 @@
     font-size: 10px;
     height: 10px;
     font-weight: 100;
-    margin-left: -200px;
+    padding: 0px;
+    margin: 0px;
   }
 
   .ant-tabs-tab-btn {
@@ -395,6 +429,10 @@
 
   @media screen and (max-width: 750px) {
     .logo {
+      display: none;
+    }
+
+    .footer-logo {
       display: none;
     }
 
