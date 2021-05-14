@@ -4,7 +4,7 @@ import { Tabs } from "antd";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-export default function AboutPage () {
+export default function AboutPage() {
   const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
   const human = `${bgUrl}human.png`;
   const box = `${bgUrl}pic-box.png`;
@@ -20,7 +20,7 @@ export default function AboutPage () {
           <br />
           <p className="title big-title">ABOUT US</p>
           <div className="row margin-top">
-            <img className="pic" src="https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/about-pic1.png"/>
+            <img className="pic" src="https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/about-pic1.png" />
             <div className="text">
               <img className="pic-small" src={human} />
               <img className="pic-box" src={box} />
@@ -39,7 +39,7 @@ export default function AboutPage () {
               </div>
               We expect to join hands with communities, universities, and enterprises in an effort to build an open large-scale distributed networking platform as the first step, and then we expect to build a common benchmarking dataset in the networking area, encouraging more and more researchers to join us so that we can boost the networking research base on OpenNetLab and establish a healthy and sustainable networking research ecosystem.
             </div>
-            <img className="pic" src="https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/about-pic2.png"/>
+            <img className="pic" src="https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/about-pic2.png" />
           </div>
         </div>
         <div className="content-next">
@@ -70,18 +70,18 @@ export default function AboutPage () {
                   Member
                 </div>
                 <div className="name">
-                    Kaigui Bian<br />Peking University<br />
+                  Kaigui Bian<br />Peking University<br />
                   <br />
-                    Fengyuan Ren<br />Tsinghua University and Lanzhou University<br />
+                  Fengyuan Ren<br />Tsinghua University and Lanzhou University<br />
                   <br />
-                    Chen Tian<br />Nanjing University
+                  Chen Tian<br />Nanjing University
                 </div>
                 <div className="name">
-                    Peng Cheng<br />MSRA<br />
+                  Peng Cheng<br />MSRA<br />
                   <br />
-                    Beibei Shi<br />MSRA<br />
+                  Beibei Shi<br />MSRA<br />
                   <br />
-                    Yongqiang Xiong<br />MSRA
+                  Yongqiang Xiong<br />MSRA
                 </div>
               </div>
               <div className="title underline back margin-left">Technical Committee</div>
@@ -111,7 +111,7 @@ export default function AboutPage () {
                   Rotating Chair
                 </div>
                 <div className="name">
-                Yongqiang Xiong<br />MSRA
+                  Yongqiang Xiong<br />MSRA
                 </div>
               </div>
               <div className="info">
@@ -127,18 +127,18 @@ export default function AboutPage () {
                   Member
                 </div>
                 <div className="name">
-                    Kaigui Bian<br />Peking University<br />
+                  Kaigui Bian<br />Peking University<br />
                   <br />
-                    Fengyuan Ren<br />Tsinghua University and Lanzhou University<br />
+                  Fengyuan Ren<br />Tsinghua University and Lanzhou University<br />
                   <br />
-                    Chen Tian<br />Nanjing University
+                  Chen Tian<br />Nanjing University
                 </div>
                 <div className="name">
-                    Peng Cheng<br />MSRA<br />
+                  Peng Cheng<br />MSRA<br />
                   <br />
-                    Beibei Shi<br />MSRA<br />
+                  Beibei Shi<br />MSRA<br />
                   <br />
-                    Yongqiang Xiong<br />MSRA
+                  Yongqiang Xiong<br />MSRA
                 </div>
               </div>
               <div className="title underline back margin-left">Technical Committee</div>
@@ -164,36 +164,36 @@ export default function AboutPage () {
           <div className="line"></div>
           <div className="list-container">
             <ul>
-              <li className="name" style={{fontSize: 14}}>Hao Chen (MSRA)<br />Outreach</li>
-              <li className="name" style={{fontSize: 14}}>Junjie Deng (BUPT, MSRA)<br />AlphaRTC</li>
-              <li className="name" style={{fontSize: 14}}>Xuan Feng (PKU, MSRA)<br />Frontend​</li>
-              <li className="name" style={{fontSize: 14}}>Ze Gan (MSRA)<br />AlphaRTC</li>
-              <li className="name" style={{fontSize: 14}}>Weijie Guo (MSRA)<br />Frontend</li>
-              <li className="name" style={{fontSize: 14}}>Yunyun Jiang (MSRA)<br />Outreach</li>
+              <li className="name" style={{ fontSize: 14 }}>Hao Chen (MSRA)<br />Outreach</li>
+              <li className="name" style={{ fontSize: 14 }}>Junjie Deng (BUPT, MSRA)<br />AlphaRTC</li>
+              <li className="name" style={{ fontSize: 14 }}>Xuan Feng (PKU, MSRA)<br />Frontend​</li>
+              <li className="name" style={{ fontSize: 14 }}>Ze Gan (MSRA)<br />AlphaRTC</li>
+              <li className="name" style={{ fontSize: 14 }}>Weijie Guo (MSRA)<br />Frontend</li>
+              <li className="name" style={{ fontSize: 14 }}>Yunyun Jiang (MSRA)<br />Outreach</li>
             </ul>
             <ul>
-              <li className="name" style={{fontSize: 14}} style={{fontSize: 14}}>Yuting Jiang (NJU, MSRA)<br />Backend</li>
-              <li className="name" style={{fontSize: 14}}>Miran Li (MSRA)<br />Outreach</li>
-              <li className="name" style={{fontSize: 14}}>Yilin Liu (PKU, MSRA)<br />Backend​​</li>
-              <li className="name" style={{fontSize: 14}}>Yang Luo (MSRA)<br />Frontend</li>
-              <li className="name" style={{fontSize: 14}}>Xin Ma (MSRA)<br />Outreach</li>
-              <li className="name" style={{fontSize: 14}}>Yang Ou (MSRA)<br />Designer</li>
+              <li className="name" style={{ fontSize: 14 }}>Yuting Jiang (NJU, MSRA)<br />Backend</li>
+              <li className="name" style={{ fontSize: 14 }}>Miran Li (MSRA)<br />Outreach</li>
+              <li className="name" style={{ fontSize: 14 }}>Yilin Liu (PKU, MSRA)<br />Backend​​</li>
+              <li className="name" style={{ fontSize: 14 }}>Yang Luo (MSRA)<br />Frontend</li>
+              <li className="name" style={{ fontSize: 14 }}>Xin Ma (MSRA)<br />Outreach</li>
+              <li className="name" style={{ fontSize: 14 }}>Yang Ou (MSRA)<br />Designer</li>
             </ul>
             <ul>
-              <li className="name" style={{fontSize: 14}}>Tim Pan (MSRA)<br />Outreach</li>
-              <li className="name" style={{fontSize: 14}}>Lily Sun (MSRA)<br />Outreach</li>
-              <li className="name" style={{fontSize: 14}}>Yuqi Tang (UCSD)<br />Frontend​</li>
-              <li className="name" style={{fontSize: 14}}>Yizhi Wang (NJU)<br />Node Operation and Backend</li>
-              <li className="name" style={{fontSize: 14}}>Zhangyang Wei (LZU)<br />Node Operation</li>
-              <li className="name" style={{fontSize: 14}}>Yuhui Wei (PKU, MSRA)<br />Backend</li>
+              <li className="name" style={{ fontSize: 14 }}>Tim Pan (MSRA)<br />Outreach</li>
+              <li className="name" style={{ fontSize: 14 }}>Lily Sun (MSRA)<br />Outreach</li>
+              <li className="name" style={{ fontSize: 14 }}>Yuqi Tang (UCSD)<br />Frontend​</li>
+              <li className="name" style={{ fontSize: 14 }}>Yizhi Wang (NJU)<br />Node Operation and Backend</li>
+              <li className="name" style={{ fontSize: 14 }}>Zhangyang Wei (LZU)<br />Node Operation</li>
+              <li className="name" style={{ fontSize: 14 }}>Yuhui Wei (PKU, MSRA)<br />Backend</li>
             </ul>
             <ul>
-              <li className="name" style={{fontSize: 14}}>Zhongyang Xia (MSRA)<br />AlphaRTC</li>
-              <li className="name" style={{fontSize: 14}}>Kangjie Xu (SJTU, MSRA)<br />Backend​</li>
-              <li className="name" style={{fontSize: 14}}>Yuying Zhang (MSRA)<br />Designer​</li>
-              <li className="name" style={{fontSize: 14}}>Yinjie Zhang (PKU)<br />Backend​</li>
-              <li className="name" style={{fontSize: 14}}>Yuheng Zou (PKU)<br />Backend​</li>
-              <li className="name" style={{fontSize: 14}}>Wanying Zu (MSRA)<br />Designer​</li>
+              <li className="name" style={{ fontSize: 14 }}>Zhongyang Xia (MSRA)<br />AlphaRTC</li>
+              <li className="name" style={{ fontSize: 14 }}>Kangjie Xu (SJTU, MSRA)<br />Backend​</li>
+              <li className="name" style={{ fontSize: 14 }}>Yuying Zhang (MSRA)<br />Designer​</li>
+              <li className="name" style={{ fontSize: 14 }}>Yinjie Zhang (PKU)<br />Backend​</li>
+              <li className="name" style={{ fontSize: 14 }}>Yuheng Zou (PKU)<br />Backend​</li>
+              <li className="name" style={{ fontSize: 14 }}>Wanying Zu (MSRA)<br />Designer​</li>
             </ul>
           </div>
           <div className="text center bold">* Sorted by last name</div>

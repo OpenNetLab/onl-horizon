@@ -1,8 +1,11 @@
 .about-join-container {
   background: #F9FAFF;
+  font-style: normal;
 
   .header-container {
     display: flex;
+    font-style: normal;
+    font-weight: bold;
     justify-content: space-between;
     height: 200px;
     background: linear-gradient(90deg, #245182 16.94%, #253959 79.95%);
@@ -18,7 +21,6 @@
 
   .nav li {
     margin-right: 30px;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 10px;
@@ -32,6 +34,7 @@
 
   .nav-item {
     margin-top: 25px;
+    font-weight: bold;
 
     a {
       font-size: 12px;
@@ -54,7 +57,6 @@
     padding: 15px 36px;
     margin-bottom: 30px;
     color: #062A4E;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
@@ -112,7 +114,6 @@
 
   .text {
     width: 46%;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
     color: #062A4E;
@@ -130,7 +131,6 @@
   }
 
   p {
-    font-family: Segoe UI;
     margin-right: 30px;
     font-style: normal;
     font-weight: bold;
@@ -153,7 +153,6 @@
     border-radius: 10px;
     padding: 10px 0px;
     height: 52px;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -164,7 +163,6 @@
 
   .name {
     // margin-left: 100px;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -181,7 +179,7 @@
   }
 
   .footer {
-    height: 150px;
+    height: 120px;
     background: linear-gradient(184.01deg, #245182 15.97%, #253959 109.62%);
     left: 0px;
     top: 0px;
@@ -190,21 +188,55 @@
     align-items: center;
   }
 
+  .footer-logo {
+    display: flex;
+    align-items: center;
+
+    .logo-title {
+      margin-left: 6px;
+      color: white;
+    }
+
+    .logo-title-big {
+      margin: 0px;
+      padding: 0px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .logo-title-small {
+      margin: 0px;
+      padding: 0px;
+      font-weight: 200;
+      font-size: 10px;
+    }
+  }
+
+  .logo-solo {
+    height: 94px;
+    margin-left: 38px;
+  }
+
   .footer-container {
     width: 100%;
     margin: auto;
+    font-style: normal;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
+  .footer-contact {
+    margin-left: -98px;
+  }
+
   .contactUs {
     color: white;
     font-size: 14px;
-    padding-top: 8px;
+    padding: 0px;
+    margin: 0px;
     height: 14px;
     font-weight: 500;
-    margin-left: -200px;
   }
 
   .email {
@@ -212,7 +244,8 @@
     font-size: 10px;
     height: 10px;
     font-weight: 100;
-    margin-left: -200px;
+    padding: 0px;
+    margin: 0px;
   }
 
   .ant-tabs-tab-btn {
@@ -297,7 +330,6 @@
   .names {
     text-align: center;
     white-space: nowrap;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     color: #062A4E;
@@ -329,7 +361,6 @@
       margin-top: 20px;
       margin-bottom: 20px;
       margin-left: 48px;
-      font-family: Segoe UI;
       font-style: normal;
       font-weight: normal;
       font-size: 18px;
@@ -352,7 +383,6 @@
   .white-title {
     font-size: 28px;
     color: white;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
 
@@ -402,8 +432,28 @@
       display: none;
     }
 
+    .footer-logo {
+      display: none;
+    }
+
     .info-bg {
       display: none;
+    }
+
+    .join-content-next {
+      display: none;
+    }
+
+    .body-container {
+      margin-bottom: 100px;
+    }
+
+    .content-next {
+      display: none;
+    }
+
+    .text {
+      width: 84%;
     }
   }
 

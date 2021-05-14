@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "../styles/AboutPage.scss";
 import nextOne from "../assets/nextOne.png";
 
-export default function JoinPage () {
+export default function JoinPage() {
   const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
   const photo1 = `${bgUrl}Group 60.png`;
   const photo2 = `${bgUrl}Group 61.png`;
@@ -19,17 +19,17 @@ export default function JoinPage () {
 
   const ellipseUrls = [];
 
-  ellipseUrls.push({url: `${bgUrl}Ellipse 48.png`, name: "Hao Chen"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 38.png`, name: "Beibei Shi"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 39.png`, name: "Miran Lee"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 41.png`, name: "Lidong Zhou"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 40.png`, name: "Xin Ma"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 42.png`, name: "Johannes Gehrke"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 47.png`, name: "Yunyun Jiang"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 44.png`, name: "Ru Ma"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 45.png`, name: "Peng Cheng"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 46.png`, name: "Lily Sun"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 43.png`, name: "Yongqiang Xiong"});
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 48.png`, name: "Hao Chen" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 38.png`, name: "Beibei Shi" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 39.png`, name: "Miran Lee" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 41.png`, name: "Lidong Zhou" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 40.png`, name: "Xin Ma" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 42.png`, name: "Johannes Gehrke" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 47.png`, name: "Yunyun Jiang" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 44.png`, name: "Ru Ma" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 45.png`, name: "Peng Cheng" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 46.png`, name: "Lily Sun" });
+  ellipseUrls.push({ url: `${bgUrl}Ellipse 43.png`, name: "Yongqiang Xiong" });
 
   const imgs = imgUrls.map((item, index) => {
     return (
@@ -49,7 +49,6 @@ export default function JoinPage () {
   });
 
   const Tab = styled.button`
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
@@ -63,8 +62,8 @@ export default function JoinPage () {
     background: #E3E8F0;
     border-radius: 0px 0px 0px 0px;
   ${({ active }) =>
-    active &&
-    `
+      active &&
+      `
     background: #5EE0F6;
     border-radius: 0px 0px 0px 0px;
     opacity: 1;
@@ -97,7 +96,7 @@ export default function JoinPage () {
         </div>
         <div className="join-content-next">
           <div className="tab-container">
-            <div className="title underline padding-top" style={{paddingLeft: 0}}>
+            <div className="title underline padding-top" style={{ paddingLeft: 0 }}>
               Member
             </div>
             <ButtonGroup>
@@ -136,7 +135,7 @@ export default function JoinPage () {
             </div>
           </div>
           <div className="tab-container">
-            <div className="title underline padding-top" style={{paddingLeft: 0}}>
+            <div className="title underline padding-top" style={{ paddingLeft: 0 }}>
               General Founding Member
             </div>
             <ButtonGroup>
@@ -162,7 +161,7 @@ export default function JoinPage () {
                 <li>Contribute to the development and operation of ONL and the dataset by running experiments on the platform;</li>
                 <li>Acknowledge the support of ONL and cite/mention ONL explicitly in papers and articles;</li>
                 <li>Promote OpenNetLab and, support and participate in OpenNetLab related activities;</li>
-                <li>The signing of an MOU is required.</li>
+                <li>The signing of an MOU is required.​</li>
               </ul>
             }
             <div className="info-bg">
@@ -180,7 +179,7 @@ export default function JoinPage () {
             </div>
           </div>
           <div className="tab-container">
-            <div className="title underline padding-top" style={{paddingLeft: 0}}>
+            <div className="title underline padding-top" style={{ paddingLeft: 0 }}>
               Core Founding Member
             </div>
             <ButtonGroup>
