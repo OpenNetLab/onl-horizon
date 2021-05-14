@@ -1,13 +1,14 @@
-import React, {useContext /*useState*/} from 'react';
-import {Row, Avatar} from 'antd';
+import React, { useContext /*useState*/ } from 'react';
+import { Row, Avatar } from 'antd';
 import loginButton from '../assets/login-button.png';
 import vector from '../assets/Vector.png';
 import arrow from '../assets/arrow.png';
 import join from '../assets/join-button.png';
 import * as Setting from "../utils/Setting";
 import { useHistory } from "react-router-dom";
-import {MsalContext} from "@hsluoyz/msal-react";
+import { MsalContext } from "@hsluoyz/msal-react";
 import '../styles/Landing.scss';
+import logo from "../assets/ONL-Logo.png";
 
 const Landing = () => {
   const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
@@ -24,7 +25,7 @@ const Landing = () => {
   const msalContext = useContext(MsalContext);
   console.log(msalContext.accounts);
   const handleLogin = () => {
-    history.push("/home");
+    window.location.href = "/home";
   };
 
   const renderAvatar = () => {
@@ -37,24 +38,24 @@ const Landing = () => {
           <Avatar size="large" style={{ backgroundColor: Setting.getAvatarColor(account.name), verticalAlign: 'middle' }}>
             {Setting.getFirstName(account.name)}
           </Avatar>
-            &nbsp;
-            &nbsp;
-          <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
-            &nbsp;
-            &nbsp;
-            &nbsp;
+          &nbsp;
+          &nbsp;
+          <span style={{ fontWeight: "bold", fontColor: "#FFFFFF" }}>{Setting.isMobile() ? null : name}</span>
+          &nbsp;
+          &nbsp;
+          &nbsp;
         </div>
       );
     } else {
       return (
         <div>
           <Avatar size="large" src={imageSrc} />
-            &nbsp;
-            &nbsp;
-          <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
-            &nbsp;
-            &nbsp;
-            &nbsp;
+          &nbsp;
+          &nbsp;
+          <span style={{ fontWeight: "bold", fontColor: "#FFFFFF" }}>{Setting.isMobile() ? null : name}</span>
+          &nbsp;
+          &nbsp;
+          &nbsp;
         </div>
       );
     }
@@ -70,12 +71,6 @@ const Landing = () => {
             }
           </div>
           <ul className="landing-nav">
-            {/* <li className="landing-nav-item">
-              <a href="/home">RESEARCH</a>
-            </li>
-            <li className="landing-nav-item">
-              <a href="/home">DATA</a>
-            </li> */}
             <li className="landing-nav-item">
               <a href="/about">ABOUT US</a>
             </li>
@@ -90,18 +85,16 @@ const Landing = () => {
           </ul>
         </div>
       </Row>
-      <Row className="home-hero" type="flex" justify="center" align="middle">
-        <div className="hero-left">
-          <div className="bg">
-            <p className="bg-title-info">Open | Share | Collaborate</p>
-            <p className="bg-title">OpenNetLab</p>
-            <p className="bg-description">OpenNetLab aims to build and provide a distributed networking platform with many collaborative nodes and a common benchmarking dataset (i.e. ImageNet in the networking area) for researchers to collect real networking data and train/evaluate their AI models for various networking environments, including the Internet/cloud, and wireless and mobile networks.<br/>
-              <img src={loginButton} className="login" onClick={handleLogin} />
-            </p>
-          </div>
+      <div className="hero-row">
+        <div className="left-info">
+          <p className="bg-title-info">Open | Share | Collaborate</p>
+          <p className="bg-title">OpenNetLab</p>
+          <p className="bg-description">OpenNetLab aims to build and provide a distributed networking platform with many collaborative nodes and a common benchmarking dataset (i.e. ImageNet in the networking area) for researchers to collect real networking data and train/evaluate their AI models for various networking environments, including the Internet/cloud, and wireless and mobile networks.<br />
+            <img src={loginButton} className="login" onClick={handleLogin} />
+          </p>
         </div>
         <img className="img-right" src={background} />
-      </Row>
+      </div>
       <div className="margin-lift">
         <div className="line">
           <div>
@@ -115,9 +108,9 @@ const Landing = () => {
           <div className="challenge-container">
             <div className="challenge-text">
               <p className="title">Grand Challenge on Bandwidth Estimation for Real-Time Communications</p>
-              <p className="description">Real-time video applications have never played a more critical role in our lives as they enable us to live and work remotely while staying connected with the rest of the world. However, the rapid increase in the use of real-time video also poses an unprecedented challenge for consistently delivering high quality of experience (QoE) — such as high video and audio quality, low delay and few stalls — to all users.<br/><br />
-                  A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br/><br />
-                  Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
+              <p className="description">Real-time video applications have never played a more critical role in our lives as they enable us to live and work remotely while staying connected with the rest of the world. However, the rapid increase in the use of real-time video also poses an unprecedented challenge for consistently delivering high quality of experience (QoE) — such as high video and audio quality, low delay and few stalls — to all users.<br /><br />
+                A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br /><br />
+                Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
               </p>
               <a href="/home" className="links">THE PLATFORM FOR CHALLENGE IS COMING SOON</a>
               {/* <img className="arrow" src={arrow}/>
@@ -130,21 +123,21 @@ const Landing = () => {
                   <img className="vector" src={mmsys} />
                   <p className="title padding-left padding-right padding-top">ACM MMSys'21, Istanbul, Turkey</p>
                   <p className="description padding-left padding-right">
-                      More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
+                    More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
                   </p>
                 </div>
               </a>
               <div className="square-container">
                 <a href="https://github.com/OpenNetLab/AlphaRTC" target="_blank">
                   <div className="square">
-                    <img src={vector} className="vector-git"/>
-                    <p className="title">OpenNetLab<br/>AlphaRTC</p>
+                    <img src={vector} className="vector-git" />
+                    <p className="title">OpenNetLab<br />AlphaRTC</p>
                   </div>
                 </a>
                 <a href="https://github.com/OpenNetLab/gym" target="_blank">
                   <div className="square">
-                    <img src={vector} className="vector-git"/>
-                    <p className="title">OpenNetLab<br/>Gym</p>
+                    <img src={vector} className="vector-git" />
+                    <p className="title">OpenNetLab<br />Gym</p>
                   </div>
                 </a>
               </div>
@@ -168,11 +161,11 @@ const Landing = () => {
           <div className="news-text">
             <p className="title">Microsoft Research Asia partners with universities in Asia to build OpenNetLab, empowering AI-assisted networking research</p>
             <p className="description">BEIJING, 19 January 2021 – Microsoft Research Asia announced the establishment of OpenNetLab, an open networking community and platform in collaboration with multiple universities in Asia, including academia from China, Korea and Singapore.<br /><br />
-                OpenNetLab is a network research community project. Its aims to promote the application and development of artificial intelligence (AI) in networking research by providing researchers with a universal distributed network testing platform and real network evaluation datasets. Ultimately, they hope to create a healthy and sustainable networking research ecosystem.
+              OpenNetLab is a network research community project. Its aims to promote the application and development of artificial intelligence (AI) in networking research by providing researchers with a universal distributed network testing platform and real network evaluation datasets. Ultimately, they hope to create a healthy and sustainable networking research ecosystem.
             </p>
             <a href="https://news.microsoft.com/apac/2021/01/19/microsoft-research-asia-partners-with-universities-in-asia-to-build-opennetlab-empowering-ai-assisted-networking-research/" className="links" target="_blank">VIEW MORE</a>
-            <img className="arrow" src={arrow}/>
-            <img className="arrow" src={arrow}/>
+            <img className="arrow" src={arrow} />
+            <img className="arrow" src={arrow} />
             {/*<div>*/}
             {/*  <img className="ellipse" src={ellipse1}/>*/}
             {/*  <img className="ellipse" src={ellipse2}/>*/}
@@ -192,39 +185,39 @@ const Landing = () => {
       <Row class="features" type="flex" justify="center" align="middle">
         <div className="features-container">
           <div className="background-features">
-            <img className="icon" src={icon1}/>
+            <img className="icon" src={icon1} />
             <p className="title">
-                Contributing to the research community
+              Contributing to the research community
             </p>
             <p className="description">
-                Platform: Free to the networking research community Dataset: Published to GitHub for researchers to reproduce the experiments and train models
+              Platform: Free to the networking research community Dataset: Published to GitHub for researchers to reproduce the experiments and train models
             </p>
           </div>
           <div className="background-features">
-            <img className="icon" src={icon2}/>
+            <img className="icon" src={icon2} />
             <p className="title">
-                Data centric for networking-related AI
+              Data centric for networking-related AI
             </p>
             <p className="description">
-                Automatic data collection Automatic data storing Automatic data aggregation Automatic data sharing
+              Automatic data collection Automatic data storing Automatic data aggregation Automatic data sharing
             </p>
           </div>
           <div className="background-features">
-            <img className="icon" src={icon3}/>
+            <img className="icon" src={icon3} />
             <p className="title">
-                Real Applications
+              Real Applications
             </p>
             <p className="description">
-                Real Time Communication Video/Data Streaming Web Service/CDN Other networking applications
+              Real Time Communication Video/Data Streaming Web Service/CDN Other networking applications
             </p>
           </div>
           <div className="background-features">
-            <img className="icon" src={icon4}/>
+            <img className="icon" src={icon4} />
             <p className="title">
-                Distributed heterogenous test nodes
+              Distributed heterogenous test nodes
             </p>
             <p className="description">
-                Geo-distributed testbed Heterogenous network Various user devices
+              Geo-distributed testbed Heterogenous network Various user devices
             </p>
           </div>
         </div>
@@ -233,45 +226,51 @@ const Landing = () => {
         {
           Setting.isMobile() ? null : <div children="join-container">
             <p className="bg-title-bottom">
-                Join OpenNetLab
+              Join OpenNetLab
             </p>
             <p className="description description-bottom">
-                Open | Share | Collaborate
+              Open | Share | Collaborate
             </p>
           </div>
         }
-        <a href="/home"><img className="join" src={join}/></a>
+        <a href="/home"><img className="join" src={join} /></a>
       </div>
-      <img className="bg-bottom" src={bgBottom}/>
-      <Row className="landing-footer" justify="space-between">
-        <div className="landing-footer-container">
-          <div className="landing-footer-logo">
-            {
-              Setting.isMobile() ? null : <a className="logo" href={"/"} />
-            }
-          </div>
-          <div className="footer-contact">
-            <p className="contactUs">
+      <img className="bg-bottom" src={bgBottom} />
+      <div className="about-join-container">
+        <div className="footer-landing">
+          <div className="footer-container">
+            <div className="footer-logo">
+              {
+                Setting.isMobile() ? null : <img className="logo-solo" src={logo} />
+              }
+              <div className="logo-title">
+                <p className="logo-title-big">OpenNetLab</p>
+                <p className="logo-title-small">© 2021 OpenNetLab. All Rights Reserved.</p>
+              </div>
+            </div>
+            <div className="footer-contact">
+              <p className="contactUs">
                 Welcome to Contact us
-            </p>
-            <a className="email">
+              </p>
+              <a className="email">
                 contact@opennetlab.org
-            </a>
+              </a>
+            </div>
+            <ul className="nav">
+              <li className="nav-item">
+                <a href="/about">ABOUT US</a>
+              </li>
+              <li className="nav-item">
+                <a href="/join">JOIN US</a>
+              </li>
+              {/* <li className="nav-item">
+            <a href="#">Links</a>
+          </li> */}
+            </ul>
           </div>
-          <ul className="landing-nav">
-            <li className="landing-nav-item">
-              <a href="/about">ABOUT US</a>
-            </li>
-            <li className="landing-nav-item">
-              <a href="/join">JOIN US</a>
-            </li>
-            {/* <li className="landing-nav-item">
-              <a href="/home">Links</a>
-            </li> */}
-          </ul>
         </div>
-      </Row>
-    </div>
+      </div>
+    </div >
   );
 };
 
