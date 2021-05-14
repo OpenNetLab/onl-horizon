@@ -70,56 +70,48 @@
     color: #FFFFFF;
   }
 
-  .home-hero {
+  .hero-row {
     display: flex;
-    flex-wrap: nowrap;
     max-width: 1160px;
     margin: auto;
   }
 
+  .left-info {
+    margin-left: 40px;
+  }
+
   .img-right {
     height: 400px;
-    margin-top: -100px;
     // margin-right: 60px;
   }
 
-  .bg {
-    height: 700px;
-  }
-
   .bg-title-info {
-    width: 400px;
     margin-top: 100px;
-    margin-left: 10px;
+    margin-right: 10px;
     font-size: 27px;
     font-weight: 400;
     color: white;
-    z-index: 100;
   }
 
   .bg-title {
-    width: 400px;
-    margin-left: 10px;
-    margin-top: -30px;
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 700;
     color: #ffffff;
-    z-index: 100;
   }
 
   .bg-description {
     font-weight: 350;
+    margin-right: 10px;
     font-size: 14px;
-    margin-left: 10px;
     color: #ffffff;
-    z-index: 100;
   }
 
   .login {
     margin-top: 50px;
     //float: right;
-    margin-left: -15px;
+    // margin-left: -15px;
     width: 200px;
+    margin-bottom: 200px;
     //height: 103px;
     z-index: 100;
     cursor: pointer;
@@ -212,24 +204,18 @@
     padding-right: 30px;
   }
 
-  .contactUs {
-    color: white;
-    font-size: 14px;
-    height: 14px;
-    padding-top: 8px;
-    font-weight: 500;
-    margin-left: -200px;
-  }
-
-  .email {
-    color: white;
-    font-size: 10px;
-    font-weight: 100;
-    margin-left: -200px;
-  }
-
   .landing-profile {
     margin-top: 3px;
+  }
+
+  .footer-landing {
+    height: 120px;
+    background: black;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
 
   .line {
@@ -432,6 +418,14 @@
   }
 
   @media screen and (max-width: 750px) {
+    .bg-title-info {
+      display: none;
+    }
+
+    .left-info {
+      margin: 100px 20px 100px 40px;
+    }
+
     .landing-footer-logo {
       display: none;
     }
@@ -464,10 +458,6 @@
 
     .img-right {
       display: none;
-    }
-
-    .bg-description {
-      margin-right: 100px;
     }
 
     .challenge-pics {
