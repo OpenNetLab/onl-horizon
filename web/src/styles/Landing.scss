@@ -77,7 +77,7 @@
   }
 
   .left-info {
-    margin-left: 40px;
+    margin-left: 10px;
   }
 
   .img-right {
@@ -438,6 +438,10 @@
   @media screen and (max-width: 1200px) {
     .bg-bottom {
       display: none;
+    }
+
+    .left-info {
+      margin-left: 40px;
     }
 
     .footer-contact {
