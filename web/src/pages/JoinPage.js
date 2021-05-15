@@ -62,8 +62,8 @@ export default function JoinPage() {
     background: #E3E8F0;
     border-radius: 0px 0px 0px 0px;
   ${({ active }) =>
-      active &&
-      `
+    active &&
+    `
     background: #5EE0F6;
     border-radius: 0px 0px 0px 0px;
     opacity: 1;
