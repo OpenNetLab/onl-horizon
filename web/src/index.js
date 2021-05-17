@@ -1,28 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+import './styles/index.scss';
 import App from './pages/App';
 import AboutPage from "./pages/about/AboutPage";
 import JoinPage from "./pages/join/JoinPage";
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from "./pages/landing/Landing";
 import ContactPage from "./pages/contact/ContactPage";
 import SignUpPage from './pages/account/SignUpPage';
 
 import { MsalProvider } from "@hsluoyz/msal-react";
-import {pca} from "./utils/Setting";
+import { pca } from "./utils/Setting";
 
 ReactDOM.render(
   <MsalProvider instance={pca}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Landing}/>
-        <Route exact path="/join" component={JoinPage}/>
-        <Route exact path="/about" component={AboutPage}/>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/join" component={JoinPage} />
+        <Route exact path="/about" component={AboutPage} />
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/signup" component={SignUpPage} />
-        <Route component={App}/>
+        <Route component={App} />
       </Switch>
     </BrowserRouter>
   </MsalProvider>,

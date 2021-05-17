@@ -30,7 +30,7 @@ import { MsalContext } from "@hsluoyz/msal-react";
 import { loginRequest } from "../auth/authConfig";
 import { isJobAccessible, isChallengeAccessible, isAdmin } from "../utils/Setting";
 import Footer from "../components/Footer";
-import "../styles/index.css";
+import "../styles/index.scss";
 import HowTo from './challenge/HowTo';
 import { urlAlphabet } from 'nanoid';
 import logo from '../assets/ONL-Logo.png';
@@ -424,7 +424,7 @@ class App extends Component {
             }
           </Menu>
         </Header>
-        <Layout style={{ minHeight: 930 }}>
+        <Layout style={{ minHeight: 900 }}>
           <Sider breakpoint="lg" width={200}>
             {
               this.renderLeftMenu()
@@ -551,8 +551,10 @@ class App extends Component {
           }
         </div>
         <BackTop />
-        <div className="about-join-container">
-          <Footer />
+        <div className="home-footer">
+          <div className="about-join-container">
+            <Footer />
+          </div>
         </div>
       </div>
     );
