@@ -3,46 +3,41 @@
   font-style: normal;
 
   .header-container {
-    display: flex;
     font-style: normal;
     font-weight: bold;
-    justify-content: space-between;
     height: 200px;
     background: linear-gradient(90deg, #245182 16.94%, #253959 79.95%);
   }
 
+  .header-content {
+    display: flex;
+    height: 64px;
+    justify-content: space-between;
+  }
+
   .logo {
-    margin-left: 80px;
+    margin-left: 38px;
   }
 
   .nav {
     display: flex;
+    margin: auto 0;
   }
 
   .nav li {
-    margin-right: 30px;
+    margin: auto;
     font-style: normal;
     font-weight: bold;
-    font-size: 10px;
-    line-height: 24px;
-    color: white;
     list-style: none;
+    color: white;
     a {
       color: white;
-    }
-  }
-
-  .nav-item {
-    margin-top: 25px;
-    font-weight: bold;
-
-    a {
       font-size: 12px;
+      padding-right: 58px;
     }
   }
 
   .profile {
-    margin-top: 20px;
     font-size: 14px;
   }
 
@@ -179,10 +174,9 @@
   }
 
   .footer {
-    height: 120px;
+    // position: fixed;
+    height: 64px;
     background: linear-gradient(184.01deg, #245182 15.97%, #253959 109.62%);
-    left: 0px;
-    top: 0px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -195,25 +189,28 @@
     .logo-title {
       margin-left: 6px;
       color: white;
+      display: flex;
+      align-items: center;
     }
 
     .logo-title-big {
       margin: 0px;
       padding: 0px;
-      font-size: 32px;
+      font-size: 20px;
       font-weight: bold;
     }
 
     .logo-title-small {
       margin: 0px;
-      padding: 0px;
+      padding: 4px 0 0 0;
       font-weight: 200;
-      font-size: 10px;
+      font-size: 12px;
+      margin-left: 8px;
     }
   }
 
   .logo-solo {
-    height: 94px;
+    height: 42px;
     margin-left: 38px;
   }
 
@@ -227,25 +224,23 @@
   }
 
   .footer-contact {
-    margin-left: -98px;
+    display: flex;
   }
 
   .contactUs {
     color: white;
     font-size: 14px;
-    padding: 0px;
-    margin: 0px;
-    height: 14px;
     font-weight: 500;
+    margin: auto;
+    padding-right: 8px;
   }
 
   .email {
     color: white;
     font-size: 10px;
-    height: 10px;
     font-weight: 100;
-    padding: 0px;
-    margin: 0px;
+    margin: auto;
+    padding-top: 2px;
   }
 
   .ant-tabs-tab-btn {

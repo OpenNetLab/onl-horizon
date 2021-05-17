@@ -20,9 +20,9 @@ export default function Footer() {
           <p className="contactUs">
             Welcome to Contact us
           </p>
-          <a className="email">
+          <p className="email">
             contact@opennetlab.org
-          </a>
+          </p>
         </div>
         <ul className="nav">
           <li className="nav-item">
@@ -31,9 +31,6 @@ export default function Footer() {
           <li className="nav-item">
             <a href="/join">JOIN US</a>
           </li>
-          {/* <li className="nav-item">
-            <a href="#">Links</a>
-          </li> */}
         </ul>
       </div>
     </div>
