@@ -33,6 +33,7 @@ import Footer from "../components/Footer";
 import "../styles/index.css";
 import HowTo from './challenge/HowTo';
 import { urlAlphabet } from 'nanoid';
+import logo from '../assets/ONL-Logo.png';
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -402,9 +403,10 @@ class App extends Component {
     return (
       <Layout>
         <Header style={{ padding: '0', marginBottom: '3px' }}>
-          {
-            Setting.isMobile() ? null : <a className="logo" style={{ marginLeft: 80 }} href={"/"} />
-          }
+          <a href="/">
+            <img className="logo-new" src={logo} />
+            <p className="logo-new-title">OpenNetLab</p>
+          </a>
           <Menu
             // theme="dark"
             mode={(Setting.isMobile() && this.isStartPages()) ? "inline" : "horizontal"}
@@ -422,7 +424,7 @@ class App extends Component {
             }
           </Menu>
         </Header>
-        <Layout>
+        <Layout style={{ minHeight: 930 }}>
           <Sider breakpoint="lg" width={200}>
             {
               this.renderLeftMenu()
@@ -540,7 +542,7 @@ class App extends Component {
   render() {
     return (
       <div id="parent-area">
-        <div>
+        <div className="page">
           {
             this.renderContent()
           }

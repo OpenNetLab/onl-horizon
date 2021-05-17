@@ -63,28 +63,27 @@ const Landing = () => {
 
   return (
     <div className="landing-container">
-      <Row className="landing-header">
-        <div className="landing-header-container">
-          <div className="landing-logo">
-            {
-              Setting.isMobile() ? null : <a className="logo" href={"/"} />
-            }
+      <div className="landing-header-container">
+        <a href="/" className="footer-logo">
+          <img className="logo-solo" src={logo} />
+          <div className="logo-title">
+            <p className="logo-title-big">OpenNetLab</p>
           </div>
-          <ul className="landing-nav">
-            <li className="landing-nav-item">
-              <a href="/about">ABOUT US</a>
-            </li>
-            <li className="landing-nav-item">
-              <a href="/join">JOIN US</a>
-            </li>
-            <li>
-              <div className="landing-profile">
-                {msalContext.accounts.length === 0 ? null : renderAvatar()}
-              </div>
-            </li>
-          </ul>
-        </div>
-      </Row>
+        </a>
+        <ul className="nav">
+          <li className="nav-item">
+            <a href="/about">ABOUT US</a>
+          </li>
+          <li className="nav-item">
+            <a href="/join">JOIN US</a>
+          </li>
+          <li>
+            <div className="profile">
+              {msalContext.accounts.length === 0 ? null : renderAvatar()}
+            </div>
+          </li>
+        </ul>
+      </div>
       <div className="hero-row">
         <div className="left-info">
           <p className="bg-title-info">Open | Share | Collaborate</p>
@@ -263,9 +262,6 @@ const Landing = () => {
               <li className="nav-item">
                 <a href="/join">JOIN US</a>
               </li>
-              {/* <li className="nav-item">
-            <a href="#">Links</a>
-          </li> */}
             </ul>
           </div>
         </div>

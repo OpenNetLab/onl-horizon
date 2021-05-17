@@ -1,10 +1,11 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import * as Setting from "../utils/Setting";
-import {Avatar} from "antd";
+import { Avatar } from "antd";
 import "../styles/AboutPage.scss";
-import {MsalContext} from "@hsluoyz/msal-react";
+import { MsalContext } from "@hsluoyz/msal-react";
+import logo from '../assets/ONL-Logo.png';
 
-export default function Header () {
+export default function Header() {
   const msalContext = useContext(MsalContext);
   console.log(msalContext.accounts);
 
@@ -20,7 +21,7 @@ export default function Header () {
           </Avatar>
           &nbsp;
           &nbsp;
-          <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
+          <span style={{ fontWeight: "bold", fontColor: "#FFFFFF" }}>{Setting.isMobile() ? null : name}</span>
           &nbsp;
           &nbsp;
           &nbsp;
@@ -32,7 +33,7 @@ export default function Header () {
           <Avatar size="large" src={imageSrc} />
           &nbsp;
           &nbsp;
-          <span style={{fontWeight: "bold", fontColor: "#FFFFFF"}}>{Setting.isMobile() ? null : name}</span>
+          <span style={{ fontWeight: "bold", fontColor: "#FFFFFF" }}>{Setting.isMobile() ? null : name}</span>
           &nbsp;
           &nbsp;
           &nbsp;
@@ -43,30 +44,27 @@ export default function Header () {
 
   return (
     <div className="header-container">
-      <div>
-        {
-          Setting.isMobile() ? null : <a className="logo" href={"/"} />
-        }
-      </div>
-      <ul className="nav">
-        {/* <li className="nav-item">
-          <a href="#">RESEARCH</a>
-        </li>
-        <li className="nav-item">
-          <a href="#">DATA</a>
-        </li> */}
-        <li className="nav-item">
-          <a href="/about">ABOUT US</a>
-        </li>
-        <li className="nav-item">
-          <a href="/join">JOIN US</a>
-        </li>
-        <li>
-          <div className="profile">
-            {msalContext.accounts.length === 0 ? null : renderAvatar()}
+      <div className="header-content">
+        <a href="/" className="footer-logo">
+          <img className="logo-solo" src={logo} />
+          <div className="logo-title">
+            <p className="logo-title-big">OpenNetLab</p>
           </div>
-        </li>
-      </ul>
+        </a>
+        <ul className="nav">
+          <li className="nav-item">
+            <a href="/about">ABOUT US</a>
+          </li>
+          <li className="nav-item">
+            <a href="/join">JOIN US</a>
+          </li>
+          <li>
+            <div className="profile">
+              {msalContext.accounts.length === 0 ? null : renderAvatar()}
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

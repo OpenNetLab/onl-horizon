@@ -2,16 +2,7 @@
   background: linear-gradient(180deg, #1F293C 0%, #1D2A3F 14.9%, #161B25 100%);
   z-index: -100;
 
-  .landing-header {
-    width: 100%;
-    height: 100px;
-    left: 0px;
-    top: 0px;
-    border-radius: 0px;
-  }
-
   .landing-footer {
-    height: 150px;
     background-color: black;
     left: 0px;
     top: 0px;
@@ -19,10 +10,8 @@
   }
 
   .landing-header-container {
-    width: 92%;
-    margin: auto;
     display: flex;
-    align-items: center;
+    height: 64px;
     justify-content: space-between;
   }
 
@@ -45,10 +34,6 @@
   .landing-header-container ul {
     display: flex;
     margin-top: 15px;
-  }
-
-  .landing-footer-container ul {
-    display: flex;
   }
 
   .landing-nav li {
@@ -209,7 +194,7 @@
   }
 
   .footer-landing {
-    height: 120px;
+    height: 64px;
     background: black;
     left: 0px;
     top: 0px;
@@ -417,6 +402,65 @@
     }
   }
 
+  .footer {
+    // position: fixed;
+    height: 64px;
+    background: linear-gradient(184.01deg, #245182 15.97%, #253959 109.62%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+
+    .logo-title {
+      margin-left: 6px;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title-big {
+      margin: 0px;
+      padding: 0px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo-title-small {
+      margin: 0px;
+      padding: 4px 0 0 0;
+      font-weight: 200;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+  }
+
+  .logo-solo {
+    height: 42px;
+    margin-left: 38px;
+  }
+
+  .nav {
+    display: flex;
+    margin: auto 0;
+  }
+
+  .nav li {
+    margin: auto;
+    font-style: normal;
+    font-weight: bold;
+    list-style: none;
+    color: white;
+    a {
+      color: white;
+      font-size: 12px;
+      padding-right: 58px;
+    }
+  }
+
   @media screen and (max-width: 750px) {
     .bg-title-info {
       display: none;
@@ -431,6 +475,14 @@
     }
 
     .landing-logo {
+      display: none;
+    }
+
+    .footer-logo {
+      display: none;
+    }
+
+    .profile {
       display: none;
     }
   }
