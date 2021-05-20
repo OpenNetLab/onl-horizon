@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {Row, Table} from "antd";
+import { Row, Table } from "antd";
 import '../../styles/Self.scss';
-import {getLatest3} from "../../backend/api";
+import { getLatest3 } from "../../backend/api";
 
 const Self = () => {
   const [data, setData] = useState([]);
@@ -10,22 +10,22 @@ const Self = () => {
     {
       title: 'Name',
       dataIndex: 'name',
-      key:'name',
+      key: 'name',
     },
     {
       title: 'Metrics(video score)',
       dataIndex: 'metricsVideo',
-      key:'metricsVideo',
+      key: 'metricsVideo',
     },
     {
       title: 'Metrics(audio score)',
       dataIndex: 'metricsAudio',
-      key:'metricsAudio',
+      key: 'metricsAudio',
     },
     {
       title: 'Metrics(network)',
       dataIndex: 'metricsAll',
-      key:'metricsAll',
+      key: 'metricsAll',
     },
     // {
     //   title: 'Rank',
@@ -54,13 +54,14 @@ const Self = () => {
   return (
     <div className="self-container">
       <Row justify="space-between">
-        <p className="title">Your submissions</p>
+        <p className="title">Submission List</p>
       </Row>
       <p className="info">Please check <a href="/jobs">Job List</a> for AlphaRTC logs.</p>
       <div className="table-wrapper">
         <Table
           dataSource={data}
           columns={columns}
+          pagination={false}
         />
       </div>
     </div>
