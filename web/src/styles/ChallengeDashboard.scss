@@ -1,21 +1,60 @@
 .challenge-content {
-  padding: 38px;
   background-color: white;
+
+  .self-wrapper {
+    margin-top: 78px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin: 20px 0;
+
+    a {
+      color: #02A5F4;
+      font-weight: bold;
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  .challenge-title {
+    font-size: 48px;
+    color: #062A4E;
+    font-weight: bold;
+  }
+
+  .line {
+    margin-top: 38px;
+    border-bottom: 3px solid black;
+  }
 
   .challenge-wrapper {
     padding: 42px;
-    background-color: #F8F8F8;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.2));
+    background-color: #F9FBFF;
+  }
+
+  .content-wrapper {
+    padding: 42px;
+  }
+
+  .md-wrapper {
+    background-color: #F2F8FF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 42px;
   }
 
   .intro-header {
-    text-align: center;
-    font-size: 48px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #0078d4;
+    color: #062A4E;
+    text-decoration: underline;
   }
 
   .row-wrapper {
@@ -24,42 +63,41 @@
   }
 
   .btn {
-    background: linear-gradient(315.63deg, #02A5F4 3.96%, #04B2EE 42.99%, #06C1E6 71.92%, #08CBE1 90.32%);
-    filter: drop-shadow(0px 0px 12px rgba(1, 86, 96, 0.169));
+    background: #266593;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     padding: 10px 0;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
-    margin: 50px 20px;
-    width: 280px;
+    margin: 50px 20px 50px 0;
+    width: 300px;
     text-align: center;
-    border-radius: 10px;
-    border: 2px solid darkgray;
+    border-radius: 2px;
+    // border: 2px solid darkgray;
   }
 
   .btn-website {
-    background: #266593;
-    filter: drop-shadow(0px 0px 12px rgba(1, 86, 96, 0.169));
+    background: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    color: white;
-    font-size: 30px;
+    color: #1D1D1D;
+    font-size: 24px;
     font-weight: bold;
-    margin: 50px 20px;
-    width: 380px;
+    margin: 50px 20px 50px 100px;
+    width: 320px;
     text-align: center;
-    border-radius: 10px;
-    border: 2px solid darkgray;
+    border-radius: 2px;
   }
 
   .info {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 24px;
-    color: rgb(87, 87, 87);
+    // text-align: center;
+    margin-bottom: 34px;
+    font-size: 16px;
+    color: black;
     margin-top: -58px;
     a {
       font-weight: bold;
-      text-decoration: underline;
+      color: #02A5F4;
     }
   }
 }
