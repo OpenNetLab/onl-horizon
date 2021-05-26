@@ -78,4 +78,17 @@
   .table-title {
     font-size: 16px;
   }
+
+  th {
+    text-align: center !important;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  .status {
+    text-align: left !important;
+    margin-left: 30%;
+  }
 }
