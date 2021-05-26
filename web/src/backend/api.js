@@ -1,6 +1,6 @@
 import {get, post, postFile, deleteData, patch} from './http';
 import * as Setting from "../utils/Setting";
-const multiDownload = require('multi-download');
+import multiFileGet from 'multi-file-get';
 
 // local test
 // const baseUrl = '/api'
@@ -124,7 +124,7 @@ export const getMachineLocations = () => {
 
 export const downloadMultipleFiles = (data) => {
   const urls = data.map(dataItem => `${baseUrl}/results/download/${dataItem.id}?filename=${dataItem.file}`);
-  multiDownload(urls);
+  multiFileGet(urls);
 };
 
 export const getMachineList = () => {

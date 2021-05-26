@@ -23,11 +23,11 @@ const InfoCard = (props) => {
       <div className="wrapper" style={{height:height, width:width}} >
         <Row className="title" justify="space-between">
           {title}
-          {showChart && (
+          {/* {showChart && (
             <Link to="/jobs">
               <button className="link">Job List</button>
             </Link>)
-          }
+          } */}
         </Row>
         <div className="line"></div>
         {showChart && <Row style={{marginTop: 0, paddingBottom:48}}>

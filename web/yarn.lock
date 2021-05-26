@@ -8166,6 +8166,11 @@ multi-download@^3.0.0:
   resolved "https://registry.npm.taobao.org/multi-download/download/multi-download-3.0.0.tgz#c169bcdb723d9c568856593a158a32d3d205d36a"
   integrity sha1-wWm823I9nFaIVlk6FYoy09IF02o=
 
+multi-file-get@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/multi-file-get/-/multi-file-get-1.1.0.tgz#60af64c2cb298d32dffd445e93ae7ac8cae05d96"
+  integrity sha512-6FeoleIhF8gXx/AC0LPu7lA1COsmyvm7U+YW9Uv10Yc+QW/u6OYnN5+gEQo32aHafHJuvWv4K1RiDPf9iBic+A==
+
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/multicast-dns-service-types/download/multicast-dns-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
