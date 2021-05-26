@@ -330,12 +330,12 @@ class App extends Component {
                   Create Job
                 </div>
               </Menu.Item> */}
-              <Menu.Item key="2" onClick={() => this.props.history.push("/jobs")}>
+              {/* <Menu.Item key="2" onClick={() => this.props.history.push("/jobs")}>
                 <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
                   <DatabaseOutlined />
                   Job List
                 </div>
-              </Menu.Item>
+              </Menu.Item> */}
             </>
         }
         {/* <SubMenu key="3" title="Activity" icon={<PlusOutlined />} style={{ paddingLeft: "10px", fontWeight: "bold" }}>
@@ -442,9 +442,9 @@ class App extends Component {
             >
               <Switch>
                 <Route exact path="/home" component={HomePage} />
-                {jobRoutes.map(
+                {/* {jobRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isJobAccessible()} {...route} />
-                )}
+                )} */}
                 {challengeRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isChallengeAccessible()} {...route} />
                 )}

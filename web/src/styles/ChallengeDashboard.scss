@@ -73,7 +73,11 @@
     width: 300px;
     text-align: center;
     border-radius: 2px;
-    // border: 2px solid darkgray;
+  }
+
+  .btn:hover {
+    background: linear-gradient(315.63deg, #02A5F4 3.96%, #04B2EE 42.99%, #06C1E6 71.92%, #08CBE1 90.32%);
+    color: #faedcd;
   }
 
   .btn-website {
@@ -87,6 +91,11 @@
     width: 320px;
     text-align: center;
     border-radius: 2px;
+  }
+
+  .btn-website:hover {
+    background: linear-gradient(315.63deg, #02A5F4 3.96%, #04B2EE 42.99%, #06C1E6 71.92%, #08CBE1 90.32%);
+    color: #faedcd;
   }
 
   .info {

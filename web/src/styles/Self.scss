@@ -3,7 +3,7 @@
     margin-top: 50px;
     height: 80px;
     max-height: 100px;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 36px;
     color: #062A4E;
     font-weight: bold;
@@ -14,8 +14,68 @@
     padding-bottom: 3px;
   }
 
+  .btn-download {
+    height: 36px;
+    padding: 4px;
+  }
+
+  .btn-download-disabled {
+    height: 36px;
+    padding: 4px;
+  }
+
   .btn-download:hover {
-    background-color: #D9D9D9;
-    border-radius: 5px;
+    background-color: #faedcd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #faedcd;
+  }
+
+  .suc {
+    background-color: #21C358;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+  }
+
+  .blank {
+    background-color: darkgray;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+  }
+
+  .run {
+    background-color: #0077b6;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    animation: bounce 2.4s linear infinite;
+  }
+
+  @keyframes bounce {
+    25% {
+      box-shadow: 0px 0px 6px 2px #55dde0;
+    }
+    50% {
+      box-shadow: 0px 0px 12px 4px #55dde0;
+    }
+    75% {
+      box-shadow: 0px 0px 6px 2px #55dde0;
+    }
+  }
+
+  .fail {
+    background-color: #E42828;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+  }
+
+  .table-title {
+    font-size: 16px;
   }
 }
