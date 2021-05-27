@@ -5,6 +5,7 @@ import { getLatest3 } from "../../backend/api";
 import btnDownload from "../../assets/download.png";
 import btnDownloadDisabled from "../../assets/download_disabled.png";
 import multiFileGet from 'multi-file-get';
+import { baseUrl } from "../../backend/api";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -32,7 +33,7 @@ const Self = () => {
     let urls = [];
     for (let i = 0; i < fileNames.length; i++) {
       if (fileNames[i] != []) {
-        urls.push("https://dev-api.opennetlab.org/api" + "/results/download/" + jobId + "?filename=" + fileNames[i]);
+        urls.push(baseUrl + "/results/download/" + jobId + "?filename=" + fileNames[i]);
       }
     }
     console.log(urls);
