@@ -15,6 +15,7 @@ const SubmitResult = (props) => {
   const [showSteps, setShowSteps] = useState(false);
 
   const showTryAgain = (sendStatus === ST.CREATE_FAILED) || (sendStatus === ST.RUN_FAILED);
+  const showList = sendStatus === ST.RUN_SUCCEEDED;
 
   let submitIcon = <StepsIcon type='checked' showLarge={sendStatus === ST.SUBMIT_SUCCEEDED || sendStatus === ST.CREATE_PROCESSING || sendStatus === ST.CREATE_WAITING} />;
 
@@ -157,7 +158,8 @@ const SubmitResult = (props) => {
         </CSSTransition>
       </div>
       <div className="footer">
-        {showTryAgain ? (<div>Please  <span className="link-text" onClick={setFirst}>Create</span> again later</div>) : (<p>{countTime}s</p>)}
+        {showTryAgain ? (<div>Please <span className="link-text" onClick={setFirst}><b>Create</b></span> again later.</div>) : null}
+        {showList ? (<div>Please check the <a href="/challenge"><b>job list</b></a> for AlphaRTC logs.</div>) : null}
       </div>
     </div>
   );
