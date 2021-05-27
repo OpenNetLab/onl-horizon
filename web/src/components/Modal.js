@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ReactCSSTransitionGroup from 'react-transition-group';
 import '../styles/Modal.scss';
 import {Button, Space, Switch, Table} from "antd";
+import { baseUrl } from "../backend/api";
 
 const Modal = (props) => {
   const [checkStrictly, setCheckStrictly] = React.useState(false);
@@ -93,7 +94,7 @@ const Modal = (props) => {
     handleConfirm(willDownloadFiles);
   };
   const handleFileClick = (fileObj) => {
-    const url = 'https://dev-api.opennetlab.org/api' + '/results/download/' + fileObj.id + '?filename=' + fileObj.name;
+    const url = baseUrl + '/results/download/' + fileObj.id + '?filename=' + fileObj.name;
     var temporaryDownloadLink = document.createElement("a");
     temporaryDownloadLink.style.display = 'none';
     document.body.appendChild(temporaryDownloadLink);
