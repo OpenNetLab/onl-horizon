@@ -7,10 +7,10 @@ import multiFileGet from 'multi-file-get';
 // vm test
 
 // Production Env
-export const baseUrl = 'https://api.opennetlab.org/api';
+// export const baseUrl = 'https://api.opennetlab.org/api';
 
 // DEV Env
-// export const baseUrl = 'https://dev-api.opennetlab.org/api';
+export const baseUrl = 'https://dev-api.opennetlab.org/api';
 
 // create job
 export const sendCreateJobReq = (params = {}) => {
