@@ -34,12 +34,12 @@ import "../styles/index.scss";
 import HowTo from './challenge/HowTo';
 import { urlAlphabet } from 'nanoid';
 import logo from '../assets/ONL-Logo.png';
+import { imgBaseUrl } from '../utils/Setting';
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
-const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
-const human = `${bgUrl}human.png`;
-const box = `${bgUrl}pic-box.png`;
+const human = `${imgBaseUrl}human.png`;
+const box = `${imgBaseUrl}pic-box.png`;
 
 // todo: divide the code
 class App extends Component {

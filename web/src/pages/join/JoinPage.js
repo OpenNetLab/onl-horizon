@@ -4,32 +4,32 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "../../styles/AboutPage.scss";
 import nextOne from "../../assets/nextOne.png";
+import { imgBaseUrl } from '../../utils/Setting';
 
 export default function JoinPage () {
-  const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
-  const photo1 = `${bgUrl}Group 60.png`;
-  const photo2 = `${bgUrl}Group 61.png`;
-  const photo3 = `${bgUrl}Group 62.png`;
-  const photo4 = `${bgUrl}Group 63.png`;
-  const photo5 = `${bgUrl}Group 64.png`;
-  const photo6 = `${bgUrl}Group 65.png`;
-  const photo7 = `${bgUrl}Group 66.png`;
+  const photo1 = `${imgBaseUrl}Group 60.png`;
+  const photo2 = `${imgBaseUrl}Group 61.png`;
+  const photo3 = `${imgBaseUrl}Group 62.png`;
+  const photo4 = `${imgBaseUrl}Group 63.png`;
+  const photo5 = `${imgBaseUrl}Group 64.png`;
+  const photo6 = `${imgBaseUrl}Group 65.png`;
+  const photo7 = `${imgBaseUrl}Group 66.png`;
 
   var imgUrls = [photo1, photo2, photo3, photo4, photo5, photo6, photo7];
 
   const ellipseUrls = [];
 
-  ellipseUrls.push({url: `${bgUrl}Ellipse 48.png`, name: "Hao Chen"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 38.png`, name: "Beibei Shi"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 39.png`, name: "Miran Lee"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 41.png`, name: "Lidong Zhou"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 40.png`, name: "Xin Ma"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 42.png`, name: "Johannes Gehrke"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 47.png`, name: "Yunyun Jiang"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 44.png`, name: "Ru Ma"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 45.png`, name: "Peng Cheng"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 46.png`, name: "Lily Sun"});
-  ellipseUrls.push({url: `${bgUrl}Ellipse 43.png`, name: "Yongqiang Xiong"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 48.png`, name: "Hao Chen"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 38.png`, name: "Beibei Shi"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 39.png`, name: "Miran Lee"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 41.png`, name: "Lidong Zhou"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 40.png`, name: "Xin Ma"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 42.png`, name: "Johannes Gehrke"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 47.png`, name: "Yunyun Jiang"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 44.png`, name: "Ru Ma"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 45.png`, name: "Peng Cheng"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 46.png`, name: "Lily Sun"});
+  ellipseUrls.push({url: `${imgBaseUrl}Ellipse 43.png`, name: "Yongqiang Xiong"});
 
   const imgs = imgUrls.map((item, index) => {
     return (

@@ -3,13 +3,15 @@ import "../../styles/AboutPage.scss";
 import { Tabs } from "antd";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { imgBaseUrl } from "../../utils/Setting";
 
 export default function AboutPage () {
-  const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
-  const human = `${bgUrl}human.png`;
-  const box = `${bgUrl}pic-box.png`;
-  const aboutBg = `${bgUrl}about-bg.png`;
-  const earth = `${bgUrl}earth.png`;
+  const human = `${imgBaseUrl}human.png`;
+  const box = `${imgBaseUrl}pic-box.png`;
+  const aboutBg = `${imgBaseUrl}about-bg.png`;
+  const earth = `${imgBaseUrl}earth.png`;
+  const aboutPic1 = `${imgBaseUrl}about-pic1.png`;
+  const aboutPic2 = `${imgBaseUrl}about-pic2.png`;
   const { TabPane } = Tabs;
 
   return (
@@ -20,7 +22,7 @@ export default function AboutPage () {
           <br />
           <p className="title big-title">ABOUT US</p>
           <div className="row margin-top">
-            <img className="pic" src="https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/about-pic1.png"/>
+            <img className="pic" src={aboutPic1}/>
             <div className="text">
               <img className="pic-small" src={human} />
               <img className="pic-box" src={box} />
@@ -39,7 +41,7 @@ export default function AboutPage () {
               </div>
               We expect to join hands with communities, universities, and enterprises in an effort to build an open large-scale distributed networking platform as the first step, and then we expect to build a common benchmarking dataset in the networking area, encouraging more and more researchers to join us so that we can boost the networking research base on OpenNetLab and establish a healthy and sustainable networking research ecosystem.
             </div>
-            <img className="pic" src="https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/about-pic2.png"/>
+            <img className="pic" src={aboutPic2}/>
           </div>
         </div>
         <div className="content-next">
