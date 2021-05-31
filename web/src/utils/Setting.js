@@ -5,6 +5,8 @@ import {msalConfig} from "../auth/authConfig";
 
 export let ServerUrl = '';
 
+export const imgBaseUrl = "https://cdn.opennetlab.org/img/";
+
 export const pca = new PublicClientApplication(msalConfig);
 
 export function initServerUrl() {

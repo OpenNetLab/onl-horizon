@@ -9,17 +9,17 @@ import { useHistory } from "react-router-dom";
 import { MsalContext } from "@hsluoyz/msal-react";
 import '../../styles/Landing.scss';
 import logo from "../../assets/ONL-Logo.png";
+import { imgBaseUrl } from '../../utils/Setting';
 
 const Landing = () => {
-  const bgUrl = "https://cdn.jsdelivr.net/gh/OpenNetLab/static@latest/img/";
-  const mmsys = `${bgUrl}mmsys.png`;
-  const icon1 = `${bgUrl}icon-1.png`;
-  const icon2 = `${bgUrl}icon-2.png`;
-  const icon3 = `${bgUrl}icon-3.png`;
-  const icon4 = `${bgUrl}icon-4.png`;
-  const photo = `${bgUrl}photo.png`;
-  const background = `${bgUrl}bg.png`;
-  const bgBottom = `${bgUrl}bg-bottom.png`;
+  const mmsys = `${imgBaseUrl}mmsys.png`;
+  const icon1 = `${imgBaseUrl}icon-1.png`;
+  const icon2 = `${imgBaseUrl}icon-2.png`;
+  const icon3 = `${imgBaseUrl}icon-3.png`;
+  const icon4 = `${imgBaseUrl}icon-4.png`;
+  const photo = `${imgBaseUrl}photo.png`;
+  const background = `${imgBaseUrl}bg.png`;
+  const bgBottom = `${imgBaseUrl}bg-bottom.png`;
 
   const history = useHistory();
   const msalContext = useContext(MsalContext);
