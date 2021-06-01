@@ -106,12 +106,12 @@ export const signUp = (params) => {
     });
 };
 
-export const getMyJobStates = (userId = Setting.getUserId()) => {
-  return get(`${baseUrl}/display/jobStatistics?userId=${userId}`);
+export const getMyJobStates = () => {
+  return get(`${baseUrl}/display/jobStatistics?type=1`);
 };
 
 export const getGlobalJobStates = () => {
-  return get(`${baseUrl}/display/jobStatistics`);
+  return get(`${baseUrl}/display/jobStatistics?type=0`);
 };
 
 export const getGlobalMachineStates = () => {

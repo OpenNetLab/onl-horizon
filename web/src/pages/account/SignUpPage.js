@@ -57,7 +57,7 @@ const SignUpPage = (props) => {
     console.log(params);
     signUp(params)
       .then(()=>{
-        history.push("/");
+        Setting.goToLink('/home');
       });
   };
 
