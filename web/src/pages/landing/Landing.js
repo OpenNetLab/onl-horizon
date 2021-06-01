@@ -232,7 +232,7 @@ const Landing = () => {
             </p>
           </div>
         }
-        <a href="/home"><img className="join" src={join} /></a>
+        <a href="/join"><img className="join" src={join} /></a>
       </div>
       <img className="bg-bottom" src={bgBottom} />
       <div className="about-join-container">

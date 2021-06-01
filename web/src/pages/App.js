@@ -518,7 +518,7 @@ class App extends Component {
           title={
             <div>
               <CloseCircleTwoTone style={{ marginRight: "10px" }} twoToneColor={"rgb(225,107,88)"} />
-              Please sign up to visit the website.
+              Please sign up to visit the website, or re-login to get the latest permissions.
             </div>
           }
           visible={true}
@@ -526,6 +526,9 @@ class App extends Component {
           footer={[
             <Button key="signup" type="primary" onClick={() => this.props.history.push("/signup")}>
               Signup
+            </Button>,
+            <Button key="logout" type="default" onClick={this.logout}>
+              Logout
             </Button>,
           ]}
         >
