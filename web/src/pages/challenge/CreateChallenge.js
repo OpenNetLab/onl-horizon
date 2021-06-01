@@ -33,15 +33,22 @@ const CreateChallenge = () => {
 
     createChallenge(params['name'])
       .then(res => {
-        statusFlow.push(ST.CREATE_SUCCEEDED);
-        console.log('create', params);
+        if (res.status != 4) {
+          statusFlow.push(ST.CREATE_SUCCEEDED);
+        } else {
+          statusFlow.push(ST.CREATE_FAILED);
+        }
         return runChallenge(res.id, params);
       }, err => {
         statusFlow.push(ST.CREATE_FAILED);
         return new Promise(()=>{});
       })
       .then(res => {
-        statusFlow.push(ST.RUN_SUCCEEDED);
+        if (res.status != 4) {
+          statusFlow.push(ST.RUN_SUCCEEDED);
+        } else {
+          statusFlow.push(ST.RUN_FAILED);
+        }
       }, err => {
         statusFlow.push(ST.RUN_FAILED);
       })
