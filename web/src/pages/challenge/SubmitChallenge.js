@@ -72,7 +72,7 @@ const SubmitChallenge = (props) => {
               title="Name"
               placeholder="Model Name"
               handleChange={setTitle}
-              widthRange={[200, 1200]}
+              widthRange={[200, 292]}
               showError={checkValid && !titleValid}
               errorText="Please enter your name"
               isAdaptive={true}
