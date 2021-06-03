@@ -127,6 +127,29 @@ export const downloadMultipleFiles = (data) => {
   multiFileGet(urls);
 };
 
+// Download file with Authorization Header
+export const downLoadByUrl = (url) => {
+  var xhh = new XMLHttpRequest();
+  xhh.open("get", url);
+  xhh.setRequestHeader("Authorization", Setting.getAuthorizationHeader());
+  xhh.setRequestHeader("Content-Type", "application/json");
+  xhh.responseType = 'blob';
+  xhh.onload = function () {
+    if (this.status === 200) {
+      var blob = this.response;
+      var reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onload = function (e) {
+        var a = document.createElement('a');
+        a.download = url.split("?filename=")[1];
+        a.href = e.target.result;
+        a.click();
+      };
+    }
+  };
+  xhh.send();
+};
+
 export const getMachineList = () => {
   // return get('https://private-b088c9-v2onlapi.apiary-mock.com/api/availableMachineList');
   return get(`${baseUrl}/display/availableMachineList`);

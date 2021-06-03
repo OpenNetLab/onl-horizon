@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Row, Table } from "antd";
 import '../../styles/Self.scss';
-import { getLatest3 } from "../../backend/api";
+import { getLatest3, baseUrl, downLoadByUrl } from "../../backend/api";
 import btnDownload from "../../assets/download.png";
 import btnDownloadDisabled from "../../assets/download_disabled.png";
-import multiFileGet from 'multi-file-get';
-import { baseUrl } from "../../backend/api";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -33,11 +31,13 @@ const Self = () => {
     let urls = [];
     for (let i = 0; i < fileNames.length; i++) {
       if (fileNames[i] != []) {
-        urls.push(baseUrl + "/results/download/" + jobId + "?filename=" + fileNames[i]);
+        urls.push(baseUrl + "/display/downloadFile/" + jobId + "?filename=" + fileNames[i]);
       }
     }
     console.log(urls);
-    multiFileGet(urls);
+    for (let i = 0; i < urls.length; i++) {
+      downLoadByUrl(urls[i]);
+    }
   };
 
   const columns = [
@@ -106,7 +106,7 @@ const Self = () => {
       render: (text, record) => (
         <>
           {
-            record.fileName == null ?  <img className="btn-download-disabled" src={btnDownloadDisabled} /> : <a><img className="btn-download" src={btnDownload} onClick={() => handleDownload(record.jobId, record.fileName)}/></a>
+            record.fileName == null || record.status != 3 ? <img className="btn-download-disabled" src={btnDownloadDisabled} /> : <a><img className="btn-download" src={btnDownload} onClick={() => handleDownload(record.jobId, record.fileName)}/></a>
           }
         </>
       ),
