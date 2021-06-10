@@ -8,7 +8,8 @@ import {
   InfoCircleTwoTone,
   LogoutOutlined, PlusOutlined,
   SettingOutlined,
-  FileSearchOutlined
+  FileSearchOutlined,
+  UserAddOutlined
 } from '@ant-design/icons';
 import { Avatar, BackTop, Button, Dropdown, Layout, Menu, Modal } from 'antd';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
@@ -87,6 +88,8 @@ class App extends Component {
       return "3";
     } else if (uri.includes('howto')) {
       return "4";
+    } else if (uri.includes('admin')) {
+      return "8";
     } else {
       return "-1";
     }
@@ -324,18 +327,18 @@ class App extends Component {
         {
           !Setting.isJobAccessible() ? null :
             <>
-              {/* <Menu.Item key="1" onClick={() => this.props.history.push("/jobs/create")}>
+              <Menu.Item key="1" onClick={() => this.props.history.push("/jobs/create")}>
                 <div style={{paddingLeft: "10px", fontWeight: "bold"}}>
                   <FileAddOutlined />
                   Create Job
                 </div>
-              </Menu.Item> */}
-              {/* <Menu.Item key="2" onClick={() => this.props.history.push("/jobs")}>
+              </Menu.Item>
+              <Menu.Item key="2" onClick={() => this.props.history.push("/jobs")}>
                 <div style={{ paddingLeft: "10px", fontWeight: "bold" }}>
                   <DatabaseOutlined />
                   Job List
                 </div>
-              </Menu.Item> */}
+              </Menu.Item>
             </>
         }
         {/* <SubMenu key="3" title="Activity" icon={<PlusOutlined />} style={{ paddingLeft: "10px", fontWeight: "bold" }}>
@@ -384,6 +387,11 @@ class App extends Component {
                 Course
               </div>
             </Menu.Item>
+        }
+        {
+          !Setting.isAdmin() ? null :
+            <SubMenu key="8" title="Admin" icon={<UserAddOutlined />} style={{ paddingLeft: "10px", fontWeight: "bold" }}>
+            </SubMenu>
         }
         <img className="human" src={human} />
         <img className="box" src={box} />
@@ -442,9 +450,9 @@ class App extends Component {
             >
               <Switch>
                 <Route exact path="/home" component={HomePage} />
-                {/* {jobRoutes.map(
+                {jobRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isJobAccessible()} {...route} />
-                )} */}
+                )}
                 {challengeRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isChallengeAccessible()} {...route} />
                 )}
