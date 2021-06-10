@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as Setting from "../utils/Setting";
+import { message } from 'antd';
 
 /* change the base url based on the environment
 if (process.env.NODE_END == 'development') {
@@ -14,7 +15,7 @@ else if (process.env.NODE_END == 'production') {
 }*/
 
 
-// defalut timeout
+// default timeout
 axios.defaults.timeout = 100000;
 
 // set header of post request
@@ -32,6 +33,22 @@ axios.interceptors.request.use(
 
     }
 )*/
+
+axios.interceptors.response.use(
+  response => {
+    let res = response.data;
+
+    if (res.code != 0 && res.code != null) {
+      res.msg != null ? message.error(`${res.code}: ${res.msg}`, 10) : message.error(`${res.code}`, 10);
+      return null;
+    }
+
+    return res;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
 
 function getAxiosConfig(params, data) {
   const authHeader = Setting.getAuthorizationHeader();
