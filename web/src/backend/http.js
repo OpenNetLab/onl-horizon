@@ -40,6 +40,7 @@ axios.interceptors.response.use(
 
     if (res.code != 0 && res.code != null) {
       res.msg != null ? message.error(`${res.code}: ${res.msg}`, 10) : message.error(`${res.code}`, 10);
+      return null;
     }
 
     return res;
