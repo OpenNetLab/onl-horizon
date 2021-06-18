@@ -512,7 +512,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The platform for challenge user is coming soon.<br />
+          The platform for challenge user is released.<br />
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br />
           please email us: feedback(at)opennetlab.org
         </Modal>
@@ -540,7 +540,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The platform for challenge user is coming soon.<br />
+          The platform for challenge user is released.<br />
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br />
           please email us: feedback(at)opennetlab.org
         </Modal>
