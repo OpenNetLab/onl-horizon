@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Button, Upload, message, Col, Row } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
 import AdvInput from "../../components/AdvInput";
 import { nanoid } from 'nanoid';
 import '../../styles/SubmitChallenge.scss';
@@ -37,6 +38,9 @@ const SubmitChallenge = (props) => {
   const uploadParams = {
     name: 'file',
     accept: 'application/zip',
+    itemRender: () => {
+      null;
+    },
     beforeUpload: (file) => {
       console.log(file.type);
       setIsZip(true);
@@ -53,6 +57,12 @@ const SubmitChallenge = (props) => {
     },
   };
 
+  let handleReset = () => {
+    setIsModel(false);
+    setModelFileName('Model Path');
+    setIsZip(false);
+  };
+
   const titleValid = useMemo(() => {
     return title;
   }, [title]);
@@ -63,46 +73,45 @@ const SubmitChallenge = (props) => {
 
   return (
     <div className="submit-challenge-container">
-      <Row className="content-zone" justify="center">
-        <Col span={20}>
-          <p className="title">Challenge</p>
-          <div className="model-name">
-            <AdvInput
-              type="normal"
-              title="Name"
-              placeholder="Model Name"
-              handleChange={setTitle}
-              widthRange={[200, 292]}
-              showError={checkValid && !titleValid}
-              errorText="Please enter your name"
-              isAdaptive={true}
-              height="40px"
-            />
-          </div>
-
-          <Row className="model">
-            <AdvInput
-              type="normal"
-              title="Model Upload (.zip)"
-              placeholder={modelFileName}
-              widthRange={[200, 400]}
-              showError={checkValid && !modelValid}
-              errorText="Please upload your model"
-              isAdaptive={false}
-              height="40px"
-              disabled={true}
-            />
-            <div className="upload">
-              <Upload {...uploadParams} >
-                <Button disabled={isModel}>Browse</Button>
-              </Upload>
-            </div>
-          </Row>
-        </Col>
+      <div className="title-container">
+        <p className="title">Challenge</p>
+        <p className="title-info">Create a new challenge.</p>
+      </div>
+      <div className="model-name">
+        <AdvInput
+          type="normal"
+          title="Name"
+          placeholder="Model Name"
+          handleChange={setTitle}
+          widthRange={[500, 500]}
+          showError={checkValid && !titleValid}
+          errorText="Please enter your name"
+          isAdaptive={true}
+          height="40px"
+        />
+      </div>
+      <Row className="model">
+        <AdvInput
+          type="normal"
+          title="Model Upload (.zip)"
+          placeholder={modelFileName}
+          widthRange={[390, 600]}
+          showError={checkValid && !modelValid}
+          errorText="Please upload your model"
+          isAdaptive={true}
+          height="40px"
+          disabled={true}
+        />
+        <div className="upload">
+          <Upload {...uploadParams} >
+            <Button type="primary" className="button-browse" disabled={isModel}>Browse</Button>
+          </Upload>
+          {isModel && <Button type="primary" className="button-inline" onClick={handleReset}><DeleteOutlined /></Button>}
+        </div>
       </Row>
-      <Row justify="end">
-        <Col span={4}>
-          <Button type="primary" onClick={onClickNext} disabled={!isZip}>NEXT</Button>
+      <Row justify="center">
+        <Col>
+          <Button className="next-btn" type="primary" onClick={onClickNext} disabled={!isZip}>Submit</Button>
         </Col>
       </Row>
     </div>

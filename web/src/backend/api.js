@@ -133,10 +133,12 @@ export const downLoadByUrl = (url) => {
   xhh.open("get", url);
   xhh.setRequestHeader("Authorization", Setting.getAuthorizationHeader());
   xhh.setRequestHeader("Content-Type", "application/json");
-  xhh.responseType = 'blob';
+  xhh.responseType = 'json';
   xhh.onload = function () {
     if (this.status === 200) {
-      var blob = this.response;
+      var file = this.response.data.fileContents;
+      let content = window.atob(file);
+      var blob = new Blob([content]);
       var reader = new FileReader();
       reader.readAsDataURL(blob);
       reader.onload = function (e) {
