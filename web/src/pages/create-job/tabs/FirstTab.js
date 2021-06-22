@@ -59,8 +59,8 @@ const FirstTab = (props) => {
               value={appType}
               size="large"
               handleChange={setType}
-              options={['AlphaRTC', 'Probing', 'Advanced']}
-              optionsValue={['WebRTC', 'Iperf', 'Advanced']}
+              options={['Probing', 'AlphaRTC', 'Advanced']}
+              optionsValue={['Iperf', 'WebRTC', 'Advanced']}
               errorText={"Please choose job type"}
               showError={checkValid && !appType}
               isAdaptive={true}

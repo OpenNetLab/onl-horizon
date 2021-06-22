@@ -111,9 +111,9 @@ const Landing = () => {
                 A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br /><br />
                 Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
               </p>
-              <a href="/home" className="links">THE PLATFORM FOR CHALLENGE IS COMING SOON</a>
-              {/* <img className="arrow" src={arrow}/>
-              <img className="arrow" src={arrow}/> */}
+              <a href="/home" className="links">WELCOME TO LOGIN</a>
+              <img className="arrow" src={arrow}/>
+              <img className="arrow" src={arrow}/>
             </div>
             <div className="challenge-pics">
               <a href="https://2021.acmmmsys.org/rtc_challenge.php" className="linksInRect" target="_blank">More Information</a>
