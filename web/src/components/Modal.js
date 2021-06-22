@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-transition-group';
 import '../styles/Modal.scss';
 import {Button, Space, Switch, Table} from "antd";
 import { baseUrl } from "../backend/api";
-import { downLoadByUrl } from '../backend/api';
+import { downloadFile } from '../backend/api';
 
 const Modal = (props) => {
   const [checkStrictly, setCheckStrictly] = React.useState(false);
@@ -40,14 +40,16 @@ const Modal = (props) => {
       curJob.id = jobs[i].jobId;
       const filesPath = [];
       for (let file of jobs[i].files) {
-        const fileObj = {};
-        fileObj.key = `${i}-${filesPath.length}`;
-        fileObj.name = file;
-        fileObj.isFile = true;
-        fileObj.id = curJob.id;
-        filesPath.push(fileObj);
-        keyToFile.set(fileObj.key, file);
-        keyToId.set(fileObj.key, fileObj.id);
+        if (file != "") {
+          const fileObj = {};
+          fileObj.key = `${i}-${filesPath.length}`;
+          fileObj.name = file;
+          fileObj.isFile = true;
+          fileObj.id = curJob.id;
+          filesPath.push(fileObj);
+          keyToFile.set(fileObj.key, file);
+          keyToId.set(fileObj.key, fileObj.id);
+        }
       }
       curJob.children = filesPath;
       retData.push(curJob);
@@ -98,7 +100,7 @@ const Modal = (props) => {
 
   const handleFileClick = (fileObj) => {
     const url = baseUrl + '/display/downloadFile/' + fileObj.id + '?filename=' + fileObj.name;
-    downLoadByUrl(url);
+    downloadFile(url);
   };
 
   return visible && (

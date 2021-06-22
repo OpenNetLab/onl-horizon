@@ -123,31 +123,36 @@ export const getMachineLocations = () => {
 };
 
 export const downloadMultipleFiles = (data) => {
-  const urls = data.map(dataItem => `${baseUrl}/results/download/${dataItem.id}?filename=${dataItem.file}`);
+  const urls = data.map(dataItem => `${baseUrl}/display/downloadFile/${dataItem.id}?filename=${dataItem.file}`);
   for (let i = 0; i < urls.length; i++) {
-    var xhh = new XMLHttpRequest();
-    xhh.open("get", urls[i]);
-    xhh.setRequestHeader("Authorization", Setting.getAuthorizationHeader());
-    xhh.setRequestHeader("Content-Type", "application/json");
-    xhh.responseType = 'blob';
-    xhh.onload = function () {
-      if (this.status === 200) {
-        var blob = this.response;
-        var reader = new FileReader();
-        reader.readAsDataURL(blob);
-        reader.onload = function (e) {
-          var a = document.createElement('a');
-          a.download = urls[i].split("?filename=")[1];
-          a.href = e.target.result;
-          a.click();
-        };
-      }
-    };
-    xhh.send();
+    downloadFile(urls[i]);
   }
 };
 
-// Download file with Authorization Header
+// Download file by url with Authorization Header in job detail page
+export const downloadFile = (url) => {
+  var xhh = new XMLHttpRequest();
+  xhh.open("get", url);
+  xhh.setRequestHeader("Authorization", Setting.getAuthorizationHeader());
+  xhh.setRequestHeader("Content-Type", "application/json");
+  xhh.responseType = 'blob';
+  xhh.onload = function () {
+    if (this.status === 200) {
+      var blob = this.response;
+      var reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onload = function (e) {
+        var a = document.createElement('a');
+        a.download = url.split("?filename=")[1];
+        a.href = e.target.result;
+        a.click();
+      };
+    }
+  };
+  xhh.send();
+};
+
+// Download file with Authorization Header in challenge page
 export const downLoadByUrl = (url) => {
   var xhh = new XMLHttpRequest();
   xhh.open("get", url);
