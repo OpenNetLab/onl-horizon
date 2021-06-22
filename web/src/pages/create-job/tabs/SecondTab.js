@@ -100,12 +100,12 @@ const SecondTab = (props) => {
     timeout:initTimeout, mode:initMode, tcpWindowSize:initTcpWindowSize,
     tcpControl: initTcpControl, mss: initMss, bandwidth: initBandWidth} = props.params;
   const [interval, setInterval] = useState(initInterval ? initInterval : 1);
-  const [buffer, setBuffer] = useState( initBufferLen ? initBufferLen : 8);
+  const [buffer, setBuffer] = useState( initBufferLen ? initBufferLen : 32);
   const [probingTimeout, setProbingTimeout] = useState(initTimeout ? initTimeout: 10);
   const [mode, setMode] = useState(initMode ? initMode : 'tcp');
   // probing -> TCP
-  const [tcpWindowSize, setTcpWindowSize] = useState(initTcpWindowSize ? initTcpWindowSize : 2048);
-  const [mss, setMss] = useState(initMss ? initMss : 1400);
+  const [tcpWindowSize, setTcpWindowSize] = useState(initTcpWindowSize ? initTcpWindowSize : 10);
+  const [mss, setMss] = useState(initMss ? initMss : 2000);
   const [tcpControl, setTcpControl] = useState(initTcpControl ? initTcpControl : 'reno');
   // probing -> UDP
   const [bandwidth, setBandwidth] = useState(initBandWidth ? initBandWidth : 10000);
