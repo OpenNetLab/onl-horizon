@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-transition-group';
 import '../styles/Modal.scss';
 import {Button, Space, Switch, Table} from "antd";
 import { baseUrl } from "../backend/api";
-import { downloadFile } from '../backend/api';
+import { downLoadByUrl } from '../backend/api';
 
 const Modal = (props) => {
   const [checkStrictly, setCheckStrictly] = React.useState(false);
@@ -100,7 +100,7 @@ const Modal = (props) => {
 
   const handleFileClick = (fileObj) => {
     const url = baseUrl + '/display/downloadFile/' + fileObj.id + '?filename=' + fileObj.name;
-    downloadFile(url);
+    downLoadByUrl(url);
   };
 
   return visible && (

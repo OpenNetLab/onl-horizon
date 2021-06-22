@@ -125,7 +125,7 @@ export const getMachineLocations = () => {
 export const downloadMultipleFiles = (data) => {
   const urls = data.map(dataItem => `${baseUrl}/display/downloadFile/${dataItem.id}?filename=${dataItem.file}`);
   for (let i = 0; i < urls.length; i++) {
-    downloadFile(urls[i]);
+    downLoadByUrl(urls[i]);
   }
 };
 

@@ -127,7 +127,7 @@ const CreateJob = () => {
           timeout:  params && params.timeout,
           bufferLen:  params && params.bufferLen,
         },
-        UserName: "test"
+        UserName: "onl"
       };
       if (params.mode === 'tcp') {
         runIperfParams.AppParams.tcpWindowSize =  params && params.tcpWindowSize;
