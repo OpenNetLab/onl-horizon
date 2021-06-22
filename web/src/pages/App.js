@@ -32,7 +32,6 @@ import { loginRequest } from "../auth/authConfig";
 import { isJobAccessible, isChallengeAccessible, isAdmin } from "../utils/Setting";
 import Footer from "../components/Footer";
 import "../styles/index.scss";
-import HowTo from './challenge/HowTo';
 import { urlAlphabet } from 'nanoid';
 import logo from '../assets/ONL-Logo.png';
 import { imgBaseUrl } from '../utils/Setting';
@@ -463,7 +462,6 @@ class App extends Component {
                 {/*<Route exact path="/jobs" component={JobListPage}/>*/}
                 {/*<Route path="/jobs/detail/:id" component={JobDetail}/>*/}
                 <Route exact path="/account" component={AccountPage} />
-                <Route exact path="/howto" component={HowTo} />
                 {/*<Route exact path="/challenge" component={ChallengeDashboard}/>*/}
                 {/*<Route exact path="/challenge/create" component={CreateChallenge}/>*/}
                 <Redirect to="/home" />
@@ -512,7 +510,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The platform for challenge user is coming soon.<br />
+          The platform for challenge user is released.<br />
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br />
           please email us: feedback(at)opennetlab.org
         </Modal>
@@ -540,7 +538,7 @@ class App extends Component {
             </Button>,
           ]}
         >
-          The platform for challenge user is coming soon.<br />
+          The platform for challenge user is released.<br />
           If you are a university professor or an institute researcher and willing to participate in the OpenNetLab project as a university/institute,<br />
           please email us: feedback(at)opennetlab.org
         </Modal>

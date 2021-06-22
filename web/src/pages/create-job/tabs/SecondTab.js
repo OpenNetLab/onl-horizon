@@ -106,7 +106,7 @@ const SecondTab = (props) => {
   // probing -> TCP
   const [tcpWindowSize, setTcpWindowSize] = useState(initTcpWindowSize ? initTcpWindowSize : 2048);
   const [mss, setMss] = useState(initMss ? initMss : 1400);
-  const [tcpControl, setTcpControl] = useState(initTcpControl ? initTcpControl : 'CTCP');
+  const [tcpControl, setTcpControl] = useState(initTcpControl ? initTcpControl : 'reno');
   // probing -> UDP
   const [bandwidth, setBandwidth] = useState(initBandWidth ? initBandWidth : 10000);
   const intervalTimeValid = useMemo(() => {
@@ -171,8 +171,8 @@ const SecondTab = (props) => {
           handleChange={setTcpControl}
           showError={checkValid && !tcpControl}
           errorText="Choose control method"
-          options={["CTCP"]}
-          optionsValue={["CTCP"]}
+          options={["Reno", "CUBIC", "BBR"]}
+          optionsValue={["reno", "cubic", "bbr"]}
         />
       </Col>
     </Row>

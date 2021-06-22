@@ -3,6 +3,7 @@ import ReactCSSTransitionGroup from 'react-transition-group';
 import '../styles/Modal.scss';
 import {Button, Space, Switch, Table} from "antd";
 import { baseUrl } from "../backend/api";
+import { downLoadByUrl } from '../backend/api';
 
 const Modal = (props) => {
   const [checkStrictly, setCheckStrictly] = React.useState(false);
@@ -90,19 +91,14 @@ const Modal = (props) => {
       }
     }
   ];
+
   const onHandleConfirmClick = () => {
     handleConfirm(willDownloadFiles);
   };
-  const handleFileClick = (fileObj) => {
-    const url = baseUrl + '/results/download/' + fileObj.id + '?filename=' + fileObj.name;
-    var temporaryDownloadLink = document.createElement("a");
-    temporaryDownloadLink.style.display = 'none';
-    document.body.appendChild(temporaryDownloadLink);
-    temporaryDownloadLink.setAttribute('href', url);
-    temporaryDownloadLink.setAttribute('download', fileObj.file);
-    temporaryDownloadLink.click();
-    document.body.removeChild(temporaryDownloadLink);
 
+  const handleFileClick = (fileObj) => {
+    const url = baseUrl + '/display/downloadFile/' + fileObj.id + '?filename=' + fileObj.name;
+    downLoadByUrl(url);
   };
 
   return visible && (
