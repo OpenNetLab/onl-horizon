@@ -39,7 +39,7 @@ export const allJobInfo = (userId = Setting.getUserId()) => {
 
 // delete job
 export const deleteJob = (jobId, data = {}, header = {}) => {
-  return deleteData(`${baseUrl}/jobs/${jobId}`, data, header);
+  return deleteData(`${baseUrl}/display/jobDetail/${jobId}`, data, header);
 };
 
 // restart job

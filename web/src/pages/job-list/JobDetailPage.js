@@ -2,7 +2,7 @@ import {Button, Col, Row, Table} from "antd";
 import React, {useEffect, useState} from "react";
 import moment from "moment";
 import * as momenttz from 'moment-timezone';
-import {downloadMultipleFiles, getJobInfo, getMachineDetail} from '../../backend/api';
+import {downloadMultipleFiles, getJobInfo, getMachineDetail, deleteJob} from '../../backend/api';
 import '../../styles/JobDetailPage.scss';
 import Modal from "../../components/Modal";
 import {useHistory} from "react-router-dom";
@@ -79,14 +79,14 @@ const JobDetail = (props) => {
   };
   const funcZone = (
     <div className="func-zone" onClick={showModalView} >
-      <Button type="default" id={0} className="logs-btn btn" disabled>
+      {/* <Button type="default" id={0} className="logs-btn btn" disabled>
         <span className="btn-text" id={0}>JOB LOGS</span>
       </Button>
       <Button type="default" id={1} className="clone-btn btn" disabled>
         <span className="btn-text" id={1}>CLONE</span>
-      </Button>
-      <Button type="default" id={2} className="stop-btn btn" disabled>
-        <span className="btn-text" id={2}>STOP</span>
+      </Button> */}
+      <Button type="default" id={2} className="stop-btn btn" disabled={false}>
+        <span className="btn-text" id={2}>DELETE</span>
       </Button>
       <Button type="default" id={3} className="download-btn btn" disabled={job.status !== "Succeeded"} >
         <span className="btn-text" id={3}>DOWNLOAD DATASET</span>
@@ -151,6 +151,15 @@ const JobDetail = (props) => {
     case 1:
       break;
     case 2:
+      console.log(job.id);
+      deleteJob(job.id)
+        .then(() => {
+          setShowModal(false);
+          window.location.href = "/jobs";
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       break;
     case 3:
       download(data);

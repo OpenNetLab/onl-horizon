@@ -272,13 +272,9 @@ const JobList = () => {
       />
       <Row justify="space-between">
         <p className="title">Job List</p>
-        <div className="func-wrapper">
-          {funcZone}
-        </div>
       </Row>
       <div className="table-wrapper">
         <Table
-          rowSelection={rowSelection}
           columns={columns}
           dataSource={data}
           loading={loading}
