@@ -52,7 +52,7 @@ const SubmitChallenge = (props) => {
       if (info.fileList.length > 0) {
         setIsModel(true);
         // If the current file (last file in fileList) is larger than 2MB, prompt that it may fail to run
-        if (info.fileList[info.fileList.length - 1].size >= 1 * 1024 * 1024) {
+        if (info.fileList[info.fileList.length - 1].size >= 2 * 1024 * 1024) {
           message.warning('File larger than 2MB may not be supported');
         }
       } else {
