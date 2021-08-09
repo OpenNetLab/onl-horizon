@@ -64,16 +64,21 @@ const JobDetail = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [btnId, setBtnId] = useState(0);
   const [downloadData, setDownloadData] = useState([]);
-  const btnToModalBtn = ['Stop', 'Start', 'Delete', 'Download'];
-  const btnToModalTitle = ['Stop Job', 'Start Job', 'Delete Job', 'Download Dataset'];
+  const btnToModalBtn = ['Stop', 'Start', 'Delete', 'Download', 'Delete'];
+  const btnToModalTitle = ['Stop Job', 'Start Job', 'Delete Job', 'Download Dataset', 'Delete a Running Job'];
   const slots = [
     'These jobs will stop. Are you sure?',
     'These jobs will start. Are you sure?',
-    'These jobs will be deleted. Are you sure?',
-    'Please choose files to download:'];
+    'This job will be deleted. Are you sure?',
+    'Please choose files to download:',
+    'This job is running. Are you sure to stop and delete it?'];
+
   const showModalView = (e) => {
     const curBtn = e.target;
-    const id = +curBtn.id;
+    let id = +curBtn.id;
+    if (id === 2 && job.status === "Running") {
+      id = 4;
+    }
     setBtnId(id);
     setShowModal(true);
   };
@@ -150,7 +155,8 @@ const JobDetail = (props) => {
       break;
     case 1:
       break;
-    case 2:
+    case 2: // Delete a non-running job
+    case 4: // Delete a running job
       console.log(job.id);
       deleteJob(job.id)
         .then(() => {
@@ -158,6 +164,8 @@ const JobDetail = (props) => {
           window.location.href = "/jobs";
         })
         .catch((err) => {
+          // Error message will prompt externally
+          setShowModal(false);
           console.log(err);
         });
       break;

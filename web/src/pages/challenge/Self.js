@@ -95,6 +95,9 @@ const Self = () => {
             status == "5" ? <div className="status"><div className="run"></div>&nbsp;&nbsp;<b>DeferSelection</b></div> : null
           }
           {
+            status == "6" ? <div className="status"><div className="run"></div>&nbsp;&nbsp;<b>Waiting</b></div> : null
+          }
+          {
             status == null ? <div className="status"><div className="blank"></div>&nbsp;&nbsp;<b style={{color:'#8e8e8e'}}>Unknown</b></div> : null
           }
         </>
