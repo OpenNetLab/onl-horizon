@@ -192,4 +192,5 @@ export const appTypeMap = {
 export const appTypeMapR = {
   WebRTC: "AlphaRTC",
   Iperf: "Probing",
+  ChallengeAlphaRTC: "Challenge",
 };
