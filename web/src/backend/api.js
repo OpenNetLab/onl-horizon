@@ -28,7 +28,7 @@ export const getJobInfo = (jobId) => {
 
 // get machine detail for one job
 export const getMachineDetail = (machineList) => {
-  return get(`${baseUrl}/display/machines?id=${machineList}`);
+  return get(`${baseUrl}/display/machines/${machineList}`);
 };
 
 // get job info list

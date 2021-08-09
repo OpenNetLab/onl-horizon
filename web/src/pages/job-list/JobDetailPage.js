@@ -25,23 +25,33 @@ const columns = [
 const hostColumns = [
   {
     title: 'GUID',
-    dataIndex:'guid',
-    key:'guid',
+    dataIndex:'id',
+    key:'id',
+    align: 'center',
   },
   {
     title: 'Name',
     dataIndex: 'name',
-    key: 'name'
+    key: 'name',
+    align: 'center',
   },
   {
     title: 'Network Type',
     dataIndex: 'networkType',
-    key: 'networkType'
+    key: 'networkType',
+    align: 'center',
   },
   {
     title: 'VM Spec',
     dataIndex: 'vmSpec',
-    key: 'vmSpec'
+    key: 'vmSpec',
+    align: 'center',
+  },
+  {
+    title: 'Location',
+    dataIndex: 'location',
+    key: 'location',
+    align: 'center',
   }
 ];
 const columnReflect = [
@@ -96,14 +106,12 @@ const JobDetail = (props) => {
   const  initData = (id) => {
     getJobInfo(id)
       .then(
-        (info) => {
+        async (info) => {
           handleJobInfo(info);
           console.log('1', info.machineList);
-          getMachineDetail(info.machineList);
-        })
-      .then(
-        (info) => setInfo(info)
-      );
+          const machineDetail = await getMachineDetail(info.machineList);
+          setInfo(machineDetail);
+        });
   };
   const download = (data) => {
     console.log(data);
@@ -218,6 +226,7 @@ const JobDetail = (props) => {
             dataSource={info}
             loading={loading}
             pagination={false}
+            locale={{emptyText: <div className="host-nodata-prompt">No machines assigned to this job</div>}}
           />
         </Col>
       </Row>
