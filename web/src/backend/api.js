@@ -38,8 +38,9 @@ export const allJobInfo = (userId = Setting.getUserId()) => {
 };
 
 // delete job
-export const deleteJob = (jobId, data = {}, header = {}) => {
-  return deleteData(`${baseUrl}/display/jobDetail/${jobId}`, data, header);
+// force: stop and delete a RUNNING job
+export const deleteJob = (jobId, data = {}, header = {}, force = true) => {
+  return deleteData(`${baseUrl}/display/jobDetail/${jobId}?force=${force}`, data, header);
 };
 
 // restart job

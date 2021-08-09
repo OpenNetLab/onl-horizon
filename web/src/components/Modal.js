@@ -39,16 +39,18 @@ const Modal = (props) => {
       curJob.name = jobs[i].title;
       curJob.id = jobs[i].jobId;
       const filesPath = [];
-      for (let file of jobs[i].files) {
-        if (file != "") {
-          const fileObj = {};
-          fileObj.key = `${i}-${filesPath.length}`;
-          fileObj.name = file;
-          fileObj.isFile = true;
-          fileObj.id = curJob.id;
-          filesPath.push(fileObj);
-          keyToFile.set(fileObj.key, file);
-          keyToId.set(fileObj.key, fileObj.id);
+      if(jobs[i].files) {
+        for (let file of jobs[i].files) {
+          if (file != "") {
+            const fileObj = {};
+            fileObj.key = `${i}-${filesPath.length}`;
+            fileObj.name = file;
+            fileObj.isFile = true;
+            fileObj.id = curJob.id;
+            filesPath.push(fileObj);
+            keyToFile.set(fileObj.key, file);
+            keyToId.set(fileObj.key, fileObj.id);
+          }
         }
       }
       curJob.children = filesPath;
