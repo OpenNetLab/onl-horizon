@@ -326,7 +326,7 @@ class App extends Component {
         {
           !Setting.isJobAccessible() ? null :
             <>
-              {/* <Menu.Item key="1" onClick={() => this.props.history.push("/jobs/create")}>
+              <Menu.Item key="1" onClick={() => this.props.history.push("/jobs/create")}>
                 <div style={{paddingLeft: "10px", fontWeight: "bold"}}>
                   <FileAddOutlined />
                   Create Job
@@ -337,7 +337,7 @@ class App extends Component {
                   <DatabaseOutlined />
                   Job List
                 </div>
-              </Menu.Item> */}
+              </Menu.Item>
             </>
         }
         {/* <SubMenu key="3" title="Activity" icon={<PlusOutlined />} style={{ paddingLeft: "10px", fontWeight: "bold" }}>
@@ -449,9 +449,9 @@ class App extends Component {
             >
               <Switch>
                 <Route exact path="/home" component={HomePage} />
-                {/* {jobRoutes.map(
+                {jobRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isJobAccessible()} {...route} />
-                )} */}
+                )}
                 {challengeRoutes.map(
                   (route) => <AuthRoute key={route.path} operation={isChallengeAccessible()} {...route} />
                 )}
