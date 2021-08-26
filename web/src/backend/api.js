@@ -174,13 +174,13 @@ export const createChallenge = (title) => {
   params['userId'] = Setting.getUserId();
   params['RequiredMachineNumber'] = 2;
   params['appType'] = "ChallengeAlphaRTC";
-  params['modeChoice'] = "AutoSelection";
   return post(`${baseUrl}/display/createJob`, params);
 };
 
 export const runChallengeApp = (jobId, runChallengeParams) => {
   runChallengeParams.AppParams.challengeId = Setting.getChallengeId();
   runChallengeParams.AppParams.userId = Setting.getUserId();
+  runChallengeParams.AppParams.modeChoice = "AutoSelection";
   console.log(runChallengeParams);
   return post(`${baseUrl}/display/runJob/${jobId}?appName=ChallengeAlphaRTC`, runChallengeParams);
 };
