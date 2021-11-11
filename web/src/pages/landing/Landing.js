@@ -109,7 +109,7 @@ const Landing = () => {
               <p className="title">OpenNetLab 2.0 – The Next-Gen Platform for AI-assisted Networking </p>
               <video src="https://onlweb.blob.core.windows.net/onl-introduction/%E5%BE%AE%E8%BD%AFMG1020%E6%94%B9.mp4?sp=r&st=2021-11-10T09:32:29Z&se=2022-11-10T17:32:29Z&spr=https&sv=2020-08-04&sr=b&sig=m9H1gARN7hjQ4G6cggSV4%2FpClH6tzbQ7gx8DRvdX6ns%3D" width="100%" controls></video>
             </div>
-            <div className="introduction-pic">
+            <div>
               <div className="introduction-square-container">
                 <a href="https://github.com/OpenNetLab/AlphaRTC" target="_blank">
                   <div className="square">
