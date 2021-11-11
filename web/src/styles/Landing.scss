@@ -115,6 +115,11 @@
   //   margin-right: 100px;
   // }
 
+  .introduction-container {
+    display: flex;
+    max-width: 1160px;
+  }
+
   .news-container {
     display: flex;
     max-width: 1160px;
@@ -282,6 +287,17 @@
       margin-top: 34px;
       margin-left: 20px;
     }
+  }
+
+  .introduction-video {
+    margin-top: 30px;
+  }
+
+  .introduction-square-container {
+    display: flex;
+    margin-left: 110px;
+    padding-top: 30%;
+    justify-content: space-between;
   }
 
   .square-container {

@@ -97,42 +97,28 @@ const Landing = () => {
       <div className="margin-lift">
         <div className="line">
           <div>
-            <p>CHALLENGE</p>
+            <p>INTRODUCTION</p>
           </div>
           <div className="border">
             {/*<img src={line}/>*/}
           </div>
         </div>
-        <Row className="challenge" type="flex" justify="center" align="middle">
-          <div className="challenge-container">
-            <div className="challenge-text">
-              <p className="title">Grand Challenge on Bandwidth Estimation for Real-Time Communications</p>
-              <p className="description">Real-time video applications have never played a more critical role in our lives as they enable us to live and work remotely while staying connected with the rest of the world. However, the rapid increase in the use of real-time video also poses an unprecedented challenge for consistently delivering high quality of experience (QoE) — such as high video and audio quality, low delay and few stalls — to all users.<br /><br />
-                A pivotal algorithm to optimize the QoE for real-time video communications is bandwidth estimation. It runs on the endpoint of a real-time video application and aims at adapting the video bitrate dynamically to stay within the available network capacity. To this end, it generally collects packet statistics from the network path and regularly computes a bandwidth estimate for the future. It then passes the estimate into a video codec as a target bitrate, requesting the codec to encode video frames in an average bitrate approximately equivalent to the target. As a result, the bandwidth estimator avoids network oversubscription by controlling the sending rate of video indirectly through the codec.<br /><br />
-                Although we have only focused on video so far, a bandwidth estimator is required to take audio into account too and deliver high quality audio. In this challenge, we call for a novel bandwidth estimation scheme implemented in the provided framework, such that it is able to attain superior overall QoE on a real-world testbed we built for real-time communications (RTC) of video and audio.
-              </p>
-              <a href="/home" className="links">WELCOME TO LOGIN</a>
-              <img className="arrow" src={arrow}/>
-              <img className="arrow" src={arrow}/>
+        <Row class="news" type="flex" justify="center" align="middle">
+          <div className="introduction-container">
+            <div className="introduction-video">
+              <p className="title">OpenNetLab 2.0 – The Next-Gen Platform for AI-assisted Networking </p>
+              <video src="https://onlweb.blob.core.windows.net/onl-introduction/%E5%BE%AE%E8%BD%AFMG1020%E6%94%B9.mp4?sp=r&st=2021-11-10T09:32:29Z&se=2022-11-10T17:32:29Z&spr=https&sv=2020-08-04&sr=b&sig=m9H1gARN7hjQ4G6cggSV4%2FpClH6tzbQ7gx8DRvdX6ns%3D" width="100%" controls></video>
             </div>
-            <div className="challenge-pics">
-              <a href="https://2021.acmmmsys.org/rtc_challenge.php" className="linksInRect" target="_blank">More Information</a>
-              <a href="https://2021.acmmmsys.org/rtc_challenge.php" target="_blank">
-                <div className="background">
-                  <img className="vector" src={mmsys} />
-                  <p className="title padding-left padding-right padding-top">ACM MMSys'21, Istanbul, Turkey</p>
-                  <p className="description padding-left padding-right">
-                    More Information about Grand Challenge on Bandwidth Estimation for Real-Time Communications
-                  </p>
-                </div>
-              </a>
-              <div className="square-container">
+            <div>
+              <div className="introduction-square-container">
                 <a href="https://github.com/OpenNetLab/AlphaRTC" target="_blank">
                   <div className="square">
                     <img src={vector} className="vector-git" />
                     <p className="title">OpenNetLab<br />AlphaRTC</p>
                   </div>
                 </a>
+              </div>
+              <div className="introduction-square-container">
                 <a href="https://github.com/OpenNetLab/gym" target="_blank">
                   <div className="square">
                     <img src={vector} className="vector-git" />
