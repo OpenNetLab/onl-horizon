@@ -14,8 +14,11 @@ export default function JoinPage () {
   const photo5 = `${imgBaseUrl}Group 64.png`;
   const photo6 = `${imgBaseUrl}Group 65.png`;
   const photo7 = `${imgBaseUrl}Group 66.png`;
+  const photo8 = `${imgBaseUrl}Group 67.png`;
+  const photo9 = `${imgBaseUrl}Group 68.png`;
+  const photo10 = `${imgBaseUrl}Group 69.png`;
 
-  var imgUrls = [photo1, photo2, photo3, photo4, photo5, photo6, photo7];
+  var imgUrls = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10];
 
   const ellipseUrls = [];
 
