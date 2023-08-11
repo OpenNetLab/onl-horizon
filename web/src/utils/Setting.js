@@ -9,6 +9,8 @@ export const imgBaseUrl = "https://cdn.opennetlab.org/img/";
 
 export const pca = new PublicClientApplication(msalConfig);
 
+export const mapKey = "";
+
 export function initServerUrl() {
   const hostname = window.location.hostname;
   if (hostname === 'localhost') {

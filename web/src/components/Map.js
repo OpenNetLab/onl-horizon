@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {ReactBingmaps} from "react-bingmaps-vnext";
 import pushpin from "../assets/map-pushpin.svg";
 import {getMachineLocations} from "../backend/api";
+import * as Setting from "../utils/Setting";
 
 const Map = () => {
   const [locations, setLocations] = useState([]);
@@ -92,7 +93,7 @@ const Map = () => {
   return (
     <div key="bingMap" className="map__card" style={{height: "500px", width:"100%", overflow: "hidden", minWidth:"200px", maxWidth:"800px"}}>
       <ReactBingmaps
-        bingmapKey="Av03W3HiiT7J8Py8b1742QwqC7NuBpKD3Tl9NLOI4C-4_U8AjTEMTSbx6sYVUzGJ"
+        bingmapKey={Setting.mapKey}
         center={[35.0614, 115.78600]}
         zoom={3}
         infoboxesWithPushPins={infoboxesWithPushPins}
